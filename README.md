@@ -24,7 +24,7 @@ This repository provides the tool for the paper "JUSTGen: Effective Test Generat
 * Opam 2.0.5
 * z3.4.8.1
 
-### Building
+### Building JUSTGen
 
 1. clone the source code
 ```
@@ -63,6 +63,15 @@ By running above command, JUSTGen generates test programs triggering the behavio
 
 The test programs will be placed in test_case folder.
 
+#### Result
+Currently, the JNI specification expressed in our DSL defines 37 types and 105 refinement types. 
+Based on this JNI specification, the JUSTGen finds 34,990 unspecified cases.
+There will be 34,990 test programs in test_case folder.
+
+## Artifact Evaluation
+### With provided docker image
+
+### without docker image
 
 
 ## Publication
