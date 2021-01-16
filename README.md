@@ -2,6 +2,14 @@
 
 This repository provides the tool for the paper "JUSTGen: Effective Test Generation for Unspecified JNI Behaviors on JVMs" accepted at ICSE 2021.
 
+## Environment
+
+JUSTGen is verified in following OS:
+
+1. MacOS 10.13.5
+
+2. Linux xxxxx
+
 ## Structure
 1. test/rule : JNI specification expressed in our domain specific language
 
