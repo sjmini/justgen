@@ -1,0 +1,124 @@
+# dune build slang.exe --profile release
+# OCAMLPARAM: unset
+# Workspace root: /Users/sungjaehwang/jni_tmp2
+$ /usr/bin/getconf _NPROCESSORS_ONLN > /var/folders/rb/w5qz8tf914gb097v847k5qcr0000gn/T/dunee7a4cb.output 2> /dev/null
+# Auto-detected concurrency: 4
+# disable binary cache
+$ /usr/local/bin/ocamlc.opt -config > /var/folders/rb/w5qz8tf914gb097v847k5qcr0000gn/T/dune19efde.output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Release
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ;
+#  toplevel_path =
+#    Some External "/Users/sungjaehwang/.opam/default/lib/toplevel"
+#  ; ocaml_bin = External "/usr/local/bin"
+#  ; ocaml = External "/Users/sungjaehwang/.opam/default/bin/ocaml"
+#  ; ocamlc = External "/usr/local/bin/ocamlc.opt"
+#  ; ocamlopt = Some External "/usr/local/bin/ocamlopt.opt"
+#  ; ocamldep = External "/usr/local/bin/ocamldep.opt"
+#  ; ocamlmklib = External "/usr/local/bin/ocamlmklib.opt"
+#  ;
+#  env =
+#    map
+#      { "DUNE_CONFIGURATOR" : "/usr/local/bin/ocamlc.opt"
+#      ; "INSIDE_DUNE" : "1"
+#      ; "MANPATH" : "/Users/sungjaehwang/jni_tmp2/_build/install/default/bin"
+#      ;
+#      "OCAMLFIND_IGNORE_DUPS_IN" :
+#        "/Users/sungjaehwang/jni_tmp2/_build/install/default/lib"
+#      ;
+#      "OCAMLPATH" : "/Users/sungjaehwang/jni_tmp2/_build/install/default/lib"
+#      ; "OCAML_COLOR" : "always"
+#      ; "OPAMCOLOR" : "always"
+#      }
+#  ; findlib_path = [ External "/Users/sungjaehwang/.opam/default/lib" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; opam_vars = map {}
+#  ;
+#  ocaml_config =
+#    { version = "4.08.1"
+#    ; standard_library_default = "/usr/local/lib/ocaml"
+#    ; standard_library = "/usr/local/lib/ocaml"
+#    ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#    ; ccomp_type = "cc"
+#    ; c_compiler = "clang"
+#    ; ocamlc_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#    ; ocamlopt_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#    ;
+#    bytecomp_c_compiler =
+#      [ "clang"
+#      ; "-O2"
+#      ; "-fno-strict-aliasing"
+#      ; "-fwrapv"
+#      ; "-D_FILE_OFFSET_BITS=64"
+#      ; "-D_REENTRANT"
+#      ]
+#    ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
+#    ;
+#    native_c_compiler =
+#      [ "clang"
+#      ; "-O2"
+#      ; "-fno-strict-aliasing"
+#      ; "-fwrapv"
+#      ; "-D_FILE_OFFSET_BITS=64"
+#      ; "-D_REENTRANT"
+#      ]
+#    ; native_c_libraries = [ "-lm" ]
+#    ; cc_profile = [ "-pg" ]
+#    ; architecture = "amd64"
+#    ; model = "default"
+#    ; int_size = 63
+#    ; word_size = 64
+#    ; system = "macosx"
+#    ; asm = [ "clang"; "-arch"; "x86_64"; "-Wno-trigraphs"; "-c" ]
+#    ; asm_cfi_supported = true
+#    ; with_frame_pointers = false
+#    ; ext_exe = ""
+#    ; ext_obj = ".o"
+#    ; ext_asm = ".s"
+#    ; ext_lib = ".a"
+#    ; ext_dll = ".so"
+#    ; os_type = "Unix"
+#    ; default_executable_name = "a.out"
+#    ; systhread_supported = true
+#    ; host = "x86_64-apple-darwin17.7.0"
+#    ; target = "x86_64-apple-darwin17.7.0"
+#    ; profiling = true
+#    ; flambda = false
+#    ; spacetime = false
+#    ; safe_string = false
+#    ; exec_magic_number = "Caml1999X025"
+#    ; cmi_magic_number = "Caml1999I025"
+#    ; cmo_magic_number = "Caml1999O025"
+#    ; cma_magic_number = "Caml1999A025"
+#    ; cmx_magic_number = "Caml1999Y025"
+#    ; cmxa_magic_number = "Caml1999Z025"
+#    ; ast_impl_magic_number = "Caml1999M025"
+#    ; ast_intf_magic_number = "Caml1999N025"
+#    ; cmxs_magic_number = "Caml1999D025"
+#    ; cmt_magic_number = "Caml1999T025"
+#    ; natdynlink_supported = true
+#    ; supports_shared_libraries = true
+#    ; windows_unicode = false
+#    }
+#  ;
+#  which =
+#    map
+#      { "ocaml" : Some External "/Users/sungjaehwang/.opam/default/bin/ocaml"
+#      ; "ocamlc" : Some External "/usr/local/bin/ocamlc.opt"
+#      ; "ocamlobjinfo" : Some External "/usr/local/bin/ocamlobjinfo.opt"
+#      }
+#  }
+$ (cd _build/default && .ppx/1da4bba08a54c8cecd0e88ad32fdc312/ppx.exe -no-check -o src/codegen/generator.pp.ml --impl src/codegen/generator.ml -corrected-suffix .ppx-corrected -diff-cmd - -dump-ast)
+$ (cd _build/default && .ppx/1da4bba08a54c8cecd0e88ad32fdc312/ppx.exe -no-check -o src/slang.pp.ml --impl src/slang.ml -corrected-suffix .ppx-corrected -diff-cmd - -dump-ast)
+$ (cd _build/default && /usr/local/bin/ocamldep.opt -modules -impl src/codegen/generator.pp.ml) > _build/default/src/.slang.eobjs/generator.pp.ml.d
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -cclib -lstdc++ -g -bin-annot -I src/.slang.eobjs/byte -I /Users/sungjaehwang/.opam/default/lib/base -I /Users/sungjaehwang/.opam/default/lib/base/base_internalhash_types -I /Users/sungjaehwang/.opam/default/lib/base/caml -I /Users/sungjaehwang/.opam/default/lib/base/md5 -I /Users/sungjaehwang/.opam/default/lib/base/shadow_stdlib -I /Users/sungjaehwang/.opam/default/lib/base_bigstring -I /Users/sungjaehwang/.opam/default/lib/base_quickcheck -I /Users/sungjaehwang/.opam/default/lib/bin_prot -I /Users/sungjaehwang/.opam/default/lib/bin_prot/shape -I /Users/sungjaehwang/.opam/default/lib/core -I /Users/sungjaehwang/.opam/default/lib/core/error_checking_mutex -I /Users/sungjaehwang/.opam/default/lib/core_kernel -I /Users/sungjaehwang/.opam/default/lib/core_kernel/base_for_tests -I /Users/sungjaehwang/.opam/default/lib/core_kernel/bounded_int_table -I /Users/sungjaehwang/.opam/default/lib/core_kernel/flags -I /Users/sungjaehwang/.opam/default/lib/core_kernel/version_util -I /Users/sungjaehwang/.opam/default/lib/fieldslib -I /Users/sungjaehwang/.opam/default/lib/jane-street-headers -I /Users/sungjaehwang/.opam/default/lib/num -I /Users/sungjaehwang/.opam/default/lib/parmap -I /Users/sungjaehwang/.opam/default/lib/parsexp -I /Users/sungjaehwang/.opam/default/lib/ppx_assert/runtime-lib -I /Users/sungjaehwang/.opam/default/lib/ppx_bench/runtime-lib -I /Users/sungjaehwang/.opam/default/lib/ppx_compare/runtime-lib -I /Users/sungjaehwang/.opam/default/lib/ppx_enumerate/runtime-lib -I /Users/sungjaehwang/.opam/default/lib/ppx_expect/collector -I /Users/sungjaehwang/.opam/default/lib/ppx_expect/common -I /Users/sungjaehwang/.opam/default/lib/ppx_expect/config -I /Users/sungjaehwang/.opam/default/lib/ppx_hash/runtime-lib -I /Users/sungjaehwang/.opam/default/lib/ppx_here/runtime-lib -I /Users/sungjaehwang/.opam/default/lib/ppx_inline_test/config -I /Users/sungjaehwang/.opam/default/lib/ppx_inline_test/runtime-lib -I /Users/sungjaehwang/.opam/default/lib/ppx_module_timer/runtime -I /Users/sungjaehwang/.opam/default/lib/ppx_sexp_conv/runtime-lib -I /Users/sungjaehwang/.opam/default/lib/sexplib -I /Users/sungjaehwang/.opam/default/lib/sexplib/unix -I /Users/sungjaehwang/.opam/default/lib/sexplib0 -I /Users/sungjaehwang/.opam/default/lib/spawn -I /Users/sungjaehwang/.opam/default/lib/splittable_random -I /Users/sungjaehwang/.opam/default/lib/stdio -I /Users/sungjaehwang/.opam/default/lib/time_now -I /Users/sungjaehwang/.opam/default/lib/typerep -I /Users/sungjaehwang/.opam/default/lib/variantslib -I /Users/sungjaehwang/.opam/default/lib/z3 -I /usr/local/lib/ocaml/threads -no-alias-deps -o src/.slang.eobjs/byte/generator.cmo -c -impl src/codegen/generator.pp.ml)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -cclib -lstdc++ -g -I src/.slang.eobjs/byte -I src/.slang.eobjs/native -I /Users/sungjaehwang/.opam/default/lib/base -I /Users/sungjaehwang/.opam/default/lib/base/base_internalhash_types -I /Users/sungjaehwang/.opam/default/lib/base/caml -I /Users/sungjaehwang/.opam/default/lib/base/md5 -I /Users/sungjaehwang/.opam/default/lib/base/shadow_stdlib -I /Users/sungjaehwang/.opam/default/lib/base_bigstring -I /Users/sungjaehwang/.opam/default/lib/base_quickcheck -I /Users/sungjaehwang/.opam/default/lib/bin_prot -I /Users/sungjaehwang/.opam/default/lib/bin_prot/shape -I /Users/sungjaehwang/.opam/default/lib/core -I /Users/sungjaehwang/.opam/default/lib/core/error_checking_mutex -I /Users/sungjaehwang/.opam/default/lib/core_kernel -I /Users/sungjaehwang/.opam/default/lib/core_kernel/base_for_tests -I /Users/sungjaehwang/.opam/default/lib/core_kernel/bounded_int_table -I /Users/sungjaehwang/.opam/default/lib/core_kernel/flags -I /Users/sungjaehwang/.opam/default/lib/core_kernel/version_util -I /Users/sungjaehwang/.opam/default/lib/fieldslib -I /Users/sungjaehwang/.opam/default/lib/jane-street-headers -I /Users/sungjaehwang/.opam/default/lib/num -I /Users/sungjaehwang/.opam/default/lib/parmap -I /Users/sungjaehwang/.opam/default/lib/parsexp -I /Users/sungjaehwang/.opam/default/lib/ppx_assert/runtime-lib -I /Users/sungjaehwang/.opam/default/lib/ppx_bench/runtime-lib -I /Users/sungjaehwang/.opam/default/lib/ppx_compare/runtime-lib -I /Users/sungjaehwang/.opam/default/lib/ppx_enumerate/runtime-lib -I /Users/sungjaehwang/.opam/default/lib/ppx_expect/collector -I /Users/sungjaehwang/.opam/default/lib/ppx_expect/common -I /Users/sungjaehwang/.opam/default/lib/ppx_expect/config -I /Users/sungjaehwang/.opam/default/lib/ppx_hash/runtime-lib -I /Users/sungjaehwang/.opam/default/lib/ppx_here/runtime-lib -I /Users/sungjaehwang/.opam/default/lib/ppx_inline_test/config -I /Users/sungjaehwang/.opam/default/lib/ppx_inline_test/runtime-lib -I /Users/sungjaehwang/.opam/default/lib/ppx_module_timer/runtime -I /Users/sungjaehwang/.opam/default/lib/ppx_sexp_conv/runtime-lib -I /Users/sungjaehwang/.opam/default/lib/sexplib -I /Users/sungjaehwang/.opam/default/lib/sexplib/unix -I /Users/sungjaehwang/.opam/default/lib/sexplib0 -I /Users/sungjaehwang/.opam/default/lib/spawn -I /Users/sungjaehwang/.opam/default/lib/splittable_random -I /Users/sungjaehwang/.opam/default/lib/stdio -I /Users/sungjaehwang/.opam/default/lib/time_now -I /Users/sungjaehwang/.opam/default/lib/typerep -I /Users/sungjaehwang/.opam/default/lib/variantslib -I /Users/sungjaehwang/.opam/default/lib/z3 -I /usr/local/lib/ocaml/threads -intf-suffix .ml -no-alias-deps -o src/.slang.eobjs/native/generator.cmx -c -impl src/codegen/generator.pp.ml)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -cclib -lstdc++ -g -o src/slang.exe /Users/sungjaehwang/.opam/default/lib/base/base_internalhash_types/base_internalhash_types.cmxa -I /Users/sungjaehwang/.opam/default/lib/base/base_internalhash_types /Users/sungjaehwang/.opam/default/lib/base/caml/caml.cmxa /Users/sungjaehwang/.opam/default/lib/sexplib0/sexplib0.cmxa /Users/sungjaehwang/.opam/default/lib/base/shadow_stdlib/shadow_stdlib.cmxa /Users/sungjaehwang/.opam/default/lib/base/base.cmxa -I /Users/sungjaehwang/.opam/default/lib/base /Users/sungjaehwang/.opam/default/lib/ppx_compare/runtime-lib/ppx_compare_lib.cmxa /Users/sungjaehwang/.opam/default/lib/ppx_sexp_conv/runtime-lib/ppx_sexp_conv_lib.cmxa /Users/sungjaehwang/.opam/default/lib/ppx_hash/runtime-lib/ppx_hash_lib.cmxa /Users/sungjaehwang/.opam/default/lib/ppx_enumerate/runtime-lib/ppx_enumerate_lib.cmxa /Users/sungjaehwang/.opam/default/lib/fieldslib/fieldslib.cmxa /Users/sungjaehwang/.opam/default/lib/ppx_here/runtime-lib/ppx_here_lib.cmxa /Users/sungjaehwang/.opam/default/lib/ppx_assert/runtime-lib/ppx_assert_lib.cmxa /Users/sungjaehwang/.opam/default/lib/ppx_bench/runtime-lib/ppx_bench_lib.cmxa /Users/sungjaehwang/.opam/default/lib/ppx_inline_test/config/inline_test_config.cmxa /Users/sungjaehwang/.opam/default/lib/ppx_inline_test/runtime-lib/ppx_inline_test_lib.cmxa /Users/sungjaehwang/.opam/default/lib/splittable_random/splittable_random.cmxa /Users/sungjaehwang/.opam/default/lib/base_quickcheck/base_quickcheck.cmxa /Users/sungjaehwang/.opam/default/lib/base/md5/md5_lib.cmxa /usr/local/lib/ocaml/unix.cmxa -I /usr/local/lib/ocaml /usr/local/lib/ocaml/bigarray.cmxa -I /usr/local/lib/ocaml /Users/sungjaehwang/.opam/default/lib/variantslib/variantslib.cmxa /Users/sungjaehwang/.opam/default/lib/bin_prot/shape/bin_shape_lib.cmxa /Users/sungjaehwang/.opam/default/lib/bin_prot/bin_prot.cmxa -I /Users/sungjaehwang/.opam/default/lib/bin_prot /Users/sungjaehwang/.opam/default/lib/ppx_expect/config/expect_test_config.cmxa /Users/sungjaehwang/.opam/default/lib/ppx_expect/common/expect_test_common.cmxa /Users/sungjaehwang/.opam/default/lib/ppx_expect/collector/expect_test_collector.cmxa -I /Users/sungjaehwang/.opam/default/lib/ppx_expect/collector /Users/sungjaehwang/.opam/default/lib/typerep/typerep_lib.cmxa /Users/sungjaehwang/.opam/default/lib/stdio/stdio.cmxa /Users/sungjaehwang/.opam/default/lib/jane-street-headers/jane_street_headers.cmxa /Users/sungjaehwang/.opam/default/lib/time_now/time_now.cmxa -I /Users/sungjaehwang/.opam/default/lib/time_now /Users/sungjaehwang/.opam/default/lib/ppx_module_timer/runtime/ppx_module_timer_runtime.cmxa /Users/sungjaehwang/.opam/default/lib/base_bigstring/base_bigstring.cmxa -I /Users/sungjaehwang/.opam/default/lib/base_bigstring /Users/sungjaehwang/.opam/default/lib/core_kernel/base_for_tests/base_for_tests.cmxa /Users/sungjaehwang/.opam/default/lib/parsexp/parsexp.cmxa /Users/sungjaehwang/.opam/default/lib/sexplib/sexplib.cmxa /Users/sungjaehwang/.opam/default/lib/core_kernel/core_kernel.cmxa -I /Users/sungjaehwang/.opam/default/lib/core_kernel /usr/local/lib/ocaml/threads/threads.cmxa -I /usr/local/lib/ocaml /Users/sungjaehwang/.opam/default/lib/core/error_checking_mutex/error_checking_mutex.cmxa -I /Users/sungjaehwang/.opam/default/lib/core/error_checking_mutex /Users/sungjaehwang/.opam/default/lib/core_kernel/bounded_int_table/bounded_int_table.cmxa /Users/sungjaehwang/.opam/default/lib/core_kernel/flags/flags.cmxa /Users/sungjaehwang/.opam/default/lib/core_kernel/version_util/version_util.cmxa -I /Users/sungjaehwang/.opam/default/lib/core_kernel/version_util /Users/sungjaehwang/.opam/default/lib/sexplib/unix/sexplib_unix.cmxa /Users/sungjaehwang/.opam/default/lib/spawn/spawn.cmxa -I /Users/sungjaehwang/.opam/default/lib/spawn /Users/sungjaehwang/.opam/default/lib/core/core.cmxa -I /Users/sungjaehwang/.opam/default/lib/core /Users/sungjaehwang/.opam/default/lib/num/nums.cmxa -I /Users/sungjaehwang/.opam/default/lib/num -I /Users/sungjaehwang/.opam/default/lib/num /Users/sungjaehwang/.opam/default/lib/z3/z3ml.cmxa -I /Users/sungjaehwang/.opam/default/lib/z3 /usr/local/lib/ocaml/str.cmxa -I /usr/local/lib/ocaml /Users/sungjaehwang/.opam/default/lib/parmap/parmap.cmxa -I /Users/sungjaehwang/.opam/default/lib/parmap src/.slang.eobjs/native/sourcePosition.cmx src/.slang.eobjs/native/slangAST.cmx src/.slang.eobjs/native/typeChecker.cmx src/.slang.eobjs/native/dependency.cmx src/.slang.eobjs/native/constants.cmx src/.slang.eobjs/native/mapping.cmx src/.slang.eobjs/native/helpers.cmx src/.slang.eobjs/native/preconds.cmx src/.slang.eobjs/native/rule.cmx src/.slang.eobjs/native/counterexample.cmx src/.slang.eobjs/native/driver.cmx src/.slang.eobjs/native/generator.cmx src/.slang.eobjs/native/parser.cmx src/.slang.eobjs/native/lexer.cmx src/.slang.eobjs/native/sourceCollector.cmx src/.slang.eobjs/native/parseMain.cmx src/.slang.eobjs/native/postprocessing.cmx src/.slang.eobjs/native/slang.cmx)

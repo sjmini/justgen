@@ -1,0 +1,7 @@
+(include_subdirs unqualified)
+
+(executable 
+  (name slang)
+  (libraries core z3 str parmap)
+  (preprocess (pps ppx_compare ppx_sexp_conv -no-check))
+  (flags (-cclib -lstdc++)) )

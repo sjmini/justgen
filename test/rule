@@ -1,0 +1,1461 @@
+//jweak, V, JNI_COMMIT, JNI_ABORT : unspecified type
+
+//limitation
+//When these functions are used to call private methods and constructors, 
+//the method ID must be derived from the real class of obj, not from one of its superclasses.
+
+typedef jbyte
+refine isBytePointerClassInfo in jbyte*
+refine isGetByteArrayElements in jbyte*
+refine isThisByteArray in jbyte*
+refine isNULLB in jbyte*
+
+typedef jsize //equal to jint
+refine isValidIndexE in jsize
+
+typedef jweak <: jobject //same as @isWeakGlobalO
+refine isDeletedJW in jweak
+refine isNULLJW in jweak
+
+typedef jobject
+refine isGlobalO in jobject
+refine isLocalO in jobject
+//refine isWeakGlobalO in jobject //unspecified
+refine isDeletedO in jobject
+refine isLoaderO in jobject //class loader
+refine isNULLO in jobject 
+refine isSubClassO in jobject //the value should be subClass of array@isJobjectArrayJA
+refine isReflectMethodO in jobject
+refine isReflectConstructorO in jobject
+refine isReflectFieldO in jobject
+
+typedef jclass <: jobject
+refine isNULLCL in jclass
+refine isObjectCL in jclass
+refine isThrowableCL in jclass //java.lang.Throwable
+refine isArrayCL in jclass 
+refine isContainMethod in jclass 
+
+typedef jthrowable <: jobject
+refine isNULLT in jthrowable
+
+//jstring is always equal to java.lang.String
+typedef jstring <: jobject
+refine isNULLS in jstring 
+refine isUnicodeS in jstring
+
+typedef va_list
+
+typedef jvalue
+refine isArrayPtrJV in jvalue*
+refine isNULLJV in jvalue*
+
+typedef jfieldID
+refine isStaticF in jfieldID
+refine isNULLF in jfieldID
+
+typedef jobjectRefType
+typedef JNIInvalidRefType <: jobjectRefType
+typedef JNILocalRefType <: jobjectRefType
+typedef JNIGlobalRefType <: jobjectRefType
+typedef JNIWeakGlobalRefType <: jobjectRefType
+
+typedef jmethodID
+refine isNULLM in jmethodID
+refine isInitM in jmethodID
+refine isStaticM in jmethodID
+refine isJBooleanM in jmethodID
+refine isJCharM in jmethodID
+refine isJShortM in jmethodID
+refine isJIntM in jmethodID
+refine isJLongM in jmethodID
+refine isJFloatM in jmethodID
+refine isJDoubleM in jmethodID
+refine isVoidM in jmethodID
+refine isJByteM in jmethodID
+refine isJObjectM in jmethodID
+refine isPrivateM in jmethodID
+refine isInThisClassM in jmethodID
+
+
+typedef jchar
+refine isUnicodeJC in jchar*
+refine isNULLJC in jchar*
+refine isGetStringCharsJC in jchar*
+refine isGetStringCriticalJC in jchar*
+refine isGetCharArrayElementsJC in jchar*
+refine isThisCharArray in jchar*
+
+typedef char
+refine isMethodSigC in char*
+refine isEndWithVC in char*
+refine isEndWithZC in char*
+refine isEndWithBC in char*
+refine isEndWithCC in char*
+refine isEndWithSC in char*
+refine isEndWithIC in char*
+refine isEndWithJC in char*
+refine isEndWithFC in char*
+refine isEndWithDC in char*
+refine isEndWithLC in char*
+refine isInitC in char*
+refine isUTF8C in char*
+refine isNULLC in char*
+refine isGetStringUTFCharC in char*
+refine isClassSigC in char*
+refine isArrayClassSigC in char*
+refine isFieldSigC in char*
+refine isFieldNameC in char*
+refine isMethodNameC in char*
+
+typedef jboolean
+refine isGetBooleanArrayElements in jboolean*
+refine isThisBooleanArray in jboolean*
+refine isNULLJB in jboolean*
+
+typedef jshort
+refine isGetShortArrayElements in jshort*
+refine isThisShortArray in jshort*
+refine isNULLJS in jshort*
+
+typedef jint
+refine isNegativeJI in jint //negative means < 0
+refine isPositiveJI in jint //positive means > 0
+refine isZeroJI in jint
+refine isJNI_COMMITJI in jint
+refine isJNI_ABORTJI in jint
+refine isThisArrayLenJI in jint //number of array
+refine isGetIntArrayElements in jint*
+refine isThisIntArray in jint*
+refine isNULLJI in jint*
+
+typedef jlong
+refine isGetLongArrayElements in jlong*
+refine isThisLongArray in jlong*
+refine isNULLJL in jlong*
+
+typedef jfloat
+refine isGetFloatArrayElements in jfloat*
+refine isThisFloatArray in jfloat*
+refine isNULLJF in jfloat*
+
+typedef jdouble
+refine isGetDoubleArrayElements in jdouble*
+refine isThisDoubleArray in jdouble*
+refine isNULLJD in jdouble*
+
+typedef void
+refine isGetPrimitiveArrayCritical in void*
+refine isThisVoidArray in void*
+refine isNULLV in void*
+
+typedef JavaVM
+
+typedef JNINativeMethod
+
+typedef JNIEnv
+
+//special case : ... -> we are going to ignore
+
+typedef jarray <: jobject
+//refine isNULLJA in jarray
+
+typedef jobjectArray <: jarray
+refine isNULLJOA in jobjectArray
+
+typedef jbooleanArray <: jarray
+refine isNULLJZA in jbooleanArray
+
+typedef jbyteArray <: jarray
+refine isNULLJBA in jbyteArray
+
+typedef jcharArray <: jarray
+refine isNULLJCA in jcharArray
+
+typedef jshortArray <: jarray
+refine isNULLJSA in jshortArray
+
+typedef jintArray <: jarray
+refine isNULLJIA in jintArray
+
+typedef jlongArray <: jarray
+refine isNULLJLA in jlongArray
+
+typedef jfloatArray <: jarray
+refine isNULLJFA in jfloatArray
+
+typedef jdoubleArray <: jarray
+refine isNULLJDA in jdoubleArray
+
+//refine isJobjectArrayJA in jarray
+//refine isJbooleanArrayJA in jarray
+//refine isJbyteArrayJA in jarray
+//refine isJcharArrayJA in jarray
+//refine isJshortArrayJA in jarray
+//refine isJintArrayJA in jarray
+//refine isJlongArrayJA in jarray
+//refine isJfloatArrayJA in jarray
+//refine isJdoubleArrayJA in jarray
+
+//Thread related function
+//jint MonitorEnter(JNIEnv *env, jobject obj); 
+//jint MonitorExit(JNIEnv *env, jobject obj);
+
+//Not all JVM support below functions
+//NewDirectByteBuffer
+//GetDirectBufferAddress
+//GetDirectBufferCapacity
+
+rule{//jint GetJavaVM(JNIEnv *env, JavaVM **vm)
+  spec. jint@isNegativeJI || isZeroJI GetJavaVM(JNIEnv*, JavaVM*)
+  type. jint GetJavaVM(JNIEnv*, JavaVM*)
+}
+
+rule{//jobject ToReflectedField(JNIEnv *env, jclass cls, jfieldID fieldID, jboolean isStatic)
+  spec. jobject@isReflectFieldO ToReflectedField(JNIEnv*, jclass, jfieldID, jboolean)
+  type. jobject ToReflectedField(JNIEnv*, jclass, jfieldID, jboolean)
+}
+
+rule{//jobject ToReflectedMethod(JNIEnv *env, jclass cls, jmethodID methodID, jboolean isStatic)
+  spec. jobject@isReflectMethodO || isReflectConstructorO ToReflectedMethod(JNIEnv*, jclass, jmethodID, jboolean) 
+  type. jobject ToReflectedMethod(JNIEnv*, jclass, jmethodID, jboolean) 
+}
+
+rule{//jfieldID FromReflectedField(JNIEnv *env, jobject field)
+  spec. jfieldID FromReflectedField(JNIEnv*, #jobject@isReflectFieldO) 
+  type. jfieldID FromReflectedField(JNIEnv*, jobject) 
+}
+
+rule{//jmethodID FromReflectedMethod(JNIEnv *env, jobject method)
+  spec. jmethodID FromReflectedMethod(JNIEnv*, #jobject@isReflectMethodO || isReflectConstructorO) 
+  type. jmethodID FromReflectedMethod(JNIEnv*, jobject) 
+}
+
+rule{//jint UnregisterNatives(JNIEnv *env, jclass clazz)
+  spec. jint@isNegativeJI || isZeroJI UnregisterNatives(JNIEnv*, jclass) 
+  type. jint UnregisterNatives(JNIEnv*, jclass) 
+}
+
+rule{//jint RegisterNatives(JNIEnv *env, jclass clazz, const JNINativeMethod *methods, jint nMethods)
+  spec. jint@isNegativeJI || isZeroJI RegisterNatives(JNIEnv*, jclass, JNINativeMethod*, jint@isThisArrayLenJI) 
+  type. jint RegisterNatives(JNIEnv*, jclass, JNINativeMethod*, jint) 
+}
+
+rule{//void ReleasePrimitiveArrayCritical(JNIEnv *env, jarray array, void *carray, jint mode)
+  spec. void ReleasePrimitiveArrayCritical(JNIEnv*, jarray, void*@isGetPrimitiveArrayCritical && isThisVoidArray, jint@isZeroJI || isJNI_COMMITJI || isJNI_ABORTJI)
+  type. void ReleasePrimitiveArrayCritical(JNIEnv*, jarray, void*, jint)
+}
+
+rule{//void* GetPrimitiveArrayCritical(JNIEnv *env, jarray array, jboolean *isCopy)
+  spec. void*@isGetPrimitiveArrayCritical || isNULLV GetPrimitiveArrayCritical(JNIEnv*, jarray, jboolean*) 
+  type. void* GetPrimitiveArrayCritical(JNIEnv*, jarray, jboolean*) 
+}
+
+rule{
+  spec. void SetDoubleArrayRegion(JNIEnv*, jdoubleArray, jsize@isValidIndexE, jsize, jdouble*) 
+  type. void SetDoubleArrayRegion(JNIEnv*, jdoubleArray, jsize, jsize, jdouble*) 
+}
+
+rule{
+  spec. void SetFloatArrayRegion(JNIEnv*, jfloatArray, jsize@isValidIndexE, jsize, jfloat*) 
+  type. void SetFloatArrayRegion(JNIEnv*, jfloatArray, jsize, jsize, jfloat*) 
+}
+
+rule{
+  spec. void SetLongArrayRegion(JNIEnv*, jlongArray, jsize@isValidIndexE, jsize, jlong*) 
+  type. void SetLongArrayRegion(JNIEnv*, jlongArray, jsize, jsize, jlong*) 
+}
+
+rule{
+  spec. void SetIntArrayRegion(JNIEnv*, jintArray, jsize@isValidIndexE, jsize, jint*) 
+  type. void SetIntArrayRegion(JNIEnv*, jintArray, jsize, jsize, jint*) 
+}
+
+rule{
+  spec. void SetShortArrayRegion(JNIEnv*, jshortArray, jsize@isValidIndexE, jsize, jshort*) 
+  type. void SetShortArrayRegion(JNIEnv*, jshortArray, jsize, jsize, jshort*) 
+}
+
+rule{
+  spec. void SetCharArrayRegion(JNIEnv*, jcharArray, jsize@isValidIndexE, jsize, jchar*) 
+  type. void SetCharArrayRegion(JNIEnv*, jcharArray, jsize, jsize, jchar*) 
+}
+
+rule{
+  spec. void SetByteArrayRegion(JNIEnv*, jbyteArray, jsize@isValidIndexE, jsize, jbyte*) 
+  type. void SetByteArrayRegion(JNIEnv*, jbyteArray, jsize, jsize, jbyte*) 
+}
+
+rule{//void SetBooleanArrayRegion(JNIEnv *env, jbooleanArray array, jsize start, jsize len, const jboolean *buf)
+  spec. void SetBooleanArrayRegion(JNIEnv*, jbooleanArray, jsize@isValidIndexE, jsize, jboolean*) 
+  type. void SetBooleanArrayRegion(JNIEnv*, jbooleanArray, jsize, jsize, jboolean*) 
+}
+
+rule{
+  spec. void GetDoubleArrayRegion(JNIEnv*, jdoubleArray, jsize@isValidIndexE, jsize, jdouble*) 
+  type. void GetDoubleArrayRegion(JNIEnv*, jdoubleArray, jsize, jsize, jdouble*) 
+}
+
+rule{
+  spec. void GetFloatArrayRegion(JNIEnv*, jfloatArray, jsize@isValidIndexE, jsize, jfloat*) 
+  type. void GetFloatArrayRegion(JNIEnv*, jfloatArray, jsize, jsize, jfloat*) 
+}
+
+rule{
+  spec. void GetLongArrayRegion(JNIEnv*, jlongArray, jsize@isValidIndexE, jsize, jlong*) 
+  type. void GetLongArrayRegion(JNIEnv*, jlongArray, jsize, jsize, jlong*) 
+}
+
+rule{
+  spec. void GetIntArrayRegion(JNIEnv*, jintArray, jsize@isValidIndexE, jsize, jint*) 
+  type. void GetIntArrayRegion(JNIEnv*, jintArray, jsize, jsize, jint*) 
+}
+
+rule{
+  spec. void GetShortArrayRegion(JNIEnv*, jshortArray, jsize@isValidIndexE, jsize, jshort*) 
+  type. void GetShortArrayRegion(JNIEnv*, jshortArray, jsize, jsize, jshort*) 
+}
+
+rule{
+  spec. void GetCharArrayRegion(JNIEnv*, jcharArray, jsize@isValidIndexE, jsize, jchar*) 
+  type. void GetCharArrayRegion(JNIEnv*, jcharArray, jsize, jsize, jchar*) 
+}
+
+rule{
+  spec. void GetByteArrayRegion(JNIEnv*, jbyteArray, jsize@isValidIndexE, jsize, jbyte*) 
+  type. void GetByteArrayRegion(JNIEnv*, jbyteArray, jsize, jsize, jbyte*) 
+}
+
+rule{//void GetBooleanArrayRegion(JNIEnv *env, jbooleanArray array,jsize start, jsize len, jboolean *buf)
+  spec. void GetBooleanArrayRegion(JNIEnv*, jbooleanArray, jsize, jsize, jboolean*) 
+  type. void GetBooleanArrayRegion(JNIEnv*, jbooleanArray, jsize, jsize, jboolean*) 
+}
+
+rule{//void Release<PrimitiveType>ArrayElements(JNIEnv *env, ArrayType array, NativeType *elems, jint mode)
+  spec. void ReleaseDoubleArrayElements(JNIEnv*, jdoubleArray, jdouble*@isGetDoubleArrayElements && isThisDoubleArray, jint@isZeroJI || isJNI_COMMITJI || isJNI_ABORTJI)
+  type. void ReleaseDoubleArrayElements(JNIEnv*, jdoubleArray, jdouble*, jint) 
+}
+
+rule{//void Release<PrimitiveType>ArrayElements(JNIEnv *env, ArrayType array, NativeType *elems, jint mode)
+  spec. void ReleaseFloatArrayElements(JNIEnv*, jfloatArray, jfloat*@isGetFloatArrayElements && isThisFloatArray, jint@isZeroJI || isJNI_COMMITJI || isJNI_ABORTJI)
+  type. void ReleaseFloatArrayElements(JNIEnv*, jfloatArray, jfloat*, jint) 
+}
+
+rule{//void Release<PrimitiveType>ArrayElements(JNIEnv *env, ArrayType array, NativeType *elems, jint mode)
+  spec. void ReleaseLongArrayElements(JNIEnv*, jlongArray, jlong*@isGetLongArrayElements && isThisLongArray, jint@isZeroJI || isJNI_COMMITJI || isJNI_ABORTJI)
+  type. void ReleaseLongArrayElements(JNIEnv*, jlongArray, jlong*, jint) 
+}
+
+rule{//void Release<PrimitiveType>ArrayElements(JNIEnv *env, ArrayType array, NativeType *elems, jint mode)
+  spec. void ReleaseIntArrayElements(JNIEnv*, jintArray, jint*@isGetIntArrayElements && isThisIntArray, jint@isZeroJI || isJNI_COMMITJI || isJNI_ABORTJI)
+  type. void ReleaseIntArrayElements(JNIEnv*, jintArray, jint*, jint) 
+}
+
+rule{//void Release<PrimitiveType>ArrayElements(JNIEnv *env, ArrayType array, NativeType *elems, jint mode)
+  spec. void ReleaseShortArrayElements(JNIEnv*, jshortArray, jshort*@isGetShortArrayElements && isThisShortArray, jint@isZeroJI || isJNI_COMMITJI || isJNI_ABORTJI)
+  type. void ReleaseShortArrayElements(JNIEnv*, jshortArray, jshort*, jint) 
+}
+
+rule{//void Release<PrimitiveType>ArrayElements(JNIEnv *env, ArrayType array, NativeType *elems, jint mode)
+  spec. void ReleaseCharArrayElements(JNIEnv*, jcharArray, jchar*@isGetCharArrayElementsJC && isThisCharArray, jint@isZeroJI || isJNI_COMMITJI || isJNI_ABORTJI)
+  type. void ReleaseCharArrayElements(JNIEnv*, jcharArray, jchar*, jint) 
+}
+
+rule{//void Release<PrimitiveType>ArrayElements(JNIEnv *env, ArrayType array, NativeType *elems, jint mode)
+  spec. void ReleaseByteArrayElements(JNIEnv*, jbyteArray, jbyte*@isGetByteArrayElements && isThisByteArray, jint@isZeroJI || isJNI_COMMITJI || isJNI_ABORTJI)
+  type. void ReleaseByteArrayElements(JNIEnv*, jbyteArray, jbyte*, jint) 
+}
+
+rule{//void Release<PrimitiveType>ArrayElements(JNIEnv *env, ArrayType array, NativeType *elems, jint mode)
+  spec. void ReleaseBooleanArrayElements(JNIEnv*, jbooleanArray, jboolean*@isGetBooleanArrayElements && isThisBooleanArray, jint@isZeroJI || isJNI_COMMITJI || isJNI_ABORTJI)
+  type. void ReleaseBooleanArrayElements(JNIEnv*, jbooleanArray, jboolean*, jint) 
+}
+
+rule{
+  spec. jdouble*@isGetDoubleArrayElements || isNULLJD GetDoubleArrayElements(JNIEnv*, jdoubleArray, jboolean*)
+  type. jdouble* GetDoubleArrayElements(JNIEnv*, jdoubleArray, jboolean*)
+}
+
+rule{
+  spec. jfloat*@isGetFloatArrayElements || isNULLJF GetFloatArrayElements(JNIEnv*, jfloatArray, jboolean*)
+  type. jfloat* GetFloatArrayElements(JNIEnv*, jfloatArray, jboolean*)
+}
+
+rule{
+  spec. jlong*@isGetLongArrayElements || isNULLJL GetLongArrayElements(JNIEnv*, jlongArray, jboolean*)
+  type. jlong* GetLongArrayElements(JNIEnv*, jlongArray, jboolean*)
+}
+
+rule{
+  spec. jint*@isGetIntArrayElements || isNULLJI GetIntArrayElements(JNIEnv*, jintArray, jboolean*)
+  type. jint* GetIntArrayElements(JNIEnv*, jintArray, jboolean*)
+}
+
+rule{
+  spec. jshort*@isGetShortArrayElements || isNULLJS GetShortArrayElements(JNIEnv*, jshortArray, jboolean*)
+  type. jshort* GetShortArrayElements(JNIEnv*, jshortArray, jboolean*)
+}
+
+rule{
+  spec. jchar*@isGetCharArrayElementsJC || isNULLJC GetCharArrayElements(JNIEnv*, jcharArray, jboolean*)
+  type. jchar* GetCharArrayElements(JNIEnv*, jcharArray, jboolean*)
+}
+
+rule{
+  spec. jbyte*@(isGetByteArrayElements) || isNULLB GetByteArrayElements(JNIEnv*, jbyteArray, jboolean*)
+  type. jbyte* GetByteArrayElements(JNIEnv*, jbyteArray, jboolean*)
+}
+
+rule{//jboolean GetBooleanArrayElements(JNIEnv *env, jbooleanArray array, jboolean *isCopy)
+  spec. jboolean*@isGetBooleanArrayElements || isNULLJB GetBooleanArrayElements(JNIEnv*, jbooleanArray, jboolean*)
+  type. jboolean* GetBooleanArrayElements(JNIEnv*, jbooleanArray, jboolean*)
+}
+
+rule{
+  spec. jdoubleArray@isNULLJDA || !isNULLJDA NewDoubleArray(JNIEnv*, jsize) 
+  type. jdoubleArray NewDoubleArray(JNIEnv*, jsize) 
+}
+
+rule{
+  spec. jfloatArray@isNULLJFA || !isNULLJFA NewFloatArray(JNIEnv*, jsize) 
+  type. jfloatArray NewFloatArray(JNIEnv*, jsize) 
+}
+
+rule{
+  spec. jlongArray@isNULLJLA || !isNULLJLA NewLongArray(JNIEnv*, jsize) 
+  type. jlongArray NewLongArray(JNIEnv*, jsize) 
+}
+
+rule{
+  spec. jintArray@isNULLJIA || !isNULLJIA NewIntArray(JNIEnv*, jsize) 
+  type. jintArray NewIntArray(JNIEnv*, jsize) 
+}
+
+rule{
+  spec. jshortArray@isNULLJSA || !isNULLJSA  NewShortArray(JNIEnv*, jsize) 
+  type. jshortArray NewShortArray(JNIEnv*, jsize) 
+}
+
+rule{
+  spec. jcharArray@isNULLJCA || !isNULLJCA NewCharArray(JNIEnv*, jsize) 
+  type. jcharArray NewCharArray(JNIEnv*, jsize) 
+}
+
+
+rule{
+  spec. jbyteArray@isNULLJBA || !isNULLJBA NewByteArray(JNIEnv*, jsize) 
+  type. jbyteArray  NewByteArray(JNIEnv*, jsize) 
+}
+
+rule{//jbooleanArray NewBooleanArray(JNIEnv *env, jsize length)
+  spec. jbooleanArray@isNULLJZA || !isNULLJZA NewBooleanArray(JNIEnv*, jsize) 
+  type. jbooleanArray NewBooleanArray(JNIEnv*, jsize) 
+}
+
+rule{//void SetObjectArrayElement(JNIEnv *env, jobjectArray array, jsize index, jobject value)
+//isSubClass means that the jobject is subcalss of jobjectArray type
+  spec. void SetObjectArrayElement(JNIEnv*, jobjectArray, jsize@isValidIndexE, jobject@isSubClassO) 
+  type. void SetObjectArrayElement(JNIEnv*, jobjectArray, jsize, jobject) 
+}
+
+rule{//jobject GetObjectArrayElement(JNIEnv *env, jobjectArray array, jsize index)
+  spec. jobject GetObjectArrayElement(JNIEnv*, jobjectArray, jsize)
+  type. jobject GetObjectArrayElement(JNIEnv*, jobjectArray, jsize)
+}
+
+rule{//jobjectArray NewObjectArray(JNIEnv *env, jsize length,jclass elementClass, jobject initialElement)
+//discuss jarray@jobjectArray vs jclass@array
+  spec. jobjectArray@isNULLJOA || !isNULLJOA  NewObjectArray(JNIEnv*, jsize,
+  jclass, jobject) 
+  type. jobjectArray NewObjectArray(JNIEnv*, jsize, jclass, jobject) 
+}
+
+rule{//jsize GetArrayLength(JNIEnv *env, jarray array)
+  spec. jsize GetArrayLength(JNIEnv*, #jarray) 
+  type. jsize GetArrayLength(JNIEnv*, jarray) 
+}
+
+rule{//void ReleaseStringCritical(JNIEnv *env, jstring string, const jchar *carray)
+//jchar*@GetStringCritical isNULL is unspecified
+  spec. void ReleaseStringCritical(JNIEnv*, jstring, jchar*@isGetStringCriticalJC && isUnicodeJC)
+  type. void ReleaseStringCritical(JNIEnv*, jstring, jchar*)
+}
+
+rule{//const jchar * GetStringCritical(JNIEnv *env, jstring string, jboolean *isCopy)
+ //isNULL unspecified
+  spec. jchar*@(isGetStringCriticalJC && isUnicodeJC) || isNULLJC GetStringCritical(JNIEnv*, jstring, jboolean*@isNULLJB || !isNULLJB) 
+  type. jchar* GetStringCritical(JNIEnv*, jstring, jboolean*) 
+}
+
+rule{//void GetStringUTFRegion(JNIEnv *env, jstring str, jsize start, jsize len, char *buf)
+ //isNULL unspecified
+  spec. void GetStringUTFRegion(JNIEnv*, jstring@isUnicodeS, jsize, jsize, char*@isUTF8C && isNULLC) 
+  type. void GetStringUTFRegion(JNIEnv*, jstring, jsize, jsize, char*) 
+}
+
+rule{//void GetStringRegion(JNIEnv *env, jstring str, jsize start, jsize len, jchar *buf)
+ //isNULL unspecified
+  spec. void GetStringRegion(JNIEnv*, jstring@isUnicodeS, jsize, jsize, jchar*@isUnicodeJC && !isNULLJC) 
+  type. void GetStringRegion(JNIEnv*, jstring, jsize, jsize, jchar*) 
+}
+
+rule{//void ReleaseStringUTFChars(JNIEnv *env, jstring string,const char *utf)
+ //isNULL unspecified
+  spec. void ReleaseStringUTFChars(JNIEnv*, jstring, char*@isGetStringUTFCharC && isUTF8C)
+  type. void ReleaseStringUTFChars(JNIEnv*, jstring, char*)
+}
+
+rule{//const char * GetStringUTFChars(JNIEnv *env, jstring string, jboolean *isCopy)
+  spec. char*@(isGetStringUTFCharC && isUTF8C) || isNULLC GetStringUTFChars(JNIEnv*, jstring, jboolean*@isNULLJB || !isNULLJB)
+  type. char* GetStringUTFChars(JNIEnv*, jstring, jboolean*)
+}
+
+rule{//jsize GetStringUTFLength(JNIEnv *env, jstring string)
+  //spec. jsize GetStringUTFLength(JNIEnv*, jstring@UTF-8S)
+  spec. jsize GetStringUTFLength(JNIEnv*, jstring)
+  type. jsize GetStringUTFLength(JNIEnv*, jstring)
+}
+
+rule{//jstring NewStringUTF(JNIEnv *env, const char *bytes);
+  spec. jstring@!isNULLS || isNULLS NewStringUTF(JNIEnv*, char*@isUTF8C) 
+  type. jstring NewStringUTF(JNIEnv*, char*) 
+}
+
+rule{//void ReleaseStringChars(JNIEnv *env, jstring string, const jchar *chars)
+//jchar*@Unicode isNULL is unspecified
+  spec. void ReleaseStringChars(JNIEnv*, jstring, jchar*@isGetStringCharsJC && isUnicodeJC)
+  type. void ReleaseStringChars(JNIEnv*, jstring, jchar*)
+}
+
+rule{//const jchar * GetStringChars(JNIEnv *env, jstring string, jboolean *isCopy)
+  spec. jchar*@isGetStringCharsJC && isUnicodeJC || isNULLJC GetStringChars(JNIEnv*, jstring, jboolean*@isNULLJB || !isNULLJB)
+  type. jchar* GetStringChars(JNIEnv*, jstring, jboolean*)
+}
+
+rule{//jsize GetStringLength(JNIEnv *env, jstring string)
+  spec. jsize GetStringLength(JNIEnv*, jstring@isUnicodeS) 
+  type. jsize GetStringLength(JNIEnv*, jstring) 
+}
+
+rule{//jstring NewString(JNIEnv *env, const jchar *unicodeChars, jsize len);
+  spec. jstring@!isNULLS || isNULLS NewString(JNIEnv*, jchar*@isUnicodeJC, jsize)
+  type. jstring NewString(JNIEnv*, jchar*, jsize)
+}
+
+rule{//jboolean CallStaticBooleanMethodV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list args)
+  spec. jboolean CallStaticBooleanMethodV(JNIEnv*, #jclass, jmethodID@isJBooleanM && isStaticM && isInThisClassM, va_list)
+  type. jboolean CallStaticBooleanMethodV(JNIEnv*, jclass, jmethodID, va_list)
+}
+
+rule{//jchar CallStaticCharMethodV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list args)
+  spec. jchar CallStaticCharMethodV(JNIEnv*, #jclass, jmethodID@isJCharM && isStaticM && isInThisClassM, va_list)
+  type. jchar CallStaticCharMethodV(JNIEnv*, jclass, jmethodID, va_list)
+}
+
+rule{//jshort CallStaticShortMethodV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list args)
+  spec. jshort CallStaticShortMethodV(JNIEnv*, #jclass, jmethodID@isJShortM && isStaticM && isInThisClassM, va_list)
+  type. jshort CallStaticShortMethodV(JNIEnv*, jclass, jmethodID, va_list)
+}
+
+rule{//jint CallStaticIntMethodV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list args)
+  spec. jint CallStaticIntMethodV(JNIEnv*, #jclass, jmethodID@isJIntM && isStaticM && isInThisClassM, va_list)
+  type. jint CallStaticIntMethodV(JNIEnv*, jclass, jmethodID, va_list)
+}
+
+rule{//jlong CallStaticLongMethodV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list args)
+  spec. jlong CallStaticLongMethodV(JNIEnv*, #jclass, jmethodID@isJLongM && isStaticM && isInThisClassM, va_list)
+  type. jlong CallStaticLongMethodV(JNIEnv*, jclass, jmethodID, va_list)
+}
+
+rule{//jfloat CallStaticFloatMethodV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list args)
+  spec. jfloat CallStaticFloatMethodV(JNIEnv*, #jclass, jmethodID@isJFloatM && isStaticM && isInThisClassM, va_list)
+  type. jfloat CallStaticFloatMethodV(JNIEnv*, jclass, jmethodID, va_list)
+}
+
+rule{//jdouble CallStaticDoubleMethodV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list args)
+  spec. jdouble CallStaticDoubleMethodV(JNIEnv*, #jclass, jmethodID@isJDoubleM && isStaticM && isInThisClassM, va_list)
+  type. jdouble CallStaticDoubleMethodV(JNIEnv*, jclass, jmethodID, va_list)
+}
+
+rule{//jbyte CallStaticByteMethodV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list args)
+  spec. jbyte CallStaticByteMethodV(JNIEnv*, #jclass, jmethodID@isJByteM && isStaticM && isInThisClassM, va_list)
+  type. jbyte CallStaticByteMethodV(JNIEnv*, jclass, jmethodID, va_list)
+}
+
+rule{//jobject CallStaticObjectMethodV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list args)
+  spec. jobject CallStaticObjectMethodV(JNIEnv*, #jclass, jmethodID@isJObjectM && isStaticM && isInThisClassM, va_list)
+  type. jobject CallStaticObjectMethodV(JNIEnv*, jclass, jmethodID, va_list)
+}
+
+rule{//void CallStaticVoidMethodV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list args)
+  spec. void CallStaticVoidMethodV(JNIEnv*, #jclass, jmethodID@isVoidM && isStaticM && isInThisClassM, va_list)
+  type. void CallStaticVoidMethodV(JNIEnv*, jclass, jmethodID, va_list)
+}
+
+rule{//jboolean CallStaticBooleanMethodA(JNIEnv *env, jclass clazz, jmethodID methodID, jvalue *args)
+  spec. jboolean CallStaticBooleanMethodA(JNIEnv*, #jclass, jmethodID@isJBooleanM && isStaticM && isInThisClassM, jvalue*@isArrayPtrJV)
+  type. jboolean CallStaticBooleanMethodA(JNIEnv*, jclass, jmethodID, jvalue*)
+}
+
+rule{//jchar CallStaticCharMethodA(JNIEnv *env, jclass clazz, jmethodID methodID, jvalue *args)
+  spec. jchar CallStaticCharMethodA(JNIEnv*, #jclass, jmethodID@isJCharM && isStaticM && isInThisClassM, jvalue*@isArrayPtrJV)
+  type. jchar CallStaticCharMethodA(JNIEnv*, jclass, jmethodID, jvalue*)
+}
+
+rule{//jshort CallStaticShortMethodA(JNIEnv *env, jclass clazz, jmethodID methodID, jvalue *args)
+  spec. jshort CallStaticShortMethodA(JNIEnv*, #jclass, jmethodID@isJShortM && isStaticM && isInThisClassM, jvalue*@isArrayPtrJV)
+  type. jshort CallStaticShortMethodA(JNIEnv*, jclass, jmethodID, jvalue*)
+}
+
+rule{//jint CallStaticIntMethodA(JNIEnv *env, jclass clazz, jmethodID methodID, jvalue *args)
+  spec. jint CallStaticIntMethodA(JNIEnv*, #jclass, jmethodID@isJIntM && isStaticM && isInThisClassM, jvalue*@isArrayPtrJV)
+  type. jint CallStaticIntMethodA(JNIEnv*, jclass, jmethodID, jvalue*)
+}
+
+rule{//jlong CallStaticLongMethodA(JNIEnv *env, jclass clazz, jmethodID methodID, jvalue *args)
+  spec. jlong CallStaticLongMethodA(JNIEnv*, #jclass, jmethodID@isJLongM && isStaticM && isInThisClassM, jvalue*@isArrayPtrJV)
+  type. jlong CallStaticLongMethodA(JNIEnv*, jclass, jmethodID, jvalue*)
+}
+
+rule{//jfloat CallStaticFloatMethodA(JNIEnv *env, jclass clazz, jmethodID methodID, jvalue *args)
+  spec. jfloat CallStaticFloatMethodA(JNIEnv*, #jclass, jmethodID@isJFloatM && isStaticM && isInThisClassM, jvalue*@isArrayPtrJV)
+  type. jfloat CallStaticFloatMethodA(JNIEnv*, jclass, jmethodID, jvalue*)
+}
+
+rule{//jdouble CallStaticDoubleMethodA(JNIEnv *env, jclass clazz, jmethodID methodID, jvalue *args)
+  spec. jdouble CallStaticDoubleMethodA(JNIEnv*, #jclass, jmethodID@isJDoubleM && isStaticM && isInThisClassM, jvalue*@isArrayPtrJV)
+  type. jdouble CallStaticDoubleMethodA(JNIEnv*, jclass, jmethodID, jvalue*)
+}
+
+rule{//jbyte CallStaticByteMethodA(JNIEnv *env, jclass clazz, jmethodID methodID, jvalue *args)
+  spec. jbyte CallStaticByteMethodA(JNIEnv*, #jclass, jmethodID@isJByteM && isStaticM && isInThisClassM, jvalue*@isArrayPtrJV)
+  type. jbyte CallStaticByteMethodA(JNIEnv*, jclass, jmethodID, jvalue*)
+}
+
+rule{//jobject CallStaticObjectMethodA(JNIEnv *env, jclass clazz, jmethodID methodID, jvalue *args)
+  spec. jobject CallStaticObjectMethodA(JNIEnv*, #jclass, jmethodID@isJObjectM && isStaticM && isInThisClassM, jvalue*@isArrayPtrJV)
+  type. jobject CallStaticObjectMethodA(JNIEnv*, jclass, jmethodID, jvalue*)
+}
+
+rule{//void CallStaticVoidMethodA(JNIEnv *env, jclass clazz, jmethodID methodID, jvalue *args)
+  spec. void CallStaticVoidMethodA(JNIEnv*, #jclass, jmethodID@isVoidM && isStaticM && isInThisClassM, jvalue*@isArrayPtrJV)
+  type. void CallStaticVoidMethodA(JNIEnv*, jclass, jmethodID, jvalue*)
+}
+
+rule{//jboolean CallStaticBooleanMethod(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
+  spec. jboolean CallStaticBooleanMethod(JNIEnv*, #jclass, jmethodID@isJBooleanM && isStaticM && isInThisClassM, ...)
+  type. jboolean CallStaticBooleanMethod(JNIEnv*, jclass, jmethodID, ...)
+}
+
+rule{//jchar CallStaticCharMethod(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
+  spec. jchar CallStaticCharMethod(JNIEnv*, #jclass, jmethodID@isJCharM && isStaticM && isInThisClassM, ...)
+  type. jchar CallStaticCharMethod(JNIEnv*, jclass, jmethodID, ...)
+}
+
+rule{//jshort CallStaticShortMethod(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
+  spec. jshort CallStaticShortMethod(JNIEnv*, #jclass, jmethodID@isJShortM && isStaticM && isInThisClassM, ...)
+  type. jshort CallStaticShortMethod(JNIEnv*, jclass, jmethodID, ...)
+}
+
+rule{//jint CallStaticIntMethod(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
+  spec. jint CallStaticIntMethod(JNIEnv*, #jclass, jmethodID@isJIntM && isStaticM && isInThisClassM, ...)
+  type. jint CallStaticIntMethod(JNIEnv*, jclass, jmethodID, ...)
+}
+
+rule{//jlong CallStaticLongMethod(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
+  spec. jlong CallStaticLongMethod(JNIEnv*, #jclass, jmethodID@isJLongM && isStaticM && isInThisClassM, ...)
+  type. jlong CallStaticLongMethod(JNIEnv*, jclass, jmethodID, ...)
+}
+
+rule{//jfloat CallStaticFloatMethod(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
+  spec. jfloat CallStaticFloatMethod(JNIEnv*, #jclass, jmethodID@isJFloatM && isStaticM && isInThisClassM, ...)
+  type. jfloat CallStaticFloatMethod(JNIEnv*, jclass, jmethodID, ...)
+}
+
+rule{//jdouble CallStaticDoubleMethod(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
+  spec. jdouble CallStaticDoubleMethod(JNIEnv*, #jclass, jmethodID@isJDoubleM && isStaticM && isInThisClassM, ...)
+  type. jdouble CallStaticDoubleMethod(JNIEnv*, jclass, jmethodID, ...)
+}
+
+rule{//jbyte CallStaticByteMethod(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
+  spec. jbyte CallStaticByteMethod(JNIEnv*, #jclass, jmethodID@isJByteM && isStaticM && isInThisClassM, ...)
+  type. jbyte CallStaticByteMethod(JNIEnv*, jclass, jmethodID, ...)
+}
+
+rule{//jobject CallStaticObjectMethod(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
+  spec. jobject CallStaticObjectMethod(JNIEnv*, #jclass, jmethodID@isJObjectM && isStaticM && isInThisClassM, ...)
+  type. jobject CallStaticObjectMethod(JNIEnv*, jclass, jmethodID, ...)
+}
+
+rule{//void CallStaticVoidMethod(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
+  spec. void CallStaticVoidMethod(JNIEnv*, #jclass, jmethodID@isVoidM && isStaticM && isInThisClassM, ...)
+  type. void CallStaticVoidMethod(JNIEnv*, jclass, jmethodID, ...)
+}
+
+rule{//jmethodID GetStaticMethodID(JNIEnv *env, jclass clazz, const char *name, const char *sig)
+//ask unspecified runtime?
+  spec. jmethodID@(isJBooleanM && isStaticM) || isNULLM GetStaticMethodID(JNIEnv*, #jclass, char*@isMethodNameC, char*@isMethodSigC && isEndWithZC)
+  spec. jmethodID@(isVoidM && isStaticM) || isNULLM GetStaticMethodID(JNIEnv*, #jclass, char*@isMethodNameC, char*@isMethodSigC && isEndWithVC)
+  spec. jmethodID@(isJByteM && isStaticM) || isNULLM GetStaticMethodID(JNIEnv*, #jclass, char*@isMethodNameC, char*@isMethodSigC && isEndWithBC)
+  spec. jmethodID@(isJCharM && isStaticM) || isNULLM GetStaticMethodID(JNIEnv*, #jclass, char*@isMethodNameC, char*@isMethodSigC && isEndWithCC)
+  spec. jmethodID@(isJShortM && isStaticM) || isNULLM GetStaticMethodID(JNIEnv*, #jclass, char*@isMethodNameC, char*@isMethodSigC && isEndWithSC)
+  spec. jmethodID@(isJIntM && isStaticM) || isNULLM GetStaticMethodID(JNIEnv*, #jclass, char*@isMethodNameC, char*@isMethodSigC && isEndWithIC)
+  spec. jmethodID@(isJLongM && isStaticM) || isNULLM GetStaticMethodID(JNIEnv*, #jclass, char*@isMethodNameC, char*@isMethodSigC && isEndWithJC)
+  spec. jmethodID@(isJFloatM && isStaticM) || isNULLM GetStaticMethodID(JNIEnv*, #jclass, char*@isMethodNameC, char*@isMethodSigC && isEndWithFC)
+  spec. jmethodID@(isJDoubleM && isStaticM) || isNULLM GetStaticMethodID(JNIEnv*, #jclass, char*@isMethodNameC, char*@isMethodSigC && isEndWithDC)
+  spec. jmethodID@(isJObjectM && isStaticM) || isNULLM GetStaticMethodID(JNIEnv*, #jclass, char*@isMethodNameC, char*@isMethodSigC && isEndWithLC)
+  type. jmethodID GetStaticMethodID(JNIEnv*, jclass, char*, char*)
+}
+
+rule{//void SetStaticDoubleField(JNIEnv *env, jclass clazz, jfieldID fieldID, jdouble value)
+//unspecified : what if static field is not in jclass
+//unspecified : what if jfieldID is NULL 
+  spec. void SetStaticDoubleField(JNIEnv*, #jclass, jfieldID@isStaticF, jdouble)
+  type. void SetStaticDoubleField(JNIEnv*, jclass, jfieldID, jdouble)
+}
+
+rule{//void SetStaticFloatField(JNIEnv *env, jclass clazz, jfieldID fieldID, jfloat value)
+//unspecified : what if static field is not in jclass
+//unspecified : what if jfieldID is NULL 
+  spec. void SetStaticFloatField(JNIEnv*, #jclass, jfieldID@isStaticF, jfloat)
+  type. void SetStaticFloatField(JNIEnv*, jclass, jfieldID, jfloat)
+}
+
+rule{//void SetStaticLongField(JNIEnv *env, jclass clazz, jfieldID fieldID, jlong value)
+//unspecified : what if static field is not in jclass
+//unspecified : what if jfieldID is NULL 
+  spec. void SetStaticLongField(JNIEnv*, #jclass, jfieldID@isStaticF, jlong)
+  type. void SetStaticLongField(JNIEnv*, jclass, jfieldID, jlong)
+}
+
+rule{//void SetStaticIntField(JNIEnv *env, jclass clazz, jfieldID fieldID, jint value)
+//unspecified : what if static field is not in jclass
+//unspecified : what if jfieldID is NULL 
+  spec. void SetStaticIntField(JNIEnv*, #jclass, jfieldID@isStaticF, jint)
+  type. void SetStaticIntField(JNIEnv*, jclass, jfieldID, jint)
+}
+
+rule{//void SetStaticShortField(JNIEnv *env, jclass clazz, jfieldID fieldID, jshort value)
+//unspecified : what if static field is not in jclass
+//unspecified : what if jfieldID is NULL 
+  spec. void SetStaticShortField(JNIEnv*, #jclass, jfieldID@isStaticF, jshort)
+  type. void SetStaticShortField(JNIEnv*, jclass, jfieldID, jshort)
+}
+
+rule{//void SetStaticCharField(JNIEnv *env, jclass clazz, jfieldID fieldID, jchar value)
+//unspecified : what if static field is not in jclass
+//unspecified : what if jfieldID is NULL 
+  spec. void SetStaticCharField(JNIEnv*, #jclass, jfieldID@isStaticF, jchar)
+  type. void SetStaticCharField(JNIEnv*, jclass, jfieldID, jchar)
+}
+
+rule{//void SetStaticByteField(JNIEnv *env, jclass clazz, jfieldID fieldID, jbyte value)
+//unspecified : what if static field is not in jclass
+//unspecified : what if jfieldID is NULL 
+  spec. void SetStaticByteField(JNIEnv*, #jclass, jfieldID@isStaticF, jbyte)
+  type. void SetStaticByteField(JNIEnv*, jclass, jfieldID, jbyte)
+}
+
+rule{//void SetStaticBooleanField(JNIEnv *env, jclass clazz, jfieldID fieldID, jboolean value)
+//unspecified : what if static field is not in jclass
+//unspecified : what if jfieldID is NULL 
+  spec. void SetStaticBooleanField(JNIEnv*, #jclass, jfieldID@isStaticF, jboolean)
+  type. void SetStaticBooleanField(JNIEnv*, jclass, jfieldID, jboolean)
+}
+
+rule{//void SetStaticObjectField(JNIEnv *env, jclass clazz, jfieldID fieldID, jobject value)
+//unspecified : what if static field is not in jclass
+//unspecified : what if jfieldID is NULL 
+  spec. void SetStaticObjectField(JNIEnv*, #jclass, jfieldID@isStaticF, jobject)
+  type. void SetStaticObjectField(JNIEnv*, jclass, jfieldID, jobject)
+}
+
+rule{//jdouble GetStaticDoubleField(JNIEnv *env, jclass clazz, jfieldID fieldID)
+//unspecified : what if static field is not in jclass?
+//unspecified : not saying return is NULL
+//unspecified : what if jfieldID is NULL 
+  spec. jdouble GetStaticDoubleField(JNIEnv*, #jclass, jfieldID@isStaticF)
+  type. jdouble GetStaticDoubleField(JNIEnv*, jclass, jfieldID)
+}
+
+rule{//jfloat GetStaticFloatField(JNIEnv *env, jclass clazz, jfieldID fieldID)
+//unspecified : what if static field is not in jclass?
+//unspecified : not saying return is NULL
+//unspecified : what if jfieldID is NULL 
+  spec. jfloat GetStaticFloatField(JNIEnv*, #jclass, jfieldID@isStaticF)
+  type. jfloat GetStaticFloatField(JNIEnv*, jclass, jfieldID)
+}
+
+rule{//jlong GetStaticLongField(JNIEnv *env, jclass clazz, jfieldID fieldID)
+//unspecified : what if static field is not in jclass?
+//unspecified : not saying return is NULL
+//unspecified : what if jfieldID is NULL 
+  spec. jlong GetStaticLongField(JNIEnv*, #jclass, jfieldID@isStaticF)
+  type. jlong GetStaticLongField(JNIEnv*, jclass, jfieldID)
+}
+
+rule{//jint GetStaticIntField(JNIEnv *env, jclass clazz, jfieldID fieldID)
+//unspecified : what if static field is not in jclass?
+//unspecified : not saying return is NULL
+//unspecified : what if jfieldID is NULL 
+  spec. jint GetStaticIntField(JNIEnv*, #jclass, jfieldID@isStaticF)
+  type. jint GetStaticIntField(JNIEnv*, jclass, jfieldID)
+}
+
+rule{//jshort GetStaticShortField(JNIEnv *env, jclass clazz, jfieldID fieldID)
+//unspecified : what if static field is not in jclass?
+//unspecified : not saying return is NULL
+//unspecified : what if jfieldID is NULL 
+  spec. jshort GetStaticShortField(JNIEnv*, #jclass, jfieldID@isStaticF)
+  type. jshort GetStaticShortField(JNIEnv*, jclass, jfieldID)
+}
+
+rule{//jchar GetStaticCharField(JNIEnv *env, jclass clazz, jfieldID fieldID)
+//unspecified : what if static field is not in jclass?
+//unspecified : not saying return is NULL
+//unspecified : what if jfieldID is NULL 
+  spec. jchar GetStaticCharField(JNIEnv*, #jclass, jfieldID@isStaticF)
+  type. jchar GetStaticCharField(JNIEnv*, jclass, jfieldID)
+}
+
+rule{//jbyte GetStaticByteField(JNIEnv *env, jclass clazz, jfieldID fieldID)
+//unspecified : what if static field is not in jclass?
+//unspecified : not saying return is NULL
+//unspecified : what if jfieldID is NULL 
+  spec. jbyte GetStaticByteField(JNIEnv*, #jclass, jfieldID@isStaticF)
+  type. jbyte GetStaticByteField(JNIEnv*, jclass, jfieldID)
+}
+
+rule{//jboolean GetStaticBooleanField(JNIEnv *env, jclass clazz, jfieldID fieldID)
+//unspecified : what if static field is not in jclass?
+//unspecified : not saying return is NULL
+//unspecified : what if jfieldID is NULL 
+  spec. jboolean GetStaticBooleanField(JNIEnv*, #jclass, jfieldID@isStaticF)
+  type. jboolean GetStaticBooleanField(JNIEnv*, jclass, jfieldID)
+}
+
+rule{//jobject GetStaticObjectField(JNIEnv *env, jclass clazz, jfieldID fieldID)
+//unspecified : what if static field is not in jclass?
+//unspecified : not saying return is NULL
+//unspecified : what if jfieldID is NULL 
+  spec. jobject GetStaticObjectField(JNIEnv*, #jclass, jfieldID@isStaticF)
+  type. jobject GetStaticObjectField(JNIEnv*, jclass, jfieldID)
+}
+
+rule{//jfieldID GetStaticFieldID(JNIEnv *env, jclass clazz, const char *name, const char *sig)
+  spec. jfieldID@isStaticF || isNULLF GetStaticFieldID(JNIEnv*, #jclass, char*@isFieldNameC, char*@isFieldSigC && isUTF8C)
+  type. jfieldID GetStaticFieldID(JNIEnv*, jclass, char*, char*) 
+}
+
+rule{//jdouble CallNonvirtualDoubleMethodV(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, va_list args)
+  spec. jdouble CallNonvirtualDoubleMethodV(JNIEnv*, #jobject, #jclass, jmethodID@isJDoubleM && !isStaticM && isInThisClassM, va_list) 
+  type. jdouble CallNonvirtualDoubleMethodV(JNIEnv*, jobject, jclass, jmethodID, va_list) 
+}
+
+rule{//jfloat CallNonvirtualFloatMethodV(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, va_list args)
+  spec. jfloat CallNonvirtualFloatMethodV(JNIEnv*, #jobject, #jclass, jmethodID@isJFloatM && !isStaticM && isInThisClassM, va_list) 
+  type. jfloat CallNonvirtualFloatMethodV(JNIEnv*, jobject, jclass, jmethodID, va_list) 
+}
+
+rule{//jlong CallNonvirtualLongMethodV(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, va_list args)
+  spec. jlong CallNonvirtualLongMethodV(JNIEnv*, #jobject, #jclass, jmethodID@isJLongM && !isStaticM && isInThisClassM, va_list) 
+  type. jlong CallNonvirtualLongMethodV(JNIEnv*, jobject, jclass, jmethodID, va_list) 
+}
+
+
+rule{//jint CallNonvirtualIntMethodV(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, va_list args)
+  spec. jint CallNonvirtualIntMethodV(JNIEnv*, #jobject, #jclass, jmethodID@isJIntM && !isStaticM && isInThisClassM, va_list) 
+  type. jint CallNonvirtualIntMethodV(JNIEnv*, jobject, jclass, jmethodID, va_list) 
+}
+
+rule{//jshort CallNonvirtualShortMethodV(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, va_list args)
+  spec. jshort CallNonvirtualShortMethodV(JNIEnv*, #jobject, #jclass, jmethodID@isJShortM && !isStaticM && isInThisClassM, va_list) 
+  type. jshort CallNonvirtualShortMethodV(JNIEnv*, jobject, jclass, jmethodID, va_list) 
+}
+
+rule{//jchar CallNonvirtualCharMethodV(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, va_list args)
+  spec. jchar CallNonvirtualCharMethodV(JNIEnv*, #jobject, #jclass, jmethodID@isJCharM && !isStaticM && isInThisClassM, va_list) 
+  type. jchar CallNonvirtualCharMethodV(JNIEnv*, jobject, jclass, jmethodID, va_list) 
+}
+
+rule{//jbyte CallNonvirtualByteMethodV(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, va_list args)
+  spec. jbyte CallNonvirtualByteMethodV(JNIEnv*, #jobject, #jclass, jmethodID@isJByteM && !isStaticM && isInThisClassM, va_list) 
+  type. jbyte CallNonvirtualByteMethodV(JNIEnv*, jobject, jclass, jmethodID, va_list) 
+}
+
+rule{//jobject CallNonvirtualObjectMethodV(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, va_list args)
+  spec. jobject CallNonvirtualObjectMethodV(JNIEnv*, #jobject, #jclass, jmethodID@isJObjectM && !isStaticM && isInThisClassM, va_list) 
+  type. jobject CallNonvirtualObjectMethodV(JNIEnv*, jobject, jclass, jmethodID, va_list) 
+}
+
+rule{//void CallNonvirtualVoidMethodV(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, va_list args)
+  spec. void CallNonvirtualVoidMethodV(JNIEnv*, #jobject, #jclass, jmethodID@isVoidM && !isStaticM && isInThisClassM, va_list) 
+  type. void CallNonvirtualVoidMethodV(JNIEnv*, jobject, jclass, jmethodID, va_list) 
+}
+
+rule{//jboolean CallNonvirtualBooleanMethodV(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, va_list args)
+  spec. jboolean CallNonvirtualBooleanMethodV(JNIEnv*, #jobject, #jclass, jmethodID@isJBooleanM && !isStaticM && isInThisClassM, va_list) 
+  type. jboolean CallNonvirtualBooleanMethodV(JNIEnv*, jobject, jclass, jmethodID, va_list) 
+}
+
+rule{//jdouble CallNonvirtualDoubleMethodA(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, const jvalue *args)
+  spec. jdouble CallNonvirtualDoubleMethodA(JNIEnv*, #jobject, #jclass, jmethodID@isJDoubleM && !isStaticM && isInThisClassM, jvalue*@isArrayPtrJV) 
+  type. jdouble CallNonvirtualDoubleMethodA(JNIEnv*, jobject, jclass, jmethodID, jvalue*) 
+}
+
+rule{//jfloat CallNonvirtualFloatMethodA(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, const jvalue *args)
+  spec. jfloat CallNonvirtualFloatMethodA(JNIEnv*, #jobject, #jclass, jmethodID@isJFloatM && !isStaticM && isInThisClassM, jvalue*@isArrayPtrJV) 
+  type. jfloat CallNonvirtualFloatMethodA(JNIEnv*, jobject, jclass, jmethodID, jvalue*) 
+}
+
+rule{//jlong CallNonvirtualLongMethodA(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, const jvalue *args)
+  spec. jlong CallNonvirtualLongMethodA(JNIEnv*, #jobject, #jclass, jmethodID@isJLongM && !isStaticM && isInThisClassM, jvalue*@isArrayPtrJV) 
+  type. jlong CallNonvirtualLongMethodA(JNIEnv*, jobject, jclass, jmethodID, jvalue*) 
+}
+
+
+rule{//jint CallNonvirtualIntMethodA(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, const jvalue *args)
+  spec. jint CallNonvirtualIntMethodA(JNIEnv*, #jobject, #jclass, jmethodID@isJIntM && !isStaticM && isInThisClassM, jvalue*@isArrayPtrJV) 
+  type. jint CallNonvirtualIntMethodA(JNIEnv*, jobject, jclass, jmethodID, jvalue*) 
+}
+
+rule{//jshort CallNonvirtualShortMethodA(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, const jvalue *args)
+  spec. jshort CallNonvirtualShortMethodA(JNIEnv*, #jobject, #jclass, jmethodID@isJShortM && !isStaticM && isInThisClassM, jvalue*@isArrayPtrJV) 
+  type. jshort CallNonvirtualShortMethodA(JNIEnv*, jobject, jclass, jmethodID, jvalue*) 
+}
+
+rule{//jchar CallNonvirtualCharMethodA(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, const jvalue *args)
+  spec. jchar CallNonvirtualCharMethodA(JNIEnv*, #jobject, #jclass, jmethodID@isJCharM && !isStaticM && isInThisClassM, jvalue*@isArrayPtrJV) 
+  type. jchar CallNonvirtualCharMethodA(JNIEnv*, jobject, jclass, jmethodID, jvalue*) 
+}
+
+rule{//jbyte CallNonvirtualByteMethodA(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, const jvalue *args)
+  spec. jbyte CallNonvirtualByteMethodA(JNIEnv*, #jobject, #jclass, jmethodID@isJByteM && !isStaticM && isInThisClassM, jvalue*@isArrayPtrJV) 
+  type. jbyte CallNonvirtualByteMethodA(JNIEnv*, jobject, jclass, jmethodID, jvalue*) 
+}
+
+rule{//jobject CallNonvirtualObjectMethodA(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, const jvalue *args)
+  spec. jobject CallNonvirtualObjectMethodA(JNIEnv*, #jobject, #jclass, jmethodID@isJObjectM && !isStaticM && isInThisClassM, jvalue*@isArrayPtrJV) 
+  type. jobject CallNonvirtualObjectMethodA(JNIEnv*, jobject, jclass, jmethodID, jvalue*) 
+}
+
+rule{//void CallNonvirtualVoidMethodA(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, const jvalue *args)
+  spec. void CallNonvirtualVoidMethodA(JNIEnv*, #jobject, #jclass, jmethodID@isVoidM && !isStaticM && isInThisClassM, jvalue*@isArrayPtrJV) 
+  type. void CallNonvirtualVoidMethodA(JNIEnv*, jobject, jclass, jmethodID, jvalue*) 
+}
+
+rule{//jboolean CallNonvirtualBooleanMethodA(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, const jvalue *args)
+  spec. jboolean CallNonvirtualBooleanMethodA(JNIEnv*, #jobject, #jclass, jmethodID@isJBooleanM && !isStaticM && isInThisClassM, jvalue*@isArrayPtrJV) 
+  type. jboolean CallNonvirtualBooleanMethodA(JNIEnv*, jobject, jclass, jmethodID, jvalue*) 
+}
+
+rule{//jdouble CallNonvirtualDoubleMethod(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, ...)
+  spec. jdouble CallNonvirtualDoubleMethod(JNIEnv*, #jobject, #jclass, jmethodID@isJDoubleM && !isStaticM && isInThisClassM, ...) 
+  type. jdouble CallNonvirtualDoubleMethod(JNIEnv*, jobject, jclass, jmethodID, ...) 
+}
+
+rule{//jfloat CallNonvirtualFloatMethod(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, ...)
+  spec. jfloat CallNonvirtualFloatMethod(JNIEnv*, #jobject, #jclass, jmethodID@isJFloatM && !isStaticM && isInThisClassM, ...) 
+  type. jfloat CallNonvirtualFloatMethod(JNIEnv*, jobject, jclass, jmethodID, ...) 
+}
+
+rule{//jlong CallNonvirtualLongMethod(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, ...)
+  spec. jlong CallNonvirtualLongMethod(JNIEnv*, #jobject, #jclass, jmethodID@isJLongM && !isStaticM && isInThisClassM, ...) 
+  type. jlong CallNonvirtualLongMethod(JNIEnv*, jobject, jclass, jmethodID, ...) 
+}
+
+rule{//jint CallNonvirtualIntMethod(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, ...)
+  spec. jint CallNonvirtualIntMethod(JNIEnv*, #jobject, #jclass, jmethodID@isJIntM && !isStaticM && isInThisClassM, ...) 
+  type. jint CallNonvirtualIntMethod(JNIEnv*, jobject, jclass, jmethodID, ...) 
+}
+
+rule{//jshort CallNonvirtualShortMethod(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, ...)
+  spec. jshort CallNonvirtualShortMethod(JNIEnv*, #jobject, #jclass, jmethodID@isJShortM && !isStaticM && isInThisClassM, ...) 
+  type. jshort CallNonvirtualShortMethod(JNIEnv*, jobject, jclass, jmethodID, ...) 
+}
+
+rule{//jchar CallNonvirtualCharMethod(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, ...)
+  spec. jchar CallNonvirtualCharMethod(JNIEnv*, #jobject, #jclass, jmethodID@isJCharM && !isStaticM && isInThisClassM, ...) 
+  type. jchar CallNonvirtualCharMethod(JNIEnv*, jobject, jclass, jmethodID, ...) 
+}
+
+rule{//jbyte CallNonvirtualByteMethod(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, ...)
+  spec. jbyte CallNonvirtualByteMethod(JNIEnv*, #jobject, #jclass, jmethodID@isJByteM && !isStaticM && isInThisClassM, ...) 
+  type. jbyte CallNonvirtualByteMethod(JNIEnv*, jobject, jclass, jmethodID, ...) 
+}
+
+rule{//jobject CallNonvirtualObjectMethod(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, ...)
+  spec. jobject CallNonvirtualObjectMethod(JNIEnv*, #jobject, #jclass, jmethodID@isJObjectM && !isStaticM && isInThisClassM, ...) 
+  type. jobject CallNonvirtualObjectMethod(JNIEnv*, jobject, jclass, jmethodID, ...) 
+}
+
+rule{//void CallNonvirtualVoidMethod(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, ...)
+  spec. void CallNonvirtualVoidMethod(JNIEnv*, #jobject, #jclass, jmethodID@isVoidM && !isStaticM && isInThisClassM, ...) 
+  type. void CallNonvirtualVoidMethod(JNIEnv*, jobject, jclass, jmethodID, ...) 
+}
+
+rule{//jboolean CallNonvirtualBooleanMethod(JNIEnv *env, jobject obj, jclass clazz, jmethodID methodID, ...)
+  spec. jboolean CallNonvirtualBooleanMethod(JNIEnv*, #jobject, #jclass, jmethodID@isJBooleanM && !isStaticM && isInThisClassM, ...) 
+  type. jboolean CallNonvirtualBooleanMethod(JNIEnv*, jobject, jclass, jmethodID, ...) 
+}
+
+rule{//jboolean CallBooleanMethodV(JNIEnv *env, jobject obj, jmethodID methodID, va_list args)
+  spec. jboolean CallBooleanMethodV(JNIEnv*, #jobject, jmethodID@(isJBooleanM && !isStaticM && isPrivateM && isInThisClassM), va_list)
+  spec. jboolean CallBooleanMethodV(JNIEnv*, #jobject, jmethodID@(isJBooleanM && !isStaticM && !isPrivateM), va_list)
+  type. jboolean CallBooleanMethodV(JNIEnv*, jobject, jmethodID, va_list)
+}
+
+rule{//jchar CallCharMethodV(JNIEnv *env, jobject obj, jmethodID methodID, va_list args)
+  spec. jchar CallCharMethodV(JNIEnv*, #jobject, jmethodID@(isJCharM && !isStaticM && isPrivateM && isInThisClassM), va_list)
+  spec. jchar CallCharMethodV(JNIEnv*, #jobject, jmethodID@(isJCharM && !isStaticM && !isPrivateM), va_list)
+  type. jchar CallCharMethodV(JNIEnv*, jobject, jmethodID, va_list)
+}
+
+rule{//jshort CallShortMethodV(JNIEnv *env, jobject obj, jmethodID methodID, va_list args)
+  spec. jshort CallShortMethodV(JNIEnv*, #jobject, jmethodID@(isJShortM && !isStaticM && isPrivateM && isInThisClassM), va_list)
+  spec. jshort CallShortMethodV(JNIEnv*, #jobject, jmethodID@(isJShortM && !isStaticM && !isPrivateM), va_list)
+  type. jshort CallShortMethodV(JNIEnv*, jobject, jmethodID, va_list)
+}
+
+rule{//jint CallIntMethodV(JNIEnv *env, jobject obj, jmethodID methodID, va_list args)
+  spec. jint CallIntMethodV(JNIEnv*, #jobject, jmethodID@(isJIntM && !isStaticM && isPrivateM && isInThisClassM), va_list)
+  spec. jint CallIntMethodV(JNIEnv*, #jobject, jmethodID@(isJIntM && !isStaticM && !isPrivateM), va_list)
+  type. jint CallIntMethodV(JNIEnv*, jobject, jmethodID, va_list)
+}
+
+rule{//jlong CallLongMethodV(JNIEnv *env, jobject obj, jmethodID methodID, va_list args)
+  spec. jlong CallLongMethodV(JNIEnv*, #jobject, jmethodID@(isJLongM && !isStaticM && isPrivateM && isInThisClassM), va_list)
+  spec. jlong CallLongMethodV(JNIEnv*, #jobject, jmethodID@(isJLongM && !isStaticM && !isPrivateM), va_list)
+  type. jlong CallLongMethodV(JNIEnv*, jobject, jmethodID, va_list)
+}
+
+rule{//jfloat CallFloatMethodV(JNIEnv *env, jobject obj, jmethodID methodID, va_list args)
+  spec. jfloat CallFloatMethodV(JNIEnv*, #jobject, jmethodID@(isJFloatM && !isStaticM && isPrivateM && isInThisClassM), va_list)
+  spec. jfloat CallFloatMethodV(JNIEnv*, #jobject, jmethodID@(isJFloatM && !isStaticM && !isPrivateM), va_list)
+  type. jfloat CallFloatMethodV(JNIEnv*, jobject, jmethodID, va_list)
+}
+
+rule{//jdouble CallDoubleMethodV(JNIEnv *env, jobject obj, jmethodID methodID, va_list args)
+  spec. jdouble CallDoubleMethodV(JNIEnv*, #jobject, jmethodID@(isJDoubleM && !isStaticM && isPrivateM  && isInThisClassM), va_list)
+  spec. jdouble CallDoubleMethodV(JNIEnv*, #jobject, jmethodID@(isJDoubleM && !isStaticM && !isPrivateM), va_list)
+  type. jdouble CallDoubleMethodV(JNIEnv*, jobject, jmethodID, va_list)
+}
+
+rule{//jbyte CallByteMethodV(JNIEnv *env, jobject obj, jmethodID methodID, va_list args)
+  spec. jbyte CallByteMethodV(JNIEnv*, #jobject, jmethodID@(isJByteM && !isStaticM && isPrivateM && isInThisClassM), va_list)
+  spec. jbyte CallByteMethodV(JNIEnv*, #jobject, jmethodID@(isJByteM && !isStaticM && !isPrivateM), va_list)
+  type. jbyte CallByteMethodV(JNIEnv*, jobject, jmethodID, va_list)
+}
+
+rule{//jobject CallObjectMethodV(JNIEnv *env, jobject obj, jmethodID methodID, va_list args)
+  spec. jobject CallObjectMethodV(JNIEnv*, #jobject, jmethodID@(isJObjectM && !isStaticM && isPrivateM && isInThisClassM), va_list)
+  spec. jobject CallObjectMethodV(JNIEnv*, #jobject, jmethodID@(isJObjectM && !isStaticM && !isPrivateM), va_list)
+  type. jobject CallObjectMethodV(JNIEnv*, jobject, jmethodID, va_list)
+}
+
+rule{//void CallVoidMethod(JNIEnv *env, jobject obj, jmethodID methodID, va_list args)
+  spec. void CallVoidMethodV(JNIEnv*, #jobject, jmethodID@(isVoidM && !isStaticM && isPrivateM && isInThisClassM), va_list)
+  spec. void CallVoidMethodV(JNIEnv*, #jobject, jmethodID@(isVoidM && !isStaticM && !isPrivateM), va_list)
+  type. void CallVoidMethodV(JNIEnv*, jobject, jmethodID, va_list)
+}
+
+rule{//jboolean CallBooleanMethodA(JNIEnv *env, jobject obj, jmethodID methodID, const jvalue *args)
+  spec. jboolean CallBooleanMethodA(JNIEnv*, #jobject, jmethodID@(isJBooleanM && !isStaticM && isPrivateM && isInThisClassM), jvalue*@isArrayPtrJV)
+  spec. jboolean CallBooleanMethodA(JNIEnv*, #jobject, jmethodID@(isJBooleanM && !isStaticM && !isPrivateM), jvalue*@isArrayPtrJV)
+  type. jboolean CallBooleanMethodA(JNIEnv*, jobject, jmethodID, jvalue*)
+}
+
+rule{//jchar CallCharMethodA(JNIEnv *env, jobject obj, jmethodID methodID, const jvalue *args)
+  spec. jchar CallCharMethodA(JNIEnv*, #jobject, jmethodID@(isJCharM && !isStaticM && isPrivateM && isInThisClassM), jvalue*@isArrayPtrJV)
+  spec. jchar CallCharMethodA(JNIEnv*, #jobject, jmethodID@(isJCharM && !isStaticM && !isPrivateM), jvalue*@isArrayPtrJV)
+  type. jchar CallCharMethodA(JNIEnv*, jobject, jmethodID, jvalue*)
+}
+
+rule{//jshort CallShortMethodA(JNIEnv *env, jobject obj, jmethodID methodID, const jvalue *args)
+  spec. jshort CallShortMethodA(JNIEnv*, #jobject, jmethodID@(isJShortM && !isStaticM && isPrivateM && isInThisClassM), jvalue*@isArrayPtrJV)
+  spec. jshort CallShortMethodA(JNIEnv*, #jobject, jmethodID@(isJShortM && !isStaticM && !isPrivateM), jvalue*@isArrayPtrJV)
+  type. jshort CallShortMethodA(JNIEnv*, jobject, jmethodID, jvalue*)
+}
+
+rule{//jint CallIntMethodA(JNIEnv *env, jobject obj, jmethodID methodID, const jvalue *args)
+  spec. jint CallIntMethodA(JNIEnv*, #jobject, jmethodID@(isJIntM && !isStaticM && isPrivateM && isInThisClassM), jvalue*@isArrayPtrJV)
+  spec. jint CallIntMethodA(JNIEnv*, #jobject, jmethodID@(isJIntM && !isStaticM && !isPrivateM), jvalue*@isArrayPtrJV)
+  type. jint CallIntMethodA(JNIEnv*, jobject, jmethodID, jvalue*)
+}
+
+rule{//jlong CallLongMethodA(JNIEnv *env, jobject obj, jmethodID methodID, const jvalue *args)
+  spec. jlong CallLongMethodA(JNIEnv*, #jobject, jmethodID@(isJLongM && !isStaticM && isPrivateM && isInThisClassM), jvalue*@isArrayPtrJV)
+  spec. jlong CallLongMethodA(JNIEnv*, #jobject, jmethodID@(isJLongM && !isStaticM && !isPrivateM), jvalue*@isArrayPtrJV)
+  type. jlong CallLongMethodA(JNIEnv*, jobject, jmethodID, jvalue*)
+}
+
+rule{//jfloat CallFloatMethodA(JNIEnv *env, jobject obj, jmethodID methodID, const jvalue *args)
+  spec. jfloat CallFloatMethodA(JNIEnv*, #jobject, jmethodID@(isJFloatM && !isStaticM && isPrivateM && isInThisClassM), jvalue*@isArrayPtrJV)
+  spec. jfloat CallFloatMethodA(JNIEnv*, #jobject, jmethodID@(isJFloatM && !isStaticM && !isPrivateM), jvalue*@isArrayPtrJV)
+  type. jfloat CallFloatMethodA(JNIEnv*, jobject, jmethodID, jvalue*)
+}
+
+rule{//jdouble CallDoubleMethodA(JNIEnv *env, jobject obj, jmethodID methodID, const jvalue *args)
+  spec. jdouble CallDoubleMethodA(JNIEnv*, #jobject, jmethodID@(isJDoubleM && !isStaticM && isPrivateM && isInThisClassM), jvalue*@isArrayPtrJV)
+  spec. jdouble CallDoubleMethodA(JNIEnv*, #jobject, jmethodID@(isJDoubleM && !isStaticM && !isPrivateM), jvalue*@isArrayPtrJV)
+  type. jdouble CallDoubleMethodA(JNIEnv*, jobject, jmethodID, jvalue*)
+}
+
+rule{//jbyte CallByteMethodA(JNIEnv *env, jobject obj, jmethodID methodID, const jvalue *args)
+  spec. jbyte CallByteMethodA(JNIEnv*, #jobject, jmethodID@(isJByteM && !isStaticM && isPrivateM  && isInThisClassM), jvalue*@isArrayPtrJV)
+  spec. jbyte CallByteMethodA(JNIEnv*, #jobject, jmethodID@(isJByteM && !isStaticM && !isPrivateM), jvalue*@isArrayPtrJV)
+  type. jbyte CallByteMethodA(JNIEnv*, jobject, jmethodID, jvalue*)
+}
+
+rule{//jobject CallObjectMethodA(JNIEnv *env, jobject obj, jmethodID methodID, const jvalue *args)
+  spec. jobject CallObjectMethodA(JNIEnv*, #jobject, jmethodID@(isJObjectM && !isStaticM && isPrivateM && isInThisClassM), jvalue*@isArrayPtrJV)
+  spec. jobject CallObjectMethodA(JNIEnv*, #jobject, jmethodID@(isJObjectM && !isStaticM && !isPrivateM), jvalue*@isArrayPtrJV)
+  type. jobject CallObjectMethodA(JNIEnv*, jobject, jmethodID, jvalue*)
+}
+
+rule{//void CallVoidMethodA(JNIEnv *env, jobject obj, jmethodID methodID, const jvalue *args)
+  spec. void CallVoidMethodA(JNIEnv*, #jobject, jmethodID@(isVoidM && !isStaticM && isPrivateM && isInThisClassM), jvalue*@isArrayPtrJV)
+  spec. void CallVoidMethodA(JNIEnv*, #jobject, jmethodID@(isVoidM && !isStaticM && !isPrivateM), jvalue*@isArrayPtrJV)
+  type. void CallVoidMethodA(JNIEnv*, jobject, jmethodID, jvalue*)
+}
+
+rule{//jboolean CallBooleanMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...)
+  spec. jboolean CallBooleanMethod(JNIEnv*, #jobject, jmethodID@(isJBooleanM && !isStaticM && isPrivateM && isInThisClassM), ...)
+  spec. jboolean CallBooleanMethod(JNIEnv*, #jobject, jmethodID@(isJBooleanM && !isStaticM && !isPrivateM), ...)
+  type. jboolean CallBooleanMethod(JNIEnv*, jobject, jmethodID, ...)
+}
+
+rule{//jchar CallCharMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...)
+  spec. jchar CallCharMethod(JNIEnv*, #jobject, jmethodID@(isJCharM && !isStaticM && isPrivateM && isInThisClassM), ...)
+  spec. jchar CallCharMethod(JNIEnv*, #jobject, jmethodID@(isJCharM && !isStaticM && !isPrivateM), ...)
+  type. jchar CallCharMethod(JNIEnv*, jobject, jmethodID, ...)
+}
+
+rule{//jshort CallShortMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...)
+  spec. jshort CallShortMethod(JNIEnv*, #jobject, jmethodID@(isJShortM && !isStaticM && isPrivateM && isInThisClassM), ...)
+  spec. jshort CallShortMethod(JNIEnv*, #jobject, jmethodID@(isJShortM && !isStaticM && !isPrivateM), ...)
+  type. jshort CallShortMethod(JNIEnv*, jobject, jmethodID, ...)
+}
+
+rule{//jint CallIntMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...)
+  spec. jint CallIntMethod(JNIEnv*, #jobject, jmethodID@(isJIntM && !isStaticM && isPrivateM && isInThisClassM), ...)
+  spec. jint CallIntMethod(JNIEnv*, #jobject, jmethodID@(isJIntM && !isStaticM && !isPrivateM), ...)
+  type. jint CallIntMethod(JNIEnv*, jobject, jmethodID, ...)
+}
+
+rule{//jlong CallLongMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...)
+  spec. jlong CallLongMethod(JNIEnv*, #jobject, jmethodID@(isJLongM && !isStaticM && isPrivateM && isInThisClassM), ...)
+  spec. jlong CallLongMethod(JNIEnv*, #jobject, jmethodID@(isJLongM && !isStaticM && !isPrivateM), ...)
+  type. jlong CallLongMethod(JNIEnv*, jobject, jmethodID, ...)
+}
+
+rule{//jfloat CallFloatMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...)
+  spec. jfloat CallFloatMethod(JNIEnv*, #jobject, jmethodID@(isJFloatM && !isStaticM && isPrivateM  && isInThisClassM), ...)
+  spec. jfloat CallFloatMethod(JNIEnv*, #jobject, jmethodID@(isJFloatM && !isStaticM && !isPrivateM), ...)
+  type. jfloat CallFloatMethod(JNIEnv*, jobject, jmethodID, ...)
+}
+
+rule{//jdouble CallDoubleMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...)
+  spec. jdouble CallDoubleMethod(JNIEnv*, #jobject, jmethodID@(isJDoubleM && !isStaticM && isPrivateM  && isInThisClassM), ...)
+  spec. jdouble CallDoubleMethod(JNIEnv*, #jobject, jmethodID@(isJDoubleM && !isStaticM && !isPrivateM), ...)
+  type. jdouble CallDoubleMethod(JNIEnv*, jobject, jmethodID, ...)
+}
+
+rule{//jbyte CallByteMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...)
+  spec. jbyte CallByteMethod(JNIEnv*, #jobject, jmethodID@(isJByteM && !isStaticM && isPrivateM  && isInThisClassM), ...)
+  spec. jbyte CallByteMethod(JNIEnv*, #jobject, jmethodID@(isJByteM && !isStaticM && !isPrivateM), ...)
+  type. jbyte CallByteMethod(JNIEnv*, jobject, jmethodID, ...)
+}
+
+rule{//jobject CallObjectMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...)
+  spec. jobject CallObjectMethod(JNIEnv*, #jobject, jmethodID@(isJObjectM && !isStaticM && isPrivateM && isInThisClassM), ...)
+  spec. jobject CallObjectMethod(JNIEnv*, #jobject, jmethodID@(isJObjectM && !isStaticM && !isPrivateM), ...)
+  type. jobject CallObjectMethod(JNIEnv*, jobject, jmethodID, ...)
+}
+
+rule{//void CallVoidMethod(JNIEnv *env, jobject obj, jmethodID methodID, ...)
+  spec. void CallVoidMethod(JNIEnv*, #jobject, jmethodID@(isVoidM && !isStaticM && isPrivateM && isInThisClassM), ...)
+  spec. void CallVoidMethod(JNIEnv*, #jobject, jmethodID@(isVoidM && !isStaticM && !isPrivateM), ...)
+  type. void CallVoidMethod(JNIEnv*, jobject, jmethodID, ...)
+}
+
+rule{//jmethodID GetMethodID(JNIEnv *env, jclass clazz,const char *name, const char *sig)
+  spec. jmethodID@(isJBooleanM && !isStaticM) || isNULLM GetMethodID(JNIEnv*,
+  #jclass@isContainMethod, char*@isUTF8C, char*@isMethodSigC && isEndWithZC) 
+  spec. jmethodID@(isJObjectM && !isStaticM) || isNULLM GetMethodID(JNIEnv*, #jclass@isContainMethod, char*@isUTF8C, char*@isMethodSigC && isEndWithLC) 
+  spec. jmethodID@(isJDoubleM && !isStaticM) || isNULLM GetMethodID(JNIEnv*, #jclass@isContainMethod, char*@isUTF8C, char*@isMethodSigC && isEndWithDC) 
+  spec. jmethodID@(isJFloatM && !isStaticM) || isNULLM GetMethodID(JNIEnv*, #jclass@isContainMethod, char*@isUTF8C, char*@isMethodSigC && isEndWithFC) 
+  spec. jmethodID@(isJLongM && !isStaticM) || isNULLM GetMethodID(JNIEnv*, #jclass@isContainMethod, char*@isUTF8C, char*@isMethodSigC && isEndWithJC) 
+  spec. jmethodID@(isJIntM && !isStaticM) || isNULLM GetMethodID(JNIEnv*, #jclass@isContainMethod, char*@isUTF8C, char*@isMethodSigC && isEndWithIC) 
+  spec. jmethodID@(isJShortM && !isStaticM) || isNULLM GetMethodID(JNIEnv*, #jclass@isContainMethod, char*@isUTF8C, char*@isMethodSigC && isEndWithSC) 
+  spec. jmethodID@(isJCharM && !isStaticM) || isNULLM GetMethodID(JNIEnv*, #jclass@isContainMethod, char*@isUTF8C, char*@isMethodSigC && isEndWithCC) 
+  spec. jmethodID@(isJByteM && !isStaticM) || isNULLM GetMethodID(JNIEnv*, #jclass@isContainMethod, char*@isUTF8C, char*@isMethodSigC && isEndWithBC) 
+  spec. jmethodID@(isVoidM && !isStaticM) || isNULLM GetMethodID(JNIEnv*, #jclass@isContainMethod, char*@isUTF8C, char*@isMethodSigC && isEndWithVC) 
+  spec. jmethodID@(isInitM && !isStaticM) || isNULLM GetMethodID(JNIEnv*, #jclass@isContainMethod, char*@isInitC, char*@isMethodSigC && isEndWithVC) 
+  type. jmethodID GetMethodID(JNIEnv*, jclass, char*, char*) 
+}
+
+rule{//void SetDoubleField(JNIEnv *env, jobject obj, jfieldID fieldID, jdouble value)
+  spec. void SetDoubleField(JNIEnv*, jobject@!isNULLO, jfieldID@!isStaticF, jdouble)
+  type. void SetDoubleField(JNIEnv*, jobject, jfieldID, jdouble)
+}
+
+rule{//void SetFloatField(JNIEnv *env, jobject obj, jfieldID fieldID, jfloat value)
+  spec. void SetFloatField(JNIEnv*, jobject@!isNULLO, jfieldID@!isStaticF, jfloat)
+  type. void SetFloatField(JNIEnv*, jobject, jfieldID, jfloat)
+}
+
+rule{//void SetLongField(JNIEnv *env, jobject obj, jfieldID fieldID, jlong value)
+  spec. void SetLongField(JNIEnv*, jobject@!isNULLO, jfieldID@!isStaticF, jlong)
+  type. void SetLongField(JNIEnv*, jobject, jfieldID, jlong)
+}
+
+rule{//void SetIntField(JNIEnv *env, jobject obj, jfieldID fieldID, jint value)
+  spec. void SetIntField(JNIEnv*, jobject@!isNULLO, jfieldID@!isStaticF, jint)
+  type. void SetIntField(JNIEnv*, jobject, jfieldID, jint)
+}
+
+rule{//void SetShortField(JNIEnv *env, jobject obj, jfieldID fieldID, jshort value)
+  spec. void SetShortField(JNIEnv*, jobject@!isNULLO, jfieldID@!isStaticF, jshort)
+  type. void SetShortField(JNIEnv*, jobject, jfieldID, jshort)
+}
+
+rule{//void SetCharField(JNIEnv *env, jobject obj, jfieldID fieldID, jchar value)
+  spec. void SetCharField(JNIEnv*, jobject@!isNULLO, jfieldID@!isStaticF, jchar)
+  type. void SetCharField(JNIEnv*, jobject, jfieldID, jchar)
+}
+
+rule{//void SetByteField(JNIEnv *env, jobject obj, jfieldID fieldID, jbyte value)
+  spec. void SetByteField(JNIEnv*, jobject@!isNULLO, jfieldID@!isStaticF, jbyte)
+  type. void SetByteField(JNIEnv*, jobject, jfieldID, jbyte)
+}
+
+rule{//void SetBooleanField(JNIEnv *env, jobject obj, jfieldID fieldID, jboolean value)
+  spec. void SetBooleanField(JNIEnv*, jobject@!isNULLO, jfieldID@!isStaticF, jboolean)
+  type. void SetBooleanField(JNIEnv*, jobject, jfieldID, jboolean)
+}
+
+rule{//void SetObjectField(JNIEnv *env, jobject obj, jfieldID fieldID, jobject value)
+  spec. void SetObjectField(JNIEnv*, jobject@!isNULLO, jfieldID@!isStaticF, #jobject)
+  type. void SetObjectField(JNIEnv*, jobject, jfieldID, jobject)
+}
+
+rule{//jdouble GetDoubleField(JNIEnv *env, jobject obj, jfieldID fieldID)
+  spec. jdouble GetDoubleField(JNIEnv*, jobject@!isNULLO, jfieldID@!isStaticF)
+  type. jdouble GetDoubleField(JNIEnv*, jobject, jfieldID)
+}
+
+rule{//jfloat GetFloatField(JNIEnv *env, jobject obj, jfieldID fieldID)
+  spec. jfloat GetFloatField(JNIEnv*, jobject@!isNULLO, jfieldID@!isStaticF)
+  type. jfloat GetFloatField(JNIEnv*, jobject, jfieldID)
+}
+
+rule{//jlong GetLongField(JNIEnv *env, jobject obj, jfieldID fieldID)
+  spec. jlong GetLongField(JNIEnv*, jobject@!isNULLO, jfieldID@!isStaticF)
+  type. jlong GetLongField(JNIEnv*, jobject, jfieldID)
+}
+
+rule{//jint GetIntField(JNIEnv *env, jobject obj, jfieldID fieldID)
+  spec. jint GetIntField(JNIEnv*, jobject@!isNULLO, jfieldID@!isStaticF)
+  type. jint GetIntField(JNIEnv*, jobject, jfieldID)
+}
+
+rule{//jshort GetShortField(JNIEnv *env, jobject obj, jfieldID fieldID)
+  spec. jshort GetShortField(JNIEnv*, jobject@!isNULLO, jfieldID@!isStaticF)
+  type. jshort GetShortField(JNIEnv*, jobject, jfieldID)
+}
+
+rule{//jchar GetCharField(JNIEnv *env, jobject obj, jfieldID fieldID)
+  spec. jchar GetCharField(JNIEnv*, jobject@!isNULLO, jfieldID@!isStaticF)
+  type. jchar GetCharField(JNIEnv*, jobject, jfieldID)
+}
+
+rule{//jbyte GetByteField(JNIEnv *env, jobject obj, jfieldID fieldID)
+  spec. jbyte GetByteField(JNIEnv*, jobject@!isNULLO, jfieldID@!isStaticF)
+  type. jbyte GetByteField(JNIEnv*, jobject, jfieldID)
+}
+
+rule{//jboolean GetBooleanField(JNIEnv *env, jobject obj, jfieldID fieldID)
+  spec. jboolean GetBooleanField(JNIEnv*, jobject@!isNULLO, jfieldID@!isStaticF)
+  type. jboolean GetBooleanField(JNIEnv*, jobject, jfieldID)
+}
+
+rule{//jobject GetObjectField(JNIEnv *env, jobject obj, jfieldID fieldID)
+  spec. jobject GetObjectField(JNIEnv*, jobject@!isNULLO, jfieldID@!isStaticF)
+  type. jobject GetObjectField(JNIEnv*, jobject, jfieldID)
+}
+
+rule{//jfieldID GetFieldID(JNIEnv *env, jclass clazz,const char *name, const char *sig)
+  //fieldSig is unspecified
+  spec. jfieldID@!isStaticF || isNULLF GetFieldID(JNIEnv*, jclass, char*@isFieldNameC, char*@isFieldSigC)
+  type. jfieldID GetFieldID(JNIEnv*, jclass, char*, char*)
+}
+
+rule{//jboolean IsSameObject(JNIEnv *env, jobject ref1,jobject ref2)
+  spec. jboolean IsSameObject(JNIEnv*, #jobject, #jobject)
+  type. jboolean IsSameObject(JNIEnv*, jobject, jobject)
+}
+
+rule{//jboolean IsInstanceOf(JNIEnv *env, jobject obj,jclass clazz)
+  spec. jboolean IsInstanceOf(JNIEnv*, #jobject, #jclass) 
+  type. jboolean IsInstanceOf(JNIEnv*, jobject, jclass) 
+}
+
+rule{//jobjectRefType GetObjectRefType(JNIEnv* env, jobject obj)
+  //unlink not deleted
+  spec. JNIGlobalRefType GetObjectRefType(JNIEnv*, jobject@isGlobalO && !isDeletedO) 
+  spec. JNIWeakGlobalRefType GetObjectRefType(JNIEnv*, jweak@!isDeletedJW) 
+  spec. JNILocalRefType GetObjectRefType(JNIEnv*, jobject@isLocalO && !isDeletedO) 
+  spec. JNIInvalidRefType GetObjectRefType(JNIEnv*, jobject@isNULLO)  
+  type. jobjectRefType GetObjectRefType(JNIEnv*, jobject) 
+}
+
+rule{//jclass GetObjectClass(JNIEnv *env, jobject obj)
+//HSJ
+  spec. jclass GetObjectClass(JNIEnv*, jobject@!isNULLO)
+  type. jclass GetObjectClass(JNIEnv*, jobject) 
+}
+
+rule{//jobject NewObjectV(JNIEnv *env, jclass clazz, jmethodID methodID, va_list args)
+//Discuss - va_list  
+  spec. jobject NewObjectV(JNIEnv*, jclass@!isArrayCL, jmethodID@isInitM, va_list)
+  type. jobject NewObjectV(JNIEnv*, jclass, jmethodID, va_list)
+}
+
+rule{//jobject NewObjectA(JNIEnv *env, jclass clazz, jmethodID methodID, const jvalue *args)
+  spec. jobject NewObjectA(JNIEnv*, jclass@!isArrayCL, jmethodID@isInitM, jvalue*@isArrayPtrJV) 
+  type. jobject NewObjectA(JNIEnv*, jclass, jmethodID, jvalue*) 
+}
+
+rule{//jobject NewObject(JNIEnv *env, jclass clazz, jmethodID methodID, ...)
+//Discuss - relation, ... 
+  spec. jobject NewObject(JNIEnv*, jclass@!isArrayCL, jmethodID@isInitM, ...) 
+  type. jobject NewObject(JNIEnv*, jclass, jmethodID, ...) 
+}
+
+rule{//jobject AllocObject(JNIEnv *env, jclass clazz)
+//HSJ not init object: should i represent it? -> ignore
+  spec. jobject AllocObject(JNIEnv*, jclass@!isArrayCL)
+  type. jobject AllocObject(JNIEnv*, jclass)
+}
+
+rule{//void DeleteWeakGlobalRef(JNIEnv *env, jweak obj)
+//Discuss
+  spec. void DeleteWeakGlobalRef(JNIEnv*, jweak)
+  type. void DeleteWeakGlobalRef(JNIEnv*, jweak)
+}
+
+rule{//jweak NewWeakGlobalRef(JNIEnv *env, jobject obj)
+//Discuss
+  //spec. jweak NewWeakGlobalRef(JNIEnv*, jobject@!isNULLO) 
+  spec. jweak@!isNULLJW NewWeakGlobalRef(JNIEnv*, jobject@!isNULLO) 
+  spec. jweak@isNULLJW NewWeakGlobalRef(JNIEnv*, jobject@isNULLO) 
+  type. jweak NewWeakGlobalRef(JNIEnv*, jobject) 
+}
+
+rule{//jobject NewLocalRef(JNIEnv *env, jobject ref)
+//Discuss
+  spec. jobject@isNULLO NewLocalRef(JNIEnv*, jobject@isNULLO) 
+  spec. jobject@isLocalO NewLocalRef(JNIEnv*, jobject@!isNULLO) 
+  type. jobject NewLocalRef(JNIEnv*, jobject) 
+}
+
+rule{//jobject PopLocalFrame(JNIEnv *env, jobject result)
+  spec. jobject@isNULLO PopLocalFrame(JNIEnv*, jobject@isNULLO) 
+  spec. jobject@isLocalO PopLocalFrame(JNIEnv*, jobject@isLocalO) 
+  type. jobject PopLocalFrame(JNIEnv*, jobject) 
+}
+
+rule{//jint PushLocalFrame(JNIEnv *env, jint capacity)
+//minus is unspecified
+  spec. jint@isNegativeJI || isZeroJI PushLocalFrame(JNIEnv*, jint@isPositiveJI) 
+  type. jint PushLocalFrame(JNIEnv*, jint) 
+}
+
+rule{//jint EnsureLocalCapacity(JNIEnv *env, jint capacity)
+//minus is unspecified
+  spec. jint@isNegativeJI  || isZeroJI EnsureLocalCapacity(JNIEnv*, jint@isPositiveJI) 
+  type. jint EnsureLocalCapacity(JNIEnv*, jint) 
+}
+
+rule{//void DeleteLocalRef(JNIEnv *env, jobject isLocalORef)
+  spec. void DeleteLocalRef(JNIEnv*, jobject@isLocalO) 
+  type. void DeleteLocalRef(JNIEnv*, jobject) 
+}
+
+rule{//HSJ
+
+//other types of jthrowable is unspecifed 
+  spec. jint@isNegativeJI || isZeroJI Throw(JNIEnv*, #jthrowable)
+  type. jint Throw(JNIEnv*, jthrowable)
+}
+
+rule{
+  spec. jint GetVersion(JNIEnv*)
+  type. jint GetVersion(JNIEnv*)
+}
+
+rule{
+  spec. void DeleteGlobalRef(JNIEnv*, jobject@isGlobalO)
+  type. void DeleteGlobalRef(JNIEnv*, jobject)
+}
+
+rule{
+  spec. jobject@isGlobalO NewGlobalRef(JNIEnv*, jobject@isLocalO) 
+  spec. jobject@isGlobalO NewGlobalRef(JNIEnv*, jobject@isGlobalO) 
+  type. jobject NewGlobalRef(JNIEnv*, jobject)
+}
+
+rule{
+  spec. jclass@!isNULLCL || isNULLCL FindClass(JNIEnv*, char*@isClassSigC)
+  spec. jclass@!isNULLCL || isNULLCL FindClass(JNIEnv*, char*@isArrayClassSigC)
+  type. jclass FindClass(JNIEnv*, char*)
+}
+
+rule{
+  spec. jclass DefineClass(JNIEnv*, char*@isUTF8C, #jobject@isLoaderO, jbyte*@isBytePointerClassInfo, jsize)
+  type. jclass DefineClass(JNIEnv*, char*, jobject, jbyte*, jsize)
+}
+
+rule{
+  //jboolean IsAssignableFrom(JNIEnv *env, jclass clazz1,jclass clazz2)
+  spec. jboolean IsAssignableFrom(JNIEnv*, jclass, jclass)
+  type. jboolean IsAssignableFrom(JNIEnv*, jclass, jclass)
+}
+rule{
+  //jclass GetSuperclass(JNIEnv *env, jclass clazz)
+  spec. jclass@isNULLCL GetSuperclass(JNIEnv*, jclass@isObjectCL)
+  spec. jclass@!isNULLCL || isNULLCL GetSuperclass(JNIEnv*, jclass@!isObjectCL && !isNULLCL) // ($2 <: Object, $r = (NULL|$2 <: $r))
+  type. jclass GetSuperclass(JNIEnv*, jclass)
+}
+
+rule{
+  spec. jint@isNegativeJI || isZeroJI ThrowNew(JNIEnv*, jclass@isThrowableCL, char*)
+  type. jint ThrowNew(JNIEnv*, jclass, char*)
+}
+
+rule{
+  spec. jboolean ExceptionCheck(JNIEnv*)
+  type. jboolean ExceptionCheck(JNIEnv*)
+}
+
+rule{
+  spec. void FatalError(JNIEnv*, char*)
+  type. void FatalError(JNIEnv*, char*)
+}
+
+rule{
+  spec. void ExceptionClear(JNIEnv*)
+  type. void ExceptionClear(JNIEnv*)
+}
+
+rule{
+  spec. void ExceptionDescribe(JNIEnv*)
+  type. void ExceptionDescribe(JNIEnv*)
+}
+
+rule{
+  spec. jthrowable@!isNULLT ExceptionOccurred(JNIEnv*)
+  spec. jthrowable@isNULLT ExceptionOccurred(JNIEnv*)
+  type. jthrowable ExceptionOccurred(JNIEnv*)
+}

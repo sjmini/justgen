@@ -1,0 +1,90 @@
+type token =
+    XOR_EQ
+  | XOR
+  | WHILE_KW
+  | VOID_KW
+  | UNSIGNED_KW
+  | SWITCH_KW
+  | STRUCT_KW
+  | STATIC_KW
+  | SIZEOF_KW
+  | SHIFT_RIGHT_EQ
+  | SHIFT_RIGHT
+  | SHIFT_LEFT_EQ
+  | SHIFT_LEFT
+  | SEMICOLON
+  | RETURN_KW
+  | QUESTION
+  | PLUS_EQ
+  | PLUS
+  | PAREN_OPEN
+  | PAREN_CLOSE
+  | OR
+  | NEQ
+  | NEG_MINUS
+  | MULT_EQ
+  | MULT
+  | MOD_EQ
+  | MOD
+  | MINUS_EQ
+  | MINUS
+  | LT
+  | LONG_KW
+  | LE
+  | INT_KW
+  | INT of int
+  | IF_KW
+  | ID of string
+  | GT
+  | GOTO_KW
+  | GE
+  | FOR_KW
+  | FLOAT_KW
+  | EQ
+  | EOF
+  | ELSE_KW
+  | DO_KW
+  | DOUBLE_KW
+  | DOUBLE_EQ
+  | DIV_EQ
+  | DIV
+  | DEREF
+  | CONTINUE_KW
+  | CONST_KW
+  | COMPLEMENT
+  | COMMA
+  | COLON
+  | CHAR_KW
+  | CHAR of char
+  | BREAK_KW
+  | BRACKET_OPEN
+  | BRACKET_CLOSE
+  | BRACE_OPEN
+  | BRACE_CLOSE
+  | BIT_OR_EQ
+  | BIT_OR
+  | BIT_AND_EQ
+  | BIT_AND
+  | BANG
+  | ARROW
+  | AND
+  | ADDROF
+val menhir_begin_marker : int
+val xv_var_decl : Ast.statement
+val xv_type_def : Ast.type_def
+val xv_statements : Ast.block
+val xv_statement : Ast.statement
+val xv_program : Ast.prog
+val xv_params : (string option * Ast.type_def) list
+val xv_option_ID_ : string option
+val xv_if_fstat : Ast.statement option
+val xv_fun_decl : Ast.fun_decl
+val xv_exp : Ast.exp
+val xv_decls : Ast.statement list * Ast.fun_decl list
+val xv_decl_exp_init : Ast.exp option
+val xv_decl_exp : Ast.decl_exp
+val xv_block : Ast.block
+val xv_binop : Ast.binop
+val xv_assign_op : Ast.assign_op
+val xv_args : Ast.exp list
+val menhir_end_marker : int

@@ -1,0 +1,85 @@
+// Cannot be used together
+// localRef이면서 globalRef일 수 없다.
+
+jobject : 
+// - isLocalO  || isGlobalO || jweak(type:special case) -> xor
+- isLocalO  || isGlobalO || isNULLO -> xor
+- isLoaderO || isReflectMethodO || isReflectConstructorO || isReflectFieldO || isNULLO -> or
+- isDeletedO || isNULLO -> or
+- isSubClassO || isNULLO -> or
+
+jstring :
+- isUnicodeS || isNULLS -> xor
+
+jclass :
+- isObjectCL || isThrowableCL ||isNULLCL -> or
+- isArrayCL || isNULLCL -> or
+- isContainMethod || isNULLCL -> or
+
+jweak :
+- isDeletedJW || isNULLJW -> or
+
+jbyte :
+- isBytePointerClassInfo || isNULLB -> or
+- isGetByteArrayElements || isNULLB -> or
+- isThisByteArray || isNULLB -> or
+
+jfieldID :
+- isStaticF || isNULLF -> or
+
+jint :
+- isGetIntArrayElements || isNegativeJI || isPositiveJI || isZeroJI || isJNI_COMMITJI || isJNI_ABORTJI || isNULLJI -> xor
+- isThisIntArray || isNULLJI -> or
+- isNegativeJI || isThisArrayLenJI -> or
+
+jmethodID :
+- isInitM || isStaticM -> or
+- isInitM || isJBooleanM || isJCharM || isJShortM || isJIntM || isJLongM || isJFloatM || isJDoubleM || isVoidM || isJByteM || isJObjectM || isNULLM -> xor
+- isInThisClassM || isNULLM -> or
+
+jchar :
+- isUnicodeJC || isNULLJC -> xor
+- isGetStringCharsJC || isGetStringCriticalJC || isGetCharArrayElementsJC || isNULLJC -> or
+- isThisCharArray || isNULLJC -> or
+
+
+char :
+- isUTF8C || isNULLC -> xor
+- isEndWithVC || isEndWithZC || isEndWithBC || isEndWithCC || isEndWithSC || isEndWithIC || isEndWithJC || isEndWithFC || isEndWithDC || isEndWithLC || isInitC || isNULLC -> or
+- isMethodSigC || isClassSigC || isArrayClassSigC || isFieldSigC || isFieldNameC || isMethodNameC || isNULLC -> or
+- isGetStringUTFCharC || isNULLC -> or
+- isFieldSigC || isEndWithVC -> or
+- isFieldNameC || isInitC -> or
+- isFieldSigC || isInitC -> or
+- isClassSigC || isInitC -> or
+
+
+// jarray : Delete
+// isNULLJOA || isNULLJZA || isNULLJBA || isNULLJCA || isNULLJSA || isNULLJIA || isNULLJLA || isNULLJFA || isNULLJDA -> xor
+
+jfloat :
+isGetFloatArrayElements || isNULLJF -> or
+isThisFloatArray || isNULLJF -> or
+
+jdouble :
+isGetDoubleArrayElements || isNULLJD -> or
+isThisDoubleArray || isNULLJD -> or
+
+jlong :
+isGetLongArrayElements || isNULLJL -> or
+isThisLongArray || isNULLJL -> or
+
+jshort : 
+isGetShortArrayElements || isNULLJS -> or
+isThisShortArray || isNULLJS -> or
+
+jboolean :
+isGetBooleanArrayElements || isNULLJB -> or
+isThisBooleanArray || isNULLJB -> or
+
+void :
+isGetPrimitiveArrayCritical || isNULLV -> or
+isThisVoidArray || isNULLV -> or
+
+jvalue :
+- isArrayPtrJV || isNULLJV -> xor

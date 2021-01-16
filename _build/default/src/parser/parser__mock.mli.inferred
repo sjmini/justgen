@@ -1,0 +1,39 @@
+type token =
+    STAR
+  | SHARP
+  | RSPAREN
+  | RMPAREN
+  | OR
+  | OP_SUBTYPE
+  | NAME of string
+  | LSPAREN
+  | LMPAREN
+  | KW_UNSPEC
+  | KW_TYPE
+  | KW_SPEC
+  | KW_RULE
+  | KW_REFINE
+  | KW_IN
+  | KW_DEFTYPE
+  | EOF
+  | DOT
+  | COMMA
+  | BANG
+  | AT
+  | AND
+val menhir_begin_marker : int
+val xv_unspec : SlangAST.Node.t
+val xv_types : SlangAST.Node.t
+val xv_typ : SlangAST.Node.t
+val xv_spec : SlangAST.Node.t
+val xv_refinement : SlangAST.Node.t
+val xv_predicate : SlangAST.Node.t
+val xv_main : SlangAST.Node.t
+val xv_funtype : SlangAST.Node.t
+val xv_funspecs : SlangAST.Node.t
+val xv_funspec : SlangAST.Node.t
+val xv_fulltyp : SlangAST.Node.t
+val xv_decls : SlangAST.Node.t list
+val xv_decl : SlangAST.Node.t
+val xv_btyp : SlangAST.Node.t
+val menhir_end_marker : int
