@@ -25,6 +25,10 @@ JUSTGen is verified in following OS:
 
 7. test/code/* : Template codes for generating test programs
 
+8. unspec_dsl : JNI specification expressed in our DSL with found unspecified cases
+
+9. gen_result : List of identified unspecified cases
+
 ## Getting Started
 
 ### Prerequisites
