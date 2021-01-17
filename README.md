@@ -36,11 +36,12 @@ JUSTGen is verified in following OS:
 
 1. clone the source code
 ```
-git clone https://github.com/sjmini/justgen.git
+# git clone https://github.com/sjmini/justgen.git
+# cd justgen
 ```
 2. build the source code via make command
 ```
-make
+# make
 ```
 slang.exe file will be generated.
 
