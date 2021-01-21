@@ -8,7 +8,7 @@ JUSTGen is verified in following OS:
 
 1. MacOS 10.13.5
 
-2. Linux 12.10
+2. Linux (Ubuntu 12.10)
 
 ## Structure
 1. test/rule : JNI specification expressed in our domain specific language
@@ -35,6 +35,8 @@ JUSTGen is verified in following OS:
 * Ocaml version 4.08.1
 * Opam 2.0.5
 * z3.4.8.1
+* dune 2.8.1
+* menhir 20201216
 
 ### Building JUSTGen
 
@@ -59,7 +61,8 @@ JUSTGen consists of two phases; 1) Finding unspecified cases in JNI specificatio
 Run the JUSTGen through <i>find_unspec</i> option.
 
 ```
-# export DYLD_LIBRARY_PATH=<z3 path>.opam/default/lib/z3/
+# export DYLD_LIBRARY_PATH=<z3 path>
+For artifact evaluation, the path is export DYLD_LIBRARY_PATH=/home/justgen/.opam/default/lib/z3/
 # ./slang.exe find_unspec |tee unspec_dsl
 ```
 By running above commands, JUSTGen finds unspecified cases and summaized the unspecified cases in unspec_dsl file
@@ -79,13 +82,45 @@ The test programs will be placed in test_case folder.
 #### Result
 Currently, the JNI specification expressed in our DSL defines 37 types and 105 refinement types. 
 Based on this JNI specification, the JUSTGen finds 34,990 unspecified cases.
-There will be 34,990 test programs in test_case folder.
+
+The unspecified cases can be found in <i>gen_result</i> file.
+```
+# cat gen_result
+//test0;Unspecified: CallBooleanMethod(JNIEnv*, jarray, jmethodID@isInThisClassM && isJBooleanM && isPrivateM && !isStaticM, ...)
+//test1;Unspecified: CallBooleanMethod(JNIEnv*, jbooleanArray@isNULLJZA, jmethodID@isInThisClassM && isJBooleanM && isPrivateM && !isStaticM, ...)
+//test2;Unspecified: CallBooleanMethod(JNIEnv*, jbooleanArray@!isNULLJZA, jmethodID@isInThisClassM && isJBooleanM && isPrivateM && !isStaticM, ...)
+...
+```
+There will be 34,990 test programs in <i>test_case</i> folder.
+```
+# ls test_case
+...
+test15230	test2048	test25729	test30978	test4736	test9986
+test15231	test20480	test2573	test30979	test4737	test9987
+test15232	test20481	test25730	test3098	test4738	test9988
+...
+```
+
+By running the generated test programs, you can test JNI behaviors of JVM!
 
 ## Artifact Evaluation
-### With provided docker image
+### With submitted VM Image
 
-### without docker image
+All the necessary sw packages are installed in this VM images.
+The tester only need to follow above instruction. (e.x. clone, make, find_unspec, gen_program)
 
+### Without VM image
+
+The necessary SW packages should be installed by tester manually.
+SW packages listed in <i>Prerequisites</i> are required. 
+It can be install with following commands:
+```
+tested in ubuntu 12.10
+sudo apt-get install opam
+opam install dune
+opam install menhir
+opam install z3.4.8.9
+```
 
 ## Publication
 ```
