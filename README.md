@@ -117,11 +117,21 @@ The necessary SW packages should be installed by tester manually.
 SW packages listed in <i>Prerequisites</i> are required. 
 It can be install with following commands:
 ```
-tested in ubuntu 12.10
+//tested in ubuntu 12.10
+sudo add-apt-repository ppa:avsm/ppa
+sudo apt update
 sudo apt-get install opam
 opam install dune
 opam install menhir
 opam install z3.4.8.9
+
+//Additionally following packages was required
+opam install ppx_compare 
+opam install ppx_sexp_conv
+sudo apt-get install libgmp-dev
+sudo apt-get install python
+opam install core
+sudo apt-get install libz3-dev
 ```
 
 ## Publication
