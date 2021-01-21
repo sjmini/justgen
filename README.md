@@ -8,7 +8,7 @@ JUSTGen is verified in following OS:
 
 1. MacOS 10.13.5
 
-2. Linux xxxxx
+2. Linux 12.10
 
 ## Structure
 1. test/rule : JNI specification expressed in our domain specific language
