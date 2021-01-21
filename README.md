@@ -101,7 +101,9 @@ test15232	test20481	test25730	test3098	test4738	test9988
 ...
 ```
 
-By running the generated test programs, you can test JNI behaviors of JVM!
+By running the generated test programs, you can test JNI behaviors of JVM.
+If you change the content of <i>test/rule</i> file according to the targeted specification, the justgen will find the new unspecified cases.
+Enjoy!
 
 ## Artifact Evaluation
 ### With submitted VM Image
