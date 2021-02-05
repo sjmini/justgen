@@ -1,0 +1,250 @@
+%\documentclass[10pt,conference]{IEEEtran}
+\documentclass[10pt]{article}
+%\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\usepackage{subfig}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage{makecell}
+\usepackage{hhline}
+
+\definecolor{amber}{rgb}{1.0, 0.49, 0.0}
+\newcommand\instancevector{\operatorname{\textit{Instance-of\textsubscript{v}}}}
+\newcommand\isvector{\operatorname{\textit{Is\textsubscript{v}}}}
+\newcommand{\followvector}[1]{\operatorname{\textit{Follows\textsuperscript{v}\textsubscript{spec\textsubscript{#1}}}}}
+
+\newtheorem{definition}{Definition}
+\newsavebox{\javaex}
+\newsavebox{\cex}
+\newcommand{\mytt}[1]{\texttt{\small #1}}
+
+
+\begin{document}
+\section{List of Segmentation Faults} 
+
+\subsection{Missing Type Check}
+\noindent \textbf{Call methods with a wrong receiver object:} 
+
+Calling a private function with java object that does not consist of the private function through {\tt call<type>method}, {\tt call<type>methodV}, {\tt call<type>methodA}.
+
+\vspace{3mm}
+\noindent \textbf{Define classes with a non classloader object:}
+
+Passing non classloader object when calling {\tt DefineClass}.
+
+\vspace{3mm}
+\noindent \textbf{Call reflect methods with a non reflect type object:}
+
+Passing non {\tt java.lang.reflect.Method} or {\tt java.lang.reflect.Constructor} when calling {\tt FromReflectedMethod}, and {\tt FromReflectedField}.
+
+\vspace{3mm}
+\noindent \textbf{Release unrelated strings:}
+
+Release a string by calling {\tt releaseCharArrayElements} which is not obtained by {\tt getCharArrayElements}.
+
+\subsection{Missing Null Check}
+
+\vspace{3mm}
+\noindent \textbf{Call methods with null arguments:}
+
+Missing null check of jvalue when calling {\tt Call<type>methodA}, {\tt CallNonvirtual<type>MethodA}, {\tt CallStatic<type>methodA}.
+
+\vspace{3mm}
+\noindent \textbf{Obtain/Set static fields with a null field ID:}
+
+Missing null check of static jfieldID when calling {\tt getStatic<type>Field}, {\tt setStatic<type>field}
+
+\vspace{3mm}
+\noindent \textbf{Obtain strings with a null destination buffer:}
+
+Missing null check of destination buffer when calling {\tt GetStringUTFRegion}, {\tt GetStringRegion} 
+
+\vspace{3mm}
+\noindent \textbf{Generate new strings with a null source buffer:}
+
+Missing null check of source string when calling {\tt NewString}
+
+\vspace{3mm}
+\noindent \textbf{Call methods with a null method ID:}
+
+Missing null check of jmethodID when calling {\tt call<type>method}, {\tt call<type>methodV}, {\tt call<type>methodA} 
+
+\vspace{3mm}
+\noindent \textbf{Define classes with a name as null value:}
+
+Missing null check of name of the class when calling {\tt DefineClass}
+
+\vspace{3mm}
+\noindent \textbf{Obtain fields and methods ID with a signature as null value:}
+
+Missing null check of field signature when calling {\tt GetFieldID}, {\tt GetStaticFieldID}, and
+missing null check of method signature when calling {\tt GetStaticMethodID}, {\tt GetMethodID}.
+
+\vspace{3mm}
+\noindent \textbf{Obtain fields with a null receiver object:}
+
+Missing null check of jobject when calling {\tt GetObjectField}.
+
+\vspace{3mm}
+\noindent \textbf{Obtain field/method IDs and class from a null object:}
+
+Missing null check of jobject when calling {\tt FromReflectedField}, {\tt GetObjectClass}, {\tt FromReflectedMethod}
+
+
+\section{Differences between JVMs}
+\subsection{Missing Type Check}
+
+\vspace{3mm}
+\noindent \textbf{Define classes with a non classloader object:}
+
+Passing non-classloader object when calling {\tt DefineClass}
+
+\vspace{3mm}
+\noindent \textbf{Obtain/update non-static fields with a static field ID:}
+
+Passing non-static field ID when calling {\tt GetStatic<type>Field},and {\tt SetStatic<type>Field}.
+
+\vspace{3mm}
+\noindent \textbf{Obtain/update static fields with a non-static field ID}
+
+Passing static field ID when calling {\tt Get<type>Field},and {\tt Set<type>Field}.
+
+\vspace{3mm}
+\noindent \textbf{Obtain classes with a bad class descriptor}
+
+Passing field signature as a class name when calling {\tt FindClass}.
+
+\vspace{3mm}
+\noindent \textbf{Throw exceptions with non-throwable objects}
+
+Passing non-throwable object when calling {\tt ThrowNew}.
+
+\vspace{3mm}
+\noindent \textbf{Call a private function with a receiver object that does not consist of the private function}
+
+Call Java function with wrong type of method ID.
+e.x. Calling {\tt CallBooleanMethod} with jmethod ID of Int return type function.
+
+\vspace{3mm}
+\noindent \textbf{Create Object with array classes}
+
+Passing array class when calling {\tt NewObject}.
+
+\vspace{3mm}
+\noindent \textbf{Create Object with a non-constructor method ID}
+
+Passing non-constructor method ID when calling {\tt NewObject}.
+
+\vspace{3mm}
+\noindent \textbf{Obtain field IDs with not subtype of java/lang/reflect/Field object}
+
+Passing non-java.lang.reflect.field type object when calling {\tt FromReflectedField}.
+
+\vspace{3mm}
+\noindent \textbf{Call methods with a wrong type of receiver}
+
+Calling a private function with java object that does not consist of the private function through {\tt call<type>method}, {\tt call<type>methodV}, {\tt call<type>methodA}.
+
+\vspace{3mm}
+\noindent \textbf{Release unrelated array elements}
+
+Release a string by calling releaseCharArrayElements which is not obtained by getCharArrayElements.
+
+\subsection{Missing Null Check}
+\vspace{3mm}
+\noindent \textbf{Call methods with a null method ID}
+
+Passing null jmethodID when calling {\tt Call<type>Method}.
+
+\vspace{3mm}
+\noindent \textbf{Create Objects with a null method ID}
+
+Passing null jmethodID when calling {\tt NewObject}.
+
+\vspace{3mm}
+\noindent \textbf{Obtain fields with a null receiver object}
+
+Passing null jboject when calling {\tt Get<type>Field}.
+
+\vspace{3mm}
+\noindent \textbf{Call methods with a null receiver object}
+
+Second argument of {\tt Call<type>Method} is null.
+
+\vspace{3mm}
+\noindent \textbf{Obtain field IDs with a null reflected object}
+
+Second argument of {\tt FromReflectedField} is null.
+
+\vspace{3mm}
+\noindent \textbf{Obtain method IDs with a null reflected object}
+
+Second argument of {\tt FromReflectedMethod} is null.
+
+\vspace{3mm}
+\noindent \textbf{Obtain field IDs with a field signature as null value}
+
+Forth argument of {\tt GetFieldID} is null.
+
+\vspace{3mm}
+\noindent \textbf{Obtain field IDs  with a field name as null value}
+
+Third argument of {\tt GetFieldID} is null.
+
+\vspace{3mm}
+\noindent \textbf{Obtain method IDs with a method signature as null value}
+
+Forth argument of {\tt GetMethodID} is null.
+
+\vspace{3mm}
+\noindent \textbf{Obtain method IDs  with a method name as null value}
+
+Third argument of {\tt GetMethodID} is null.
+
+\vspace{3mm}
+\noindent \textbf{Release null string}
+Third argument of {\tt ReleaseStringChars} is null.
+
+\vspace{3mm}
+\noindent \textbf{Obtain object from a non-existing local frame on the stack}
+
+Get local reference object when there is no local frame on stack by calling {\tt PopLocalFrame}
+
+\subsection{Missing Garbage Check}
+\vspace{3mm}
+\noindent \textbf{Obtain a reference type of deleted objects}
+
+Passing deleted object as second argument of {\tt GetObjectRefType}.
+
+\vspace{3mm}
+\noindent \textbf{Store deleted objects into an array element}
+
+Passing deleted object as forth argument of {\tt SetObjectArrayElement}.
+
+
+\subsection{Missing Negative Integer Check}
+
+\vspace{3mm}
+\noindent \textbf{Create negative capacity of a local reference frame}
+
+Passing negative number as second argument of {\tt EnsureLocalCapacity}.
+
+\vspace{3mm}
+\noindent \textbf{Access negative index of array elements}
+
+Passing negative number as third argument of {\tt GetByteArrayRegion}, and {\tt SetCharArrayRegion}.
+
+
+\end{document}
