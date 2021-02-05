@@ -134,6 +134,50 @@ opam install core
 sudo apt-get install libz3-dev
 ```
 
+## Bug Reports
+JUSTGen found bugs and limitations in JVMs and they are fixed by JVM vendors
+
+https://github.com/eclipse/openj9/issues/10183
+
+https://github.com/eclipse/openj9/issues/9452
+
+https://github.com/eclipse/openj9/issues/10191
+
+https://github.com/eclipse/openj9/issues/10210
+
+https://github.com/eclipse/openj9/issues/10231
+
+https://github.com/eclipse/openj9/issues/10272
+
+https://github.com/eclipse/openj9/issues/10286
+
+https://github.com/eclipse/openj9/issues/10310
+
+https://github.com/eclipse/openj9/issues/10318
+
+https://github.com/eclipse/openj9/issues/10473
+
+https://github.com/eclipse/openj9/issues/10476
+
+https://github.com/eclipse/openj9/issues/10477
+
+https://github.com/eclipse/openj9/issues/10479
+
+https://github.com/eclipse/openj9/issues/10480
+
+https://github.com/oracle/graal/issues/2815
+
+https://github.com/corretto/corretto-11/issues/128
+
+https://github.com/eclipse/openj9/issues/10481
+
+https://github.com/eclipse/openj9/issues/10481
+
+https://github.com/eclipse/openj9/issues/10484
+
+https://github.com/eclipse/openj9/issues/10484
+
+
 ## Publication
 ```
 JUSTGen: Effective Test Generation for Unspecified JNI Behaviors on JVMs. IEEE/ACM 43nd International Conference on Software Engineering, Madrid, Spain, 23-29 May 2021.
