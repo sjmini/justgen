@@ -1,4 +1,4 @@
-# JUSTGen 
+# JUSTGen [![DOI](https://zenodo.org/badge/329328931.svg)](https://zenodo.org/badge/latestdoi/329328931)
 
 This repository provides the tool for the paper "JUSTGen: Effective Test Generation for Unspecified JNI Behaviors on JVMs" accepted at ICSE 2021.
 
