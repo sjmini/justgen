@@ -37,6 +37,7 @@ sudo apt-get install libgmp-dev
 sudo apt-get install python
 opam install core
 sudo apt-get install libz3-dev
+opam install parmap
 ```
 
 
