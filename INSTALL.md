@@ -118,3 +118,5 @@ ID: justgen
 
 PW: 1234
 
+If you encounter Digest mismatch (VERR_NOT_EQUAL) error while importing the vm image, please try to not to mount disk as VDI. (unckeck 'import hard drives as VDI' checkbox).
+
