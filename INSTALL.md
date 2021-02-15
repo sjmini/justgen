@@ -6,7 +6,7 @@ JUSTGen is verified in following OS:
 
 1. MacOS 10.13.5
 
-2. Linux (Ubuntu 12.10)
+2. Linux (Ubuntu 20.10)
 
 
 ### Prerequisites
@@ -22,7 +22,7 @@ The necessary SW packages should be installed by tester manually.
 SW packages listed in <i>Prerequisites</i> are required. 
 It can be install with following commands:
 ```
-//tested in ubuntu 12.10
+//tested in ubuntu 20.10
 sudo add-apt-repository ppa:avsm/ppa
 sudo apt update
 sudo apt-get install opam
