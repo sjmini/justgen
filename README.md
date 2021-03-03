@@ -172,10 +172,6 @@ https://github.com/corretto/corretto-11/issues/128
 
 https://github.com/eclipse/openj9/issues/10481
 
-https://github.com/eclipse/openj9/issues/10481
-
-https://github.com/eclipse/openj9/issues/10484
-
 https://github.com/eclipse/openj9/issues/10484
 
 
