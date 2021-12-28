@@ -167,6 +167,80 @@ char *leaf_char_PTR_RisClassSigC(JNIEnv *env, const char *used_in, const char *r
         exit(EXIT_FAILURE);
     }
 }
+//for diff
+jint leaf_jint_RisNegativeJI(JNIEnv *env, const char *used_in, const char *refinement) {
+    return -1;
+}
+
+jsize leaf_jsize_RNot_isZeorE(JNIEnv *env, const char *used_in, const char *refinement) {
+  return 3;
+}
+
+jsize leaf_jsize_RisZeorE(JNIEnv *env, const char *used_in, const char *refinement) {
+  return 0;
+}
+
+jsize leaf_jsize_RisNegativeE(JNIEnv *env, const char *used_in, const char *refinement) {
+  return -5;
+}
+
+jsize leaf_jsize_RisPositiveE(JNIEnv *env, const char *used_in, const char *refinement) {
+  return 1;
+}
+
+jboolean *leaf_jboolean_PTR_RNot_isGetBooleanArrayElements(JNIEnv *env, const char *used_in, const char *refinement){
+  return malloc(ARRAY_SIZE * sizeof(jboolean));
+}
+jbyte *leaf_jbyte_PTR_RNot_isGetByteArrayElements(JNIEnv *env, const char *used_in, const char *refinement){
+  return malloc(ARRAY_SIZE * sizeof(jbyte));
+}
+jchar *leaf_jchar_PTR_RNot_isGetCharArrayElementsJC(JNIEnv *env, const char *used_in, const char *refinement){
+  return malloc(ARRAY_SIZE * sizeof(jchar));
+}
+jdouble *leaf_jdouble_PTR_RNot_isGetDoubleArrayElements(JNIEnv *env, const char *used_in, const char *refinement){
+  return malloc(ARRAY_SIZE * sizeof(jdouble));
+}
+jfloat *leaf_jfloat_PTR_RNot_isGetFloatArrayElements(JNIEnv *env, const char *used_in, const char *refinement){
+  return malloc(ARRAY_SIZE * sizeof(jfloat));
+}
+jint *leaf_jint_PTR_RNot_isGetIntArrayElements(JNIEnv *env, const char *used_in, const char *refinement){
+  return malloc(ARRAY_SIZE * sizeof(jint));
+}
+jlong *leaf_jlong_PTR_RNot_isGetLongArrayElements(JNIEnv *env, const char *used_in, const char *refinement){
+  return malloc(ARRAY_SIZE * sizeof(jlong));
+}
+jshort *leaf_jshort_PTR_RNot_isGetShortArrayElements(JNIEnv *env, const char *used_in, const char *refinement){
+  return malloc(ARRAY_SIZE * sizeof(jshort));
+}
+
+jchar *leaf_jchar_PTR_RisUnicodeJC_RNot_isGetStringCharsJC(JNIEnv *env, const char *used_in, const char *refinement){
+        //jstring res = (*env)->NewString(env,"HSJTEST",6);
+        //assert(res != NULL && "JNI_Test_Gen_Fail");
+        return "HSJTEST"; 
+}
+
+jchar *leaf_jchar_PTR_RisUnicodeJC_RNot_isGetStringCriticalJC(JNIEnv *env, const char *used_in, const char *refinement){
+  return "HSJTEST";
+}
+
+char *leaf_char_PTR_RisUTF8C_RNot_isGetStringUTFCharC(JNIEnv *env, const char *used_in, const char *refinement){
+  return "HSJTEST";
+}
+
+void *leaf_void_PTR_RNot_isGetPrimitiveArrayCritical(JNIEnv *env, const char *used_in, const char *refinement){
+    jintArray res = (*env)->NewIntArray(env, ARRAY_SIZE);
+    assert(res != NULL && "JNI_Test_Gen_Fail");
+    return res; 
+}
+
+jmethodID leaf_jmethodID_RNot_isInitM(JNIEnv *env, const char *used_in, const char *refinement){
+    jclass clazz = (*env)->FindClass(env, "Class1");
+    assert(clazz != NULL && "JNI_Test_Gen_Fail");
+    
+    jmethodID methodID = (*env)->GetMethodID(env, clazz, "publicIntMethod1", "(I)I");
+    assert(methodID != NULL && "JNI_Test_Gen_Fail");
+    return methodID;
+}
 
 
 //for spec
