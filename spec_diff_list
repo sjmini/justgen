@@ -1,1543 +1,1167 @@
 Done.
 
-//test0;Unspecified: GetObjectRefType(JNIEnv*, jobject@isNULLO)
+//test0;Unspecified: GetObjectRefType(JNIEnv*@isNULLEnv, jobject@isLocalO && !isDeletedO)
 
-//test1;Unspecified: GetObjectRefType(JNIEnv*@isNULLEnv, jobject@isLocalO && !isDeletedO)
+//test1;Unspecified: GetStringUTFChars(JNIEnv*, jstring@isNULLS, jboolean*@!isNULLJB)
 
-//test2;Unspecified: GetStringUTFChars(JNIEnv*, jstring, jboolean*@isNULLJB)
+//test2;Unspecified: GetStringUTFChars(JNIEnv*@isNULLEnv, jstring, jboolean*@!isNULLJB)
 
-//test3;Unspecified: GetStringUTFChars(JNIEnv*, jstring@isNULLS, jboolean*@isNULLJB)
+//test3;Unspecified: CallBooleanMethod(JNIEnv*, jobject@isNULLO, jmethodID@isJBooleanM && !isPrivateM && !isStaticM, ...)
 
-//test4;Unspecified: GetStringUTFChars(JNIEnv*, jstring@isNULLS, jboolean*@!isNULLJB)
+//test4;Unspecified: CallBooleanMethod(JNIEnv*@isNULLEnv, jobject, jmethodID@isJBooleanM && !isPrivateM && !isStaticM, ...)
 
-//test5;Unspecified: GetStringUTFChars(JNIEnv*@isNULLEnv, jstring, jboolean*@isNULLJB)
+//test5;Unspecified: CallBooleanMethodA(JNIEnv*, jobject@isNULLO, jmethodID@isJBooleanM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test6;Unspecified: GetStringUTFChars(JNIEnv*@isNULLEnv, jstring, jboolean*@!isNULLJB)
+//test6;Unspecified: CallBooleanMethodA(JNIEnv*@isNULLEnv, jobject, jmethodID@isJBooleanM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test7;Unspecified: CallBooleanMethod(JNIEnv*, jobject, jmethodID@isJDoubleM && isStaticM && !isPrivateM, ...)
+//test7;Unspecified: CallBooleanMethodV(JNIEnv*, jobject@isNULLO, jmethodID@isJBooleanM && !isPrivateM && !isStaticM, va_list)
 
-//test8;Unspecified: CallBooleanMethod(JNIEnv*, jobject, jmethodID@isNULLM, ...)
+//test8;Unspecified: CallBooleanMethodV(JNIEnv*@isNULLEnv, jobject, jmethodID@isJBooleanM && !isPrivateM && !isStaticM, va_list)
 
-//test9;Unspecified: CallBooleanMethod(JNIEnv*, jobject@isNULLO, jmethodID@isJBooleanM && !isPrivateM && !isStaticM, ...)
+//test9;Unspecified: CallNonvirtualBooleanMethod(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJBooleanM && !isStaticM, ...)
 
-//test10;Unspecified: CallBooleanMethod(JNIEnv*@isNULLEnv, jobject, jmethodID@isJBooleanM && !isPrivateM && !isStaticM, ...)
+//test10;Unspecified: CallNonvirtualBooleanMethod(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJBooleanM && !isStaticM, ...)
 
-//test11;Unspecified: CallBooleanMethodA(JNIEnv*, jobject, jmethodID@isJCharM && isStaticM && !isPrivateM, jvalue*@isArrayPtrJV)
+//test11;Unspecified: CallNonvirtualBooleanMethod(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJBooleanM && !isStaticM, ...)
 
-//test12;Unspecified: CallBooleanMethodA(JNIEnv*, jobject, jmethodID@isNULLM, jvalue*@isArrayPtrJV)
+//test12;Unspecified: CallNonvirtualBooleanMethodA(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJBooleanM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test13;Unspecified: CallBooleanMethodA(JNIEnv*, jobject@isNULLO, jmethodID@isJBooleanM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
+//test13;Unspecified: CallNonvirtualBooleanMethodA(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJBooleanM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test14;Unspecified: CallBooleanMethodA(JNIEnv*@isNULLEnv, jobject, jmethodID@isJBooleanM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
+//test14;Unspecified: CallNonvirtualBooleanMethodA(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJBooleanM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test15;Unspecified: CallBooleanMethodV(JNIEnv*, jobject, jmethodID@isJCharM && isStaticM && !isPrivateM, va_list)
+//test15;Unspecified: CallNonvirtualBooleanMethodV(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJBooleanM && !isStaticM, va_list)
 
-//test16;Unspecified: CallBooleanMethodV(JNIEnv*, jobject, jmethodID@isNULLM, va_list)
+//test16;Unspecified: CallNonvirtualBooleanMethodV(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJBooleanM && !isStaticM, va_list)
 
-//test17;Unspecified: CallBooleanMethodV(JNIEnv*, jobject@isNULLO, jmethodID@isJBooleanM && !isPrivateM && !isStaticM, va_list)
+//test17;Unspecified: CallNonvirtualBooleanMethodV(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJBooleanM && !isStaticM, va_list)
 
-//test18;Unspecified: CallBooleanMethodV(JNIEnv*@isNULLEnv, jobject, jmethodID@isJBooleanM && !isPrivateM && !isStaticM, va_list)
+//test18;Unspecified: CallStaticBooleanMethod(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJBooleanM && isStaticM, ...)
 
-//test19;Unspecified: CallNonvirtualBooleanMethod(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJBooleanM && !isStaticM, ...)
+//test19;Unspecified: CallStaticBooleanMethod(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJBooleanM && isStaticM, ...)
 
-//test20;Unspecified: CallNonvirtualBooleanMethod(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJBooleanM && !isStaticM, ...)
+//test20;Unspecified: CallStaticBooleanMethodA(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJBooleanM && isStaticM, jvalue*@isArrayPtrJV)
 
-//test21;Unspecified: CallNonvirtualBooleanMethod(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJBooleanM && !isStaticM, ...)
+//test21;Unspecified: CallStaticBooleanMethodA(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJBooleanM && isStaticM, jvalue*@isArrayPtrJV)
 
-//test22;Unspecified: CallNonvirtualBooleanMethodA(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJBooleanM && !isStaticM, jvalue*@isArrayPtrJV)
+//test22;Unspecified: CallStaticBooleanMethodV(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJBooleanM && isStaticM, va_list)
 
-//test23;Unspecified: CallNonvirtualBooleanMethodA(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJBooleanM && !isStaticM, jvalue*@isArrayPtrJV)
+//test23;Unspecified: CallStaticBooleanMethodV(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJBooleanM && isStaticM, va_list)
 
-//test24;Unspecified: CallNonvirtualBooleanMethodA(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJBooleanM && !isStaticM, jvalue*@isArrayPtrJV)
+//test24;Unspecified: ExceptionCheck(JNIEnv*@isNULLEnv)
 
-//test25;Unspecified: CallNonvirtualBooleanMethodV(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJBooleanM && !isStaticM, va_list)
+//test25;Unspecified: GetBooleanField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF)
 
-//test26;Unspecified: CallNonvirtualBooleanMethodV(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJBooleanM && !isStaticM, va_list)
+//test26;Unspecified: GetStaticBooleanField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF)
 
-//test27;Unspecified: CallNonvirtualBooleanMethodV(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJBooleanM && !isStaticM, va_list)
+//test27;Unspecified: GetStaticBooleanField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF)
 
-//test28;Unspecified: CallStaticBooleanMethod(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, ...)
+//test28;Unspecified: IsAssignableFrom(JNIEnv*, jclass, jclass@isNULLCL)
 
-//test29;Unspecified: CallStaticBooleanMethod(JNIEnv*, jclass, jmethodID@isNULLM, ...)
+//test29;Unspecified: IsAssignableFrom(JNIEnv*, jclass@isNULLCL, jclass)
 
-//test30;Unspecified: CallStaticBooleanMethod(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJBooleanM && isStaticM, ...)
+//test30;Unspecified: IsAssignableFrom(JNIEnv*@isNULLEnv, jclass, jclass)
 
-//test31;Unspecified: CallStaticBooleanMethod(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJBooleanM && isStaticM, ...)
+//test31;Unspecified: IsInstanceOf(JNIEnv*, jobject, jclass@isNULLCL)
 
-//test32;Unspecified: CallStaticBooleanMethodA(JNIEnv*, jclass, jmethodID@isInThisClassM && isJCharM && !isStaticM, jvalue*@isArrayPtrJV)
+//test32;Unspecified: IsInstanceOf(JNIEnv*@isNULLEnv, jobject, jclass)
 
-//test33;Unspecified: CallStaticBooleanMethodA(JNIEnv*, jclass, jmethodID@isNULLM, jvalue*@isArrayPtrJV)
+//test33;Unspecified: IsSameObject(JNIEnv*@isNULLEnv, jobject, jobject)
 
-//test34;Unspecified: CallStaticBooleanMethodA(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJBooleanM && isStaticM, jvalue*@isArrayPtrJV)
+//test34;Unspecified: NewBooleanArray(JNIEnv*, jsize@isNegativeE)
 
-//test35;Unspecified: CallStaticBooleanMethodA(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJBooleanM && isStaticM, jvalue*@isArrayPtrJV)
+//test35;Unspecified: NewBooleanArray(JNIEnv*@isNULLEnv, jsize@isPositiveE)
 
-//test36;Unspecified: CallStaticBooleanMethodV(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, va_list)
+//test36;Unspecified: GetBooleanArrayElements(JNIEnv*, jbooleanArray@isNULLJZA, jboolean*)
 
-//test37;Unspecified: CallStaticBooleanMethodV(JNIEnv*, jclass, jmethodID@isNULLM, va_list)
+//test37;Unspecified: GetBooleanArrayElements(JNIEnv*@isNULLEnv, jbooleanArray, jboolean*)
 
-//test38;Unspecified: CallStaticBooleanMethodV(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJBooleanM && isStaticM, va_list)
+//test38;Unspecified: CallByteMethod(JNIEnv*, jobject@isNULLO, jmethodID@isJByteM && !isPrivateM && !isStaticM, ...)
 
-//test39;Unspecified: CallStaticBooleanMethodV(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJBooleanM && isStaticM, va_list)
+//test39;Unspecified: CallByteMethod(JNIEnv*@isNULLEnv, jobject, jmethodID@isJByteM && !isPrivateM && !isStaticM, ...)
 
-//test40;Unspecified: ExceptionCheck(JNIEnv*@isNULLEnv)
+//test40;Unspecified: CallByteMethodA(JNIEnv*, jobject@isNULLO, jmethodID@isJByteM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test41;Unspecified: GetBooleanField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF)
+//test41;Unspecified: CallByteMethodA(JNIEnv*@isNULLEnv, jobject, jmethodID@isJByteM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test42;Unspecified: GetStaticBooleanField(JNIEnv*, jclass, jfieldID@isNULLF)
+//test42;Unspecified: CallByteMethodV(JNIEnv*, jobject@isNULLO, jmethodID@isJByteM && !isPrivateM && !isStaticM, va_list)
 
-//test43;Unspecified: GetStaticBooleanField(JNIEnv*, jclass, jfieldID@!isStaticF)
+//test43;Unspecified: CallByteMethodV(JNIEnv*@isNULLEnv, jobject, jmethodID@isJByteM && !isPrivateM && !isStaticM, va_list)
 
-//test44;Unspecified: GetStaticBooleanField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF)
+//test44;Unspecified: CallNonvirtualByteMethod(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJByteM && !isStaticM, ...)
 
-//test45;Unspecified: GetStaticBooleanField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF)
+//test45;Unspecified: CallNonvirtualByteMethod(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJByteM && !isStaticM, ...)
 
-//test46;Unspecified: IsAssignableFrom(JNIEnv*@isNULLEnv, jclass@isNULLCL, jclass@isNULLCL)
+//test46;Unspecified: CallNonvirtualByteMethod(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJByteM && !isStaticM, ...)
 
-//test47;Unspecified: IsInstanceOf(JNIEnv*, jobject, jclass@isNULLCL)
+//test47;Unspecified: CallNonvirtualByteMethodA(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJByteM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test48;Unspecified: IsInstanceOf(JNIEnv*, jobject@isNULLO, jclass)
+//test48;Unspecified: CallNonvirtualByteMethodA(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJByteM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test49;Unspecified: IsInstanceOf(JNIEnv*@isNULLEnv, jobject, jclass)
+//test49;Unspecified: CallNonvirtualByteMethodA(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJByteM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test50;Unspecified: IsSameObject(JNIEnv*, jobject, jobject@isNULLO)
+//test50;Unspecified: CallNonvirtualByteMethodV(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJByteM && !isStaticM, va_list)
 
-//test51;Unspecified: IsSameObject(JNIEnv*, jobject@isNULLO, jobject)
+//test51;Unspecified: CallNonvirtualByteMethodV(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJByteM && !isStaticM, va_list)
 
-//test52;Unspecified: IsSameObject(JNIEnv*@isNULLEnv, jobject, jobject)
+//test52;Unspecified: CallNonvirtualByteMethodV(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJByteM && !isStaticM, va_list)
 
-//test53;Unspecified: NewBooleanArray(JNIEnv*, jsize@isNegativeE)
+//test53;Unspecified: CallStaticByteMethod(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJByteM && isStaticM, ...)
 
-//test54;Unspecified: NewBooleanArray(JNIEnv*@isNULLEnv, jsize)
+//test54;Unspecified: CallStaticByteMethod(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJByteM && isStaticM, ...)
 
-//test55;Unspecified: GetBooleanArrayElements(JNIEnv*, jbooleanArray, jboolean*@isNULLJB)
+//test55;Unspecified: CallStaticByteMethodA(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJByteM && isStaticM, jvalue*@isArrayPtrJV)
 
-//test56;Unspecified: GetBooleanArrayElements(JNIEnv*, jbooleanArray@isNULLJZA, jboolean*)
+//test56;Unspecified: CallStaticByteMethodA(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJByteM && isStaticM, jvalue*@isArrayPtrJV)
 
-//test57;Unspecified: GetBooleanArrayElements(JNIEnv*@isNULLEnv, jbooleanArray, jboolean*)
+//test57;Unspecified: CallStaticByteMethodV(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJByteM && isStaticM, va_list)
 
-//test58;Unspecified: CallByteMethod(JNIEnv*, jobject, jmethodID@isNULLM, ...)
+//test58;Unspecified: CallStaticByteMethodV(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJByteM && isStaticM, va_list)
 
-//test59;Unspecified: CallByteMethod(JNIEnv*, jobject, jmethodID@isStaticM && isVoidM && !isPrivateM, ...)
+//test59;Unspecified: GetByteField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF)
 
-//test60;Unspecified: CallByteMethod(JNIEnv*, jobject@isNULLO, jmethodID@isJByteM && !isPrivateM && !isStaticM, ...)
+//test60;Unspecified: GetStaticByteField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF)
 
-//test61;Unspecified: CallByteMethod(JNIEnv*@isNULLEnv, jobject, jmethodID@isJByteM && !isPrivateM && !isStaticM, ...)
+//test61;Unspecified: GetStaticByteField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF)
 
-//test62;Unspecified: CallByteMethodA(JNIEnv*, jobject, jmethodID@isJBooleanM && isStaticM && !isPrivateM, jvalue*@isArrayPtrJV)
+//test62;Unspecified: NewByteArray(JNIEnv*, jsize@isNegativeE)
 
-//test63;Unspecified: CallByteMethodA(JNIEnv*, jobject, jmethodID@isNULLM, jvalue*@isArrayPtrJV)
+//test63;Unspecified: NewByteArray(JNIEnv*@isNULLEnv, jsize@isPositiveE)
 
-//test64;Unspecified: CallByteMethodA(JNIEnv*, jobject@isNULLO, jmethodID@isJByteM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
+//test64;Unspecified: GetByteArrayElements(JNIEnv*, jbyteArray@isNULLJBA, jboolean*)
 
-//test65;Unspecified: CallByteMethodA(JNIEnv*@isNULLEnv, jobject, jmethodID@isJByteM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
+//test65;Unspecified: GetByteArrayElements(JNIEnv*@isNULLEnv, jbyteArray, jboolean*)
 
-//test66;Unspecified: CallByteMethodV(JNIEnv*, jobject, jmethodID@isJBooleanM && isStaticM && !isPrivateM, va_list)
+//test66;Unspecified: CallCharMethod(JNIEnv*, jobject@isNULLO, jmethodID@isJCharM && !isPrivateM && !isStaticM, ...)
 
-//test67;Unspecified: CallByteMethodV(JNIEnv*, jobject, jmethodID@isNULLM, va_list)
+//test67;Unspecified: CallCharMethod(JNIEnv*@isNULLEnv, jobject, jmethodID@isJCharM && !isPrivateM && !isStaticM, ...)
 
-//test68;Unspecified: CallByteMethodV(JNIEnv*, jobject@isNULLO, jmethodID@isJByteM && !isPrivateM && !isStaticM, va_list)
+//test68;Unspecified: CallCharMethodA(JNIEnv*, jobject@isNULLO, jmethodID@isJCharM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test69;Unspecified: CallByteMethodV(JNIEnv*@isNULLEnv, jobject, jmethodID@isJByteM && !isPrivateM && !isStaticM, va_list)
+//test69;Unspecified: CallCharMethodA(JNIEnv*@isNULLEnv, jobject, jmethodID@isJCharM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test70;Unspecified: CallNonvirtualByteMethod(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJByteM && !isStaticM, ...)
+//test70;Unspecified: CallCharMethodV(JNIEnv*, jobject@isNULLO, jmethodID@isJCharM && !isPrivateM && !isStaticM, va_list)
 
-//test71;Unspecified: CallNonvirtualByteMethod(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJByteM && !isStaticM, ...)
+//test71;Unspecified: CallCharMethodV(JNIEnv*@isNULLEnv, jobject, jmethodID@isJCharM && !isPrivateM && !isStaticM, va_list)
 
-//test72;Unspecified: CallNonvirtualByteMethod(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJByteM && !isStaticM, ...)
+//test72;Unspecified: CallNonvirtualCharMethod(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJCharM && !isStaticM, ...)
 
-//test73;Unspecified: CallNonvirtualByteMethodA(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJByteM && !isStaticM, jvalue*@isArrayPtrJV)
+//test73;Unspecified: CallNonvirtualCharMethod(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJCharM && !isStaticM, ...)
 
-//test74;Unspecified: CallNonvirtualByteMethodA(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJByteM && !isStaticM, jvalue*@isArrayPtrJV)
+//test74;Unspecified: CallNonvirtualCharMethod(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJCharM && !isStaticM, ...)
 
-//test75;Unspecified: CallNonvirtualByteMethodA(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJByteM && !isStaticM, jvalue*@isArrayPtrJV)
+//test75;Unspecified: CallNonvirtualCharMethodA(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJCharM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test76;Unspecified: CallNonvirtualByteMethodV(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJByteM && !isStaticM, va_list)
+//test76;Unspecified: CallNonvirtualCharMethodA(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJCharM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test77;Unspecified: CallNonvirtualByteMethodV(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJByteM && !isStaticM, va_list)
+//test77;Unspecified: CallNonvirtualCharMethodA(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJCharM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test78;Unspecified: CallNonvirtualByteMethodV(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJByteM && !isStaticM, va_list)
+//test78;Unspecified: CallNonvirtualCharMethodV(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJCharM && !isStaticM, va_list)
 
-//test79;Unspecified: CallStaticByteMethod(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, ...)
+//test79;Unspecified: CallNonvirtualCharMethodV(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJCharM && !isStaticM, va_list)
 
-//test80;Unspecified: CallStaticByteMethod(JNIEnv*, jclass, jmethodID@isNULLM, ...)
+//test80;Unspecified: CallNonvirtualCharMethodV(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJCharM && !isStaticM, va_list)
 
-//test81;Unspecified: CallStaticByteMethod(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJByteM && isStaticM, ...)
+//test81;Unspecified: CallStaticCharMethod(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJCharM && isStaticM, ...)
 
-//test82;Unspecified: CallStaticByteMethod(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJByteM && isStaticM, ...)
+//test82;Unspecified: CallStaticCharMethod(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJCharM && isStaticM, ...)
 
-//test83;Unspecified: CallStaticByteMethodA(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, jvalue*@isArrayPtrJV)
+//test83;Unspecified: CallStaticCharMethodA(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJCharM && isStaticM, jvalue*@isArrayPtrJV)
 
-//test84;Unspecified: CallStaticByteMethodA(JNIEnv*, jclass, jmethodID@isNULLM, jvalue*@isArrayPtrJV)
+//test84;Unspecified: CallStaticCharMethodA(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJCharM && isStaticM, jvalue*@isArrayPtrJV)
 
-//test85;Unspecified: CallStaticByteMethodA(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJByteM && isStaticM, jvalue*@isArrayPtrJV)
+//test85;Unspecified: CallStaticCharMethodV(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJCharM && isStaticM, va_list)
 
-//test86;Unspecified: CallStaticByteMethodA(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJByteM && isStaticM, jvalue*@isArrayPtrJV)
+//test86;Unspecified: CallStaticCharMethodV(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJCharM && isStaticM, va_list)
 
-//test87;Unspecified: CallStaticByteMethodV(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, va_list)
+//test87;Unspecified: GetCharField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF)
 
-//test88;Unspecified: CallStaticByteMethodV(JNIEnv*, jclass, jmethodID@isNULLM, va_list)
+//test88;Unspecified: GetStaticCharField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF)
 
-//test89;Unspecified: CallStaticByteMethodV(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJByteM && isStaticM, va_list)
+//test89;Unspecified: GetStaticCharField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF)
 
-//test90;Unspecified: CallStaticByteMethodV(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJByteM && isStaticM, va_list)
+//test90;Unspecified: NewCharArray(JNIEnv*, jsize@isNegativeE)
 
-//test91;Unspecified: GetByteField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF)
+//test91;Unspecified: NewCharArray(JNIEnv*@isNULLEnv, jsize@isPositiveE)
 
-//test92;Unspecified: GetStaticByteField(JNIEnv*, jclass, jfieldID@isNULLF)
+//test92;Unspecified: GetCharArrayElements(JNIEnv*, jcharArray@isNULLJCA, jboolean*)
 
-//test93;Unspecified: GetStaticByteField(JNIEnv*, jclass, jfieldID@!isStaticF)
+//test93;Unspecified: GetCharArrayElements(JNIEnv*@isNULLEnv, jcharArray, jboolean*)
 
-//test94;Unspecified: GetStaticByteField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF)
+//test94;Unspecified: GetStringChars(JNIEnv*, jstring@isNULLS, jboolean*@isNULLJB)
 
-//test95;Unspecified: GetStaticByteField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF)
+//test95;Unspecified: GetStringChars(JNIEnv*, jstring@isNULLS, jboolean*@!isNULLJB)
 
-//test96;Unspecified: NewByteArray(JNIEnv*, jsize@isNegativeE)
+//test96;Unspecified: GetStringChars(JNIEnv*@isNULLEnv, jstring, jboolean*@isNULLJB)
 
-//test97;Unspecified: NewByteArray(JNIEnv*@isNULLEnv, jsize)
+//test97;Unspecified: GetStringChars(JNIEnv*@isNULLEnv, jstring, jboolean*@!isNULLJB)
 
-//test98;Unspecified: GetByteArrayElements(JNIEnv*, jbyteArray, jboolean*@isNULLJB)
+//test98;Unspecified: GetStringCritical(JNIEnv*, jstring@isNULLS, jboolean*@!isNULLJB)
 
-//test99;Unspecified: GetByteArrayElements(JNIEnv*, jbyteArray@isNULLJBA, jboolean*)
+//test99;Unspecified: GetStringCritical(JNIEnv*@isNULLEnv, jstring, jboolean*@!isNULLJB)
 
-//test100;Unspecified: GetByteArrayElements(JNIEnv*@isNULLEnv, jbyteArray, jboolean*)
+//test100;Unspecified: DefineClass(JNIEnv*, char*@isUTF8C, jobject@isLoaderO, jbyte*@isNULLB, jsize)
 
-//test101;Unspecified: CallCharMethod(JNIEnv*, jobject, jmethodID@isJBooleanM && isStaticM && !isPrivateM, ...)
+//test101;Unspecified: DefineClass(JNIEnv*@isNULLEnv, char*@isUTF8C, jobject@isLoaderO, jbyte*@isBytePointerClassInfo, jsize)
 
-//test102;Unspecified: CallCharMethod(JNIEnv*, jobject, jmethodID@isNULLM, ...)
+//test102;Unspecified: FindClass(JNIEnv*, char*@isNULLC)
 
-//test103;Unspecified: CallCharMethod(JNIEnv*, jobject@isNULLO, jmethodID@isJCharM && !isPrivateM && !isStaticM, ...)
+//test103;Unspecified: FindClass(JNIEnv*@isNULLEnv, char*@isClassSigC)
 
-//test104;Unspecified: CallCharMethod(JNIEnv*@isNULLEnv, jobject, jmethodID@isJCharM && !isPrivateM && !isStaticM, ...)
+//test104;Unspecified: GetObjectClass(JNIEnv*@isNULLEnv, jobject@!isNULLO)
 
-//test105;Unspecified: CallCharMethodA(JNIEnv*, jobject, jmethodID@isJDoubleM && isStaticM && !isPrivateM, jvalue*@isArrayPtrJV)
+//test105;Unspecified: GetSuperclass(JNIEnv*, jclass@isNULLCL)
 
-//test106;Unspecified: CallCharMethodA(JNIEnv*, jobject, jmethodID@isNULLM, jvalue*@isArrayPtrJV)
+//test106;Unspecified: GetSuperclass(JNIEnv*@isNULLEnv, jclass)
 
-//test107;Unspecified: CallCharMethodA(JNIEnv*, jobject@isNULLO, jmethodID@isJCharM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
+//test107;Unspecified: CallDoubleMethod(JNIEnv*, jobject@isNULLO, jmethodID@isJDoubleM && !isPrivateM && !isStaticM, ...)
 
-//test108;Unspecified: CallCharMethodA(JNIEnv*@isNULLEnv, jobject, jmethodID@isJCharM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
+//test108;Unspecified: CallDoubleMethod(JNIEnv*@isNULLEnv, jobject, jmethodID@isJDoubleM && !isPrivateM && !isStaticM, ...)
 
-//test109;Unspecified: CallCharMethodV(JNIEnv*, jobject, jmethodID@isJBooleanM && isStaticM && !isPrivateM, va_list)
+//test109;Unspecified: CallDoubleMethodA(JNIEnv*, jobject@isNULLO, jmethodID@isJDoubleM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test110;Unspecified: CallCharMethodV(JNIEnv*, jobject, jmethodID@isNULLM, va_list)
+//test110;Unspecified: CallDoubleMethodA(JNIEnv*@isNULLEnv, jobject, jmethodID@isJDoubleM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test111;Unspecified: CallCharMethodV(JNIEnv*, jobject@isNULLO, jmethodID@isJCharM && !isPrivateM && !isStaticM, va_list)
+//test111;Unspecified: CallDoubleMethodV(JNIEnv*, jobject@isNULLO, jmethodID@isJDoubleM && !isPrivateM && !isStaticM, va_list)
 
-//test112;Unspecified: CallCharMethodV(JNIEnv*@isNULLEnv, jobject, jmethodID@isJCharM && !isPrivateM && !isStaticM, va_list)
+//test112;Unspecified: CallDoubleMethodV(JNIEnv*@isNULLEnv, jobject, jmethodID@isJDoubleM && !isPrivateM && !isStaticM, va_list)
 
-//test113;Unspecified: CallNonvirtualCharMethod(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJCharM && !isStaticM, ...)
+//test113;Unspecified: CallNonvirtualDoubleMethod(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJDoubleM && !isStaticM, ...)
 
-//test114;Unspecified: CallNonvirtualCharMethod(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJCharM && !isStaticM, ...)
+//test114;Unspecified: CallNonvirtualDoubleMethod(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJDoubleM && !isStaticM, ...)
 
-//test115;Unspecified: CallNonvirtualCharMethod(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJCharM && !isStaticM, ...)
+//test115;Unspecified: CallNonvirtualDoubleMethod(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJDoubleM && !isStaticM, ...)
 
-//test116;Unspecified: CallNonvirtualCharMethodA(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJCharM && !isStaticM, jvalue*@isArrayPtrJV)
+//test116;Unspecified: CallNonvirtualDoubleMethodA(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJDoubleM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test117;Unspecified: CallNonvirtualCharMethodA(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJCharM && !isStaticM, jvalue*@isArrayPtrJV)
+//test117;Unspecified: CallNonvirtualDoubleMethodA(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJDoubleM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test118;Unspecified: CallNonvirtualCharMethodA(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJCharM && !isStaticM, jvalue*@isArrayPtrJV)
+//test118;Unspecified: CallNonvirtualDoubleMethodA(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJDoubleM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test119;Unspecified: CallNonvirtualCharMethodV(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJCharM && !isStaticM, va_list)
+//test119;Unspecified: CallNonvirtualDoubleMethodV(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJDoubleM && !isStaticM, va_list)
 
-//test120;Unspecified: CallNonvirtualCharMethodV(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJCharM && !isStaticM, va_list)
+//test120;Unspecified: CallNonvirtualDoubleMethodV(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJDoubleM && !isStaticM, va_list)
 
-//test121;Unspecified: CallNonvirtualCharMethodV(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJCharM && !isStaticM, va_list)
+//test121;Unspecified: CallNonvirtualDoubleMethodV(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJDoubleM && !isStaticM, va_list)
 
-//test122;Unspecified: CallStaticCharMethod(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, ...)
+//test122;Unspecified: CallStaticDoubleMethod(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJDoubleM && isStaticM, ...)
 
-//test123;Unspecified: CallStaticCharMethod(JNIEnv*, jclass, jmethodID@isNULLM, ...)
+//test123;Unspecified: CallStaticDoubleMethod(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJDoubleM && isStaticM, ...)
 
-//test124;Unspecified: CallStaticCharMethod(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJCharM && isStaticM, ...)
+//test124;Unspecified: CallStaticDoubleMethodA(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJDoubleM && isStaticM, jvalue*@isArrayPtrJV)
 
-//test125;Unspecified: CallStaticCharMethod(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJCharM && isStaticM, ...)
+//test125;Unspecified: CallStaticDoubleMethodA(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJDoubleM && isStaticM, jvalue*@isArrayPtrJV)
 
-//test126;Unspecified: CallStaticCharMethodA(JNIEnv*, jclass, jmethodID@isInThisClassM && isJBooleanM && !isStaticM, jvalue*@isArrayPtrJV)
+//test126;Unspecified: CallStaticDoubleMethodV(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJDoubleM && isStaticM, va_list)
 
-//test127;Unspecified: CallStaticCharMethodA(JNIEnv*, jclass, jmethodID@isNULLM, jvalue*@isArrayPtrJV)
+//test127;Unspecified: CallStaticDoubleMethodV(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJDoubleM && isStaticM, va_list)
 
-//test128;Unspecified: CallStaticCharMethodA(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJCharM && isStaticM, jvalue*@isArrayPtrJV)
+//test128;Unspecified: GetDoubleField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF)
 
-//test129;Unspecified: CallStaticCharMethodA(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJCharM && isStaticM, jvalue*@isArrayPtrJV)
+//test129;Unspecified: GetStaticDoubleField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF)
 
-//test130;Unspecified: CallStaticCharMethodV(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, va_list)
+//test130;Unspecified: GetStaticDoubleField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF)
 
-//test131;Unspecified: CallStaticCharMethodV(JNIEnv*, jclass, jmethodID@isNULLM, va_list)
+//test131;Unspecified: NewDoubleArray(JNIEnv*, jsize@isNegativeE)
 
-//test132;Unspecified: CallStaticCharMethodV(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJCharM && isStaticM, va_list)
+//test132;Unspecified: NewDoubleArray(JNIEnv*@isNULLEnv, jsize@isPositiveE)
 
-//test133;Unspecified: CallStaticCharMethodV(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJCharM && isStaticM, va_list)
+//test133;Unspecified: GetDoubleArrayElements(JNIEnv*, jdoubleArray@isNULLJDA, jboolean*)
 
-//test134;Unspecified: GetCharField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF)
+//test134;Unspecified: GetDoubleArrayElements(JNIEnv*@isNULLEnv, jdoubleArray, jboolean*)
 
-//test135;Unspecified: GetStaticCharField(JNIEnv*, jclass, jfieldID@isNULLF)
+//test135;Unspecified: GetFieldID(JNIEnv*, jclass, char*@isFieldNameC, char*@isNULLC)
 
-//test136;Unspecified: GetStaticCharField(JNIEnv*, jclass, jfieldID@!isStaticF)
+//test136;Unspecified: GetFieldID(JNIEnv*, jclass, char*@isNULLC, char*@isFieldSigC)
 
-//test137;Unspecified: GetStaticCharField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF)
+//test137;Unspecified: GetFieldID(JNIEnv*, jclass@isNULLCL, char*@isFieldNameC, char*@isFieldSigC)
 
-//test138;Unspecified: GetStaticCharField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF)
+//test138;Unspecified: GetFieldID(JNIEnv*@isNULLEnv, jclass, char*@isFieldNameC, char*@isFieldSigC)
 
-//test139;Unspecified: NewCharArray(JNIEnv*, jsize@isNegativeE)
+//test139;Unspecified: GetStaticFieldID(JNIEnv*, jclass, char*@isFieldNameC, char*@isNULLC)
 
-//test140;Unspecified: NewCharArray(JNIEnv*@isNULLEnv, jsize)
+//test140;Unspecified: GetStaticFieldID(JNIEnv*, jclass, char*@isNULLC, char*@isFieldSigC && isUTF8C)
 
-//test141;Unspecified: GetCharArrayElements(JNIEnv*, jcharArray, jboolean*@isNULLJB)
+//test141;Unspecified: GetStaticFieldID(JNIEnv*, jclass@isNULLCL, char*@isFieldNameC, char*@isFieldSigC && isUTF8C)
 
-//test142;Unspecified: GetCharArrayElements(JNIEnv*, jcharArray@isNULLJCA, jboolean*)
+//test142;Unspecified: GetStaticFieldID(JNIEnv*@isNULLEnv, jclass, char*@isFieldNameC, char*@isFieldSigC && isUTF8C)
 
-//test143;Unspecified: GetCharArrayElements(JNIEnv*@isNULLEnv, jcharArray, jboolean*)
+//test143;Unspecified: CallFloatMethod(JNIEnv*, jobject@isNULLO, jmethodID@isJFloatM && !isPrivateM && !isStaticM, ...)
 
-//test144;Unspecified: GetStringChars(JNIEnv*, jstring, jboolean*@isNULLJB)
+//test144;Unspecified: CallFloatMethod(JNIEnv*@isNULLEnv, jobject, jmethodID@isJFloatM && !isPrivateM && !isStaticM, ...)
 
-//test145;Unspecified: GetStringChars(JNIEnv*, jstring@isNULLS, jboolean*@isNULLJB)
+//test145;Unspecified: CallFloatMethodA(JNIEnv*, jobject@isNULLO, jmethodID@isJFloatM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test146;Unspecified: GetStringChars(JNIEnv*, jstring@isNULLS, jboolean*@!isNULLJB)
+//test146;Unspecified: CallFloatMethodA(JNIEnv*@isNULLEnv, jobject, jmethodID@isJFloatM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test147;Unspecified: GetStringChars(JNIEnv*@isNULLEnv, jstring, jboolean*@isNULLJB)
+//test147;Unspecified: CallFloatMethodV(JNIEnv*, jobject@isNULLO, jmethodID@isJFloatM && !isPrivateM && !isStaticM, va_list)
 
-//test148;Unspecified: GetStringChars(JNIEnv*@isNULLEnv, jstring, jboolean*@!isNULLJB)
+//test148;Unspecified: CallFloatMethodV(JNIEnv*@isNULLEnv, jobject, jmethodID@isJFloatM && !isPrivateM && !isStaticM, va_list)
 
-//test149;Unspecified: GetStringCritical(JNIEnv*, jstring, jboolean*@isNULLJB)
+//test149;Unspecified: CallNonvirtualFloatMethod(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJFloatM && !isStaticM, ...)
 
-//test150;Unspecified: GetStringCritical(JNIEnv*, jstring@isNULLS, jboolean*@isNULLJB)
+//test150;Unspecified: CallNonvirtualFloatMethod(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJFloatM && !isStaticM, ...)
 
-//test151;Unspecified: GetStringCritical(JNIEnv*, jstring@isNULLS, jboolean*@!isNULLJB)
+//test151;Unspecified: CallNonvirtualFloatMethod(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJFloatM && !isStaticM, ...)
 
-//test152;Unspecified: GetStringCritical(JNIEnv*@isNULLEnv, jstring, jboolean*@isNULLJB)
+//test152;Unspecified: CallNonvirtualFloatMethodA(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJFloatM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test153;Unspecified: GetStringCritical(JNIEnv*@isNULLEnv, jstring, jboolean*@!isNULLJB)
+//test153;Unspecified: CallNonvirtualFloatMethodA(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJFloatM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test154;Unspecified: DefineClass(JNIEnv*, char*@isNULLC, jobject@isLoaderO, jbyte*@isBytePointerClassInfo, jsize)
+//test154;Unspecified: CallNonvirtualFloatMethodA(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJFloatM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test155;Unspecified: DefineClass(JNIEnv*, char*@isUTF8C, jobject@isLoaderO, jbyte*@isNULLB, jsize)
+//test155;Unspecified: CallNonvirtualFloatMethodV(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJFloatM && !isStaticM, va_list)
 
-//test156;Unspecified: DefineClass(JNIEnv*, char*@isUTF8C, jobject@isNULLO, jbyte*@isBytePointerClassInfo, jsize)
+//test156;Unspecified: CallNonvirtualFloatMethodV(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJFloatM && !isStaticM, va_list)
 
-//test157;Unspecified: DefineClass(JNIEnv*@isNULLEnv, char*@isUTF8C, jobject@isLoaderO, jbyte*@isBytePointerClassInfo, jsize)
+//test157;Unspecified: CallNonvirtualFloatMethodV(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJFloatM && !isStaticM, va_list)
 
-//test158;Unspecified: FindClass(JNIEnv*, char*@isNULLC)
+//test158;Unspecified: CallStaticFloatMethod(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJFloatM && isStaticM, ...)
 
-//test159;Unspecified: FindClass(JNIEnv*@isNULLEnv, char*@isClassSigC)
+//test159;Unspecified: CallStaticFloatMethod(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJFloatM && isStaticM, ...)
 
-//test160;Unspecified: GetObjectClass(JNIEnv*@isNULLEnv, jobject@!isNULLO)
+//test160;Unspecified: CallStaticFloatMethodA(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJFloatM && isStaticM, jvalue*@isArrayPtrJV)
 
-//test161;Unspecified: GetSuperclass(JNIEnv*@isNULLEnv, jclass@isNULLCL)
+//test161;Unspecified: CallStaticFloatMethodA(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJFloatM && isStaticM, jvalue*@isArrayPtrJV)
 
-//test162;Unspecified: CallDoubleMethod(JNIEnv*, jobject, jmethodID@isNULLM, ...)
+//test162;Unspecified: CallStaticFloatMethodV(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJFloatM && isStaticM, va_list)
 
-//test163;Unspecified: CallDoubleMethod(JNIEnv*, jobject, jmethodID@isStaticM && isVoidM && !isPrivateM, ...)
+//test163;Unspecified: CallStaticFloatMethodV(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJFloatM && isStaticM, va_list)
 
-//test164;Unspecified: CallDoubleMethod(JNIEnv*, jobject@isNULLO, jmethodID@isJDoubleM && !isPrivateM && !isStaticM, ...)
+//test164;Unspecified: GetFloatField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF)
 
-//test165;Unspecified: CallDoubleMethod(JNIEnv*@isNULLEnv, jobject, jmethodID@isJDoubleM && !isPrivateM && !isStaticM, ...)
+//test165;Unspecified: GetStaticFloatField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF)
 
-//test166;Unspecified: CallDoubleMethodA(JNIEnv*, jobject, jmethodID@isJBooleanM && isStaticM && !isPrivateM, jvalue*@isArrayPtrJV)
+//test166;Unspecified: GetStaticFloatField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF)
 
-//test167;Unspecified: CallDoubleMethodA(JNIEnv*, jobject, jmethodID@isNULLM, jvalue*@isArrayPtrJV)
+//test167;Unspecified: NewFloatArray(JNIEnv*, jsize@isNegativeE)
 
-//test168;Unspecified: CallDoubleMethodA(JNIEnv*, jobject@isNULLO, jmethodID@isJDoubleM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
+//test168;Unspecified: NewFloatArray(JNIEnv*@isNULLEnv, jsize@isPositiveE)
 
-//test169;Unspecified: CallDoubleMethodA(JNIEnv*@isNULLEnv, jobject, jmethodID@isJDoubleM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
+//test169;Unspecified: GetFloatArrayElements(JNIEnv*, jfloatArray@isNULLJFA, jboolean*)
 
-//test170;Unspecified: CallDoubleMethodV(JNIEnv*, jobject, jmethodID@isJBooleanM && isStaticM && !isPrivateM, va_list)
+//test170;Unspecified: GetFloatArrayElements(JNIEnv*@isNULLEnv, jfloatArray, jboolean*)
 
-//test171;Unspecified: CallDoubleMethodV(JNIEnv*, jobject, jmethodID@isNULLM, va_list)
+//test171;Unspecified: CallIntMethod(JNIEnv*, jobject@isNULLO, jmethodID@isJIntM && !isPrivateM && !isStaticM, ...)
 
-//test172;Unspecified: CallDoubleMethodV(JNIEnv*, jobject@isNULLO, jmethodID@isJDoubleM && !isPrivateM && !isStaticM, va_list)
+//test172;Unspecified: CallIntMethod(JNIEnv*@isNULLEnv, jobject, jmethodID@isJIntM && !isPrivateM && !isStaticM, ...)
 
-//test173;Unspecified: CallDoubleMethodV(JNIEnv*@isNULLEnv, jobject, jmethodID@isJDoubleM && !isPrivateM && !isStaticM, va_list)
+//test173;Unspecified: CallIntMethodA(JNIEnv*, jobject@isNULLO, jmethodID@isJIntM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test174;Unspecified: CallNonvirtualDoubleMethod(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJDoubleM && !isStaticM, ...)
+//test174;Unspecified: CallIntMethodA(JNIEnv*@isNULLEnv, jobject, jmethodID@isJIntM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test175;Unspecified: CallNonvirtualDoubleMethod(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJDoubleM && !isStaticM, ...)
+//test175;Unspecified: CallIntMethodV(JNIEnv*, jobject@isNULLO, jmethodID@isJIntM && !isPrivateM && !isStaticM, va_list)
 
-//test176;Unspecified: CallNonvirtualDoubleMethod(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJDoubleM && !isStaticM, ...)
+//test176;Unspecified: CallIntMethodV(JNIEnv*@isNULLEnv, jobject, jmethodID@isJIntM && !isPrivateM && !isStaticM, va_list)
 
-//test177;Unspecified: CallNonvirtualDoubleMethodA(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJDoubleM && !isStaticM, jvalue*@isArrayPtrJV)
+//test177;Unspecified: CallNonvirtualIntMethod(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJIntM && !isStaticM, ...)
 
-//test178;Unspecified: CallNonvirtualDoubleMethodA(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJDoubleM && !isStaticM, jvalue*@isArrayPtrJV)
+//test178;Unspecified: CallNonvirtualIntMethod(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJIntM && !isStaticM, ...)
 
-//test179;Unspecified: CallNonvirtualDoubleMethodA(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJDoubleM && !isStaticM, jvalue*@isArrayPtrJV)
+//test179;Unspecified: CallNonvirtualIntMethod(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJIntM && !isStaticM, ...)
 
-//test180;Unspecified: CallNonvirtualDoubleMethodV(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJDoubleM && !isStaticM, va_list)
+//test180;Unspecified: CallNonvirtualIntMethodA(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJIntM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test181;Unspecified: CallNonvirtualDoubleMethodV(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJDoubleM && !isStaticM, va_list)
+//test181;Unspecified: CallNonvirtualIntMethodA(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJIntM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test182;Unspecified: CallNonvirtualDoubleMethodV(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJDoubleM && !isStaticM, va_list)
+//test182;Unspecified: CallNonvirtualIntMethodA(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJIntM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test183;Unspecified: CallStaticDoubleMethod(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, ...)
+//test183;Unspecified: CallNonvirtualIntMethodV(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJIntM && !isStaticM, va_list)
 
-//test184;Unspecified: CallStaticDoubleMethod(JNIEnv*, jclass, jmethodID@isNULLM, ...)
+//test184;Unspecified: CallNonvirtualIntMethodV(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJIntM && !isStaticM, va_list)
 
-//test185;Unspecified: CallStaticDoubleMethod(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJDoubleM && isStaticM, ...)
+//test185;Unspecified: CallNonvirtualIntMethodV(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJIntM && !isStaticM, va_list)
 
-//test186;Unspecified: CallStaticDoubleMethod(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJDoubleM && isStaticM, ...)
+//test186;Unspecified: CallStaticIntMethod(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJIntM && isStaticM, ...)
 
-//test187;Unspecified: CallStaticDoubleMethodA(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, jvalue*@isArrayPtrJV)
+//test187;Unspecified: CallStaticIntMethod(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJIntM && isStaticM, ...)
 
-//test188;Unspecified: CallStaticDoubleMethodA(JNIEnv*, jclass, jmethodID@isNULLM, jvalue*@isArrayPtrJV)
+//test188;Unspecified: CallStaticIntMethodA(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJIntM && isStaticM, jvalue*@isArrayPtrJV)
 
-//test189;Unspecified: CallStaticDoubleMethodA(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJDoubleM && isStaticM, jvalue*@isArrayPtrJV)
+//test189;Unspecified: CallStaticIntMethodA(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJIntM && isStaticM, jvalue*@isArrayPtrJV)
 
-//test190;Unspecified: CallStaticDoubleMethodA(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJDoubleM && isStaticM, jvalue*@isArrayPtrJV)
+//test190;Unspecified: CallStaticIntMethodV(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJIntM && isStaticM, va_list)
 
-//test191;Unspecified: CallStaticDoubleMethodV(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, va_list)
+//test191;Unspecified: CallStaticIntMethodV(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJIntM && isStaticM, va_list)
 
-//test192;Unspecified: CallStaticDoubleMethodV(JNIEnv*, jclass, jmethodID@isNULLM, va_list)
+//test192;Unspecified: EnsureLocalCapacity(JNIEnv*, jint@isNegativeJI)
 
-//test193;Unspecified: CallStaticDoubleMethodV(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJDoubleM && isStaticM, va_list)
+//test193;Unspecified: EnsureLocalCapacity(JNIEnv*@isNULLEnv, jint@isPositiveJI)
 
-//test194;Unspecified: CallStaticDoubleMethodV(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJDoubleM && isStaticM, va_list)
+//test194;Unspecified: GetIntField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF)
 
-//test195;Unspecified: GetDoubleField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF)
+//test195;Unspecified: GetJavaVM(JNIEnv*, JavaVM**@isNULLJVM)
 
-//test196;Unspecified: GetStaticDoubleField(JNIEnv*, jclass, jfieldID@isNULLF)
+//test196;Unspecified: GetJavaVM(JNIEnv*@isNULLEnv, JavaVM**)
 
-//test197;Unspecified: GetStaticDoubleField(JNIEnv*, jclass, jfieldID@!isStaticF)
+//test197;Unspecified: GetStaticIntField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF)
 
-//test198;Unspecified: GetStaticDoubleField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF)
+//test198;Unspecified: GetStaticIntField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF)
 
-//test199;Unspecified: GetStaticDoubleField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF)
+//test199;Unspecified: GetVersion(JNIEnv*@isNULLEnv)
 
-//test200;Unspecified: NewDoubleArray(JNIEnv*, jsize@isNegativeE)
+//test200;Unspecified: PushLocalFrame(JNIEnv*, jint@isNegativeJI)
 
-//test201;Unspecified: NewDoubleArray(JNIEnv*@isNULLEnv, jsize)
+//test201;Unspecified: PushLocalFrame(JNIEnv*@isNULLEnv, jint@isPositiveJI)
 
-//test202;Unspecified: GetDoubleArrayElements(JNIEnv*, jdoubleArray, jboolean*@isNULLJB)
+//test202;Unspecified: RegisterNatives(JNIEnv*, jclass, JNINativeMethod*, jint@isNegativeJI)
 
-//test203;Unspecified: GetDoubleArrayElements(JNIEnv*, jdoubleArray@isNULLJDA, jboolean*)
+//test203;Unspecified: RegisterNatives(JNIEnv*, jclass, JNINativeMethod*@isNULLNMD, jint@isThisArrayLenJI)
 
-//test204;Unspecified: GetDoubleArrayElements(JNIEnv*@isNULLEnv, jdoubleArray, jboolean*)
+//test204;Unspecified: RegisterNatives(JNIEnv*, jclass@isNULLCL, JNINativeMethod*, jint@isThisArrayLenJI)
 
-//test205;Unspecified: GetFieldID(JNIEnv*, jclass, char*@isFieldNameC, char*@isNULLC)
+//test205;Unspecified: RegisterNatives(JNIEnv*@isNULLEnv, jclass, JNINativeMethod*, jint@isThisArrayLenJI)
 
-//test206;Unspecified: GetFieldID(JNIEnv*, jclass, char*@isNULLC, char*@isFieldSigC)
+//test206;Unspecified: Throw(JNIEnv*, jthrowable@isNULLT)
 
-//test207;Unspecified: GetFieldID(JNIEnv*, jclass@isNULLCL, char*@isFieldNameC, char*@isFieldSigC)
+//test207;Unspecified: Throw(JNIEnv*@isNULLEnv, jthrowable)
 
-//test208;Unspecified: GetFieldID(JNIEnv*@isNULLEnv, jclass, char*@isFieldNameC, char*@isFieldSigC)
+//test208;Unspecified: ThrowNew(JNIEnv*, jclass@isNULLCL, char*)
 
-//test209;Unspecified: GetStaticFieldID(JNIEnv*, jclass, char*@isFieldNameC, char*@isNULLC)
+//test209;Unspecified: ThrowNew(JNIEnv*@isNULLEnv, jclass@isThrowableCL, char*)
 
-//test210;Unspecified: GetStaticFieldID(JNIEnv*, jclass, char*@isNULLC, char*@isFieldSigC && isUTF8C)
+//test210;Unspecified: UnregisterNatives(JNIEnv*, jclass@isNULLCL)
 
-//test211;Unspecified: GetStaticFieldID(JNIEnv*, jclass@isNULLCL, char*@isFieldNameC, char*@isFieldSigC && isUTF8C)
+//test211;Unspecified: UnregisterNatives(JNIEnv*@isNULLEnv, jclass)
 
-//test212;Unspecified: GetStaticFieldID(JNIEnv*@isNULLEnv, jclass, char*@isFieldNameC, char*@isFieldSigC && isUTF8C)
+//test212;Unspecified: NewIntArray(JNIEnv*, jsize@isNegativeE)
 
-//test213;Unspecified: CallFloatMethod(JNIEnv*, jobject, jmethodID@isNULLM, ...)
+//test213;Unspecified: NewIntArray(JNIEnv*@isNULLEnv, jsize@isPositiveE)
 
-//test214;Unspecified: CallFloatMethod(JNIEnv*, jobject, jmethodID@isStaticM && isVoidM && !isPrivateM, ...)
+//test214;Unspecified: GetIntArrayElements(JNIEnv*, jintArray@isNULLJIA, jboolean*)
 
-//test215;Unspecified: CallFloatMethod(JNIEnv*, jobject@isNULLO, jmethodID@isJFloatM && !isPrivateM && !isStaticM, ...)
+//test215;Unspecified: GetIntArrayElements(JNIEnv*@isNULLEnv, jintArray, jboolean*)
 
-//test216;Unspecified: CallFloatMethod(JNIEnv*@isNULLEnv, jobject, jmethodID@isJFloatM && !isPrivateM && !isStaticM, ...)
+//test216;Unspecified: CallLongMethod(JNIEnv*, jobject@isNULLO, jmethodID@isJLongM && !isPrivateM && !isStaticM, ...)
 
-//test217;Unspecified: CallFloatMethodA(JNIEnv*, jobject, jmethodID@isJBooleanM && isStaticM && !isPrivateM, jvalue*@isArrayPtrJV)
+//test217;Unspecified: CallLongMethod(JNIEnv*@isNULLEnv, jobject, jmethodID@isJLongM && !isPrivateM && !isStaticM, ...)
 
-//test218;Unspecified: CallFloatMethodA(JNIEnv*, jobject, jmethodID@isNULLM, jvalue*@isArrayPtrJV)
+//test218;Unspecified: CallLongMethodA(JNIEnv*, jobject@isNULLO, jmethodID@isJLongM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test219;Unspecified: CallFloatMethodA(JNIEnv*, jobject@isNULLO, jmethodID@isJFloatM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
+//test219;Unspecified: CallLongMethodA(JNIEnv*@isNULLEnv, jobject, jmethodID@isJLongM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test220;Unspecified: CallFloatMethodA(JNIEnv*@isNULLEnv, jobject, jmethodID@isJFloatM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
+//test220;Unspecified: CallLongMethodV(JNIEnv*, jobject@isNULLO, jmethodID@isJLongM && !isPrivateM && !isStaticM, va_list)
 
-//test221;Unspecified: CallFloatMethodV(JNIEnv*, jobject, jmethodID@isJBooleanM && isStaticM && !isPrivateM, va_list)
+//test221;Unspecified: CallLongMethodV(JNIEnv*@isNULLEnv, jobject, jmethodID@isJLongM && !isPrivateM && !isStaticM, va_list)
 
-//test222;Unspecified: CallFloatMethodV(JNIEnv*, jobject, jmethodID@isNULLM, va_list)
+//test222;Unspecified: CallNonvirtualLongMethod(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJLongM && !isStaticM, ...)
 
-//test223;Unspecified: CallFloatMethodV(JNIEnv*, jobject@isNULLO, jmethodID@isJFloatM && !isPrivateM && !isStaticM, va_list)
+//test223;Unspecified: CallNonvirtualLongMethod(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJLongM && !isStaticM, ...)
 
-//test224;Unspecified: CallFloatMethodV(JNIEnv*@isNULLEnv, jobject, jmethodID@isJFloatM && !isPrivateM && !isStaticM, va_list)
+//test224;Unspecified: CallNonvirtualLongMethod(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJLongM && !isStaticM, ...)
 
-//test225;Unspecified: CallNonvirtualFloatMethod(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJFloatM && !isStaticM, ...)
+//test225;Unspecified: CallNonvirtualLongMethodA(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJLongM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test226;Unspecified: CallNonvirtualFloatMethod(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJFloatM && !isStaticM, ...)
+//test226;Unspecified: CallNonvirtualLongMethodA(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJLongM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test227;Unspecified: CallNonvirtualFloatMethod(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJFloatM && !isStaticM, ...)
+//test227;Unspecified: CallNonvirtualLongMethodA(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJLongM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test228;Unspecified: CallNonvirtualFloatMethodA(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJFloatM && !isStaticM, jvalue*@isArrayPtrJV)
+//test228;Unspecified: CallNonvirtualLongMethodV(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJLongM && !isStaticM, va_list)
 
-//test229;Unspecified: CallNonvirtualFloatMethodA(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJFloatM && !isStaticM, jvalue*@isArrayPtrJV)
+//test229;Unspecified: CallNonvirtualLongMethodV(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJLongM && !isStaticM, va_list)
 
-//test230;Unspecified: CallNonvirtualFloatMethodA(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJFloatM && !isStaticM, jvalue*@isArrayPtrJV)
+//test230;Unspecified: CallNonvirtualLongMethodV(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJLongM && !isStaticM, va_list)
 
-//test231;Unspecified: CallNonvirtualFloatMethodV(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJFloatM && !isStaticM, va_list)
+//test231;Unspecified: CallStaticLongMethod(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJLongM && isStaticM, ...)
 
-//test232;Unspecified: CallNonvirtualFloatMethodV(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJFloatM && !isStaticM, va_list)
+//test232;Unspecified: CallStaticLongMethod(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJLongM && isStaticM, ...)
 
-//test233;Unspecified: CallNonvirtualFloatMethodV(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJFloatM && !isStaticM, va_list)
+//test233;Unspecified: CallStaticLongMethodA(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJLongM && isStaticM, jvalue*@isArrayPtrJV)
 
-//test234;Unspecified: CallStaticFloatMethod(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, ...)
+//test234;Unspecified: CallStaticLongMethodA(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJLongM && isStaticM, jvalue*@isArrayPtrJV)
 
-//test235;Unspecified: CallStaticFloatMethod(JNIEnv*, jclass, jmethodID@isNULLM, ...)
+//test235;Unspecified: CallStaticLongMethodV(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJLongM && isStaticM, va_list)
 
-//test236;Unspecified: CallStaticFloatMethod(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJFloatM && isStaticM, ...)
+//test236;Unspecified: CallStaticLongMethodV(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJLongM && isStaticM, va_list)
 
-//test237;Unspecified: CallStaticFloatMethod(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJFloatM && isStaticM, ...)
+//test237;Unspecified: GetLongField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF)
 
-//test238;Unspecified: CallStaticFloatMethodA(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, jvalue*@isArrayPtrJV)
+//test238;Unspecified: GetStaticLongField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF)
 
-//test239;Unspecified: CallStaticFloatMethodA(JNIEnv*, jclass, jmethodID@isNULLM, jvalue*@isArrayPtrJV)
+//test239;Unspecified: GetStaticLongField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF)
 
-//test240;Unspecified: CallStaticFloatMethodA(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJFloatM && isStaticM, jvalue*@isArrayPtrJV)
+//test240;Unspecified: NewLongArray(JNIEnv*, jsize@isNegativeE)
 
-//test241;Unspecified: CallStaticFloatMethodA(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJFloatM && isStaticM, jvalue*@isArrayPtrJV)
+//test241;Unspecified: NewLongArray(JNIEnv*@isNULLEnv, jsize@isPositiveE)
 
-//test242;Unspecified: CallStaticFloatMethodV(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, va_list)
+//test242;Unspecified: GetLongArrayElements(JNIEnv*, jlongArray@isNULLJLA, jboolean*)
 
-//test243;Unspecified: CallStaticFloatMethodV(JNIEnv*, jclass, jmethodID@isNULLM, va_list)
+//test243;Unspecified: GetLongArrayElements(JNIEnv*@isNULLEnv, jlongArray, jboolean*)
 
-//test244;Unspecified: CallStaticFloatMethodV(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJFloatM && isStaticM, va_list)
+//test244;Unspecified: GetMethodID(JNIEnv*, jclass@isContainMethod, char*@isNULLC, char*@isEndWithVC && isMethodSigC)
 
-//test245;Unspecified: CallStaticFloatMethodV(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJFloatM && isStaticM, va_list)
+//test245;Unspecified: GetMethodID(JNIEnv*, jclass@isContainMethod, char*@isUTF8C, char*@isNULLC)
 
-//test246;Unspecified: GetFloatField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF)
+//test246;Unspecified: GetMethodID(JNIEnv*, jclass@isNULLCL, char*@isUTF8C, char*@isEndWithVC && isMethodSigC)
 
-//test247;Unspecified: GetStaticFloatField(JNIEnv*, jclass, jfieldID@isNULLF)
+//test247;Unspecified: GetMethodID(JNIEnv*@isNULLEnv, jclass@isContainMethod, char*@isUTF8C, char*@isEndWithVC && isMethodSigC)
 
-//test248;Unspecified: GetStaticFloatField(JNIEnv*, jclass, jfieldID@!isStaticF)
+//test248;Unspecified: GetStaticMethodID(JNIEnv*, jclass, char*@isMethodNameC, char*@isNULLC)
 
-//test249;Unspecified: GetStaticFloatField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF)
+//test249;Unspecified: GetStaticMethodID(JNIEnv*, jclass, char*@isNULLC, char*@isEndWithZC && isMethodSigC)
 
-//test250;Unspecified: GetStaticFloatField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF)
+//test250;Unspecified: GetStaticMethodID(JNIEnv*, jclass@isNULLCL, char*@isMethodNameC, char*@isEndWithZC && isMethodSigC)
 
-//test251;Unspecified: NewFloatArray(JNIEnv*, jsize@isNegativeE)
+//test251;Unspecified: GetStaticMethodID(JNIEnv*@isNULLEnv, jclass, char*@isMethodNameC, char*@isEndWithZC && isMethodSigC)
 
-//test252;Unspecified: NewFloatArray(JNIEnv*@isNULLEnv, jsize)
+//test252;Unspecified: AllocObject(JNIEnv*, jclass@isNULLCL)
 
-//test253;Unspecified: GetFloatArrayElements(JNIEnv*, jfloatArray, jboolean*@isNULLJB)
+//test253;Unspecified: AllocObject(JNIEnv*@isNULLEnv, jclass@!isArrayCL)
 
-//test254;Unspecified: GetFloatArrayElements(JNIEnv*, jfloatArray@isNULLJFA, jboolean*)
+//test254;Unspecified: CallNonvirtualObjectMethod(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJObjectM && !isStaticM, ...)
 
-//test255;Unspecified: GetFloatArrayElements(JNIEnv*@isNULLEnv, jfloatArray, jboolean*)
+//test255;Unspecified: CallNonvirtualObjectMethod(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJObjectM && !isStaticM, ...)
 
-//test256;Unspecified: CallIntMethod(JNIEnv*, jobject, jmethodID@isJDoubleM && isStaticM && !isPrivateM, ...)
+//test256;Unspecified: CallNonvirtualObjectMethod(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJObjectM && !isStaticM, ...)
 
-//test257;Unspecified: CallIntMethod(JNIEnv*, jobject, jmethodID@isNULLM, ...)
+//test257;Unspecified: CallNonvirtualObjectMethodA(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJObjectM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test258;Unspecified: CallIntMethod(JNIEnv*, jobject@isNULLO, jmethodID@isJIntM && !isPrivateM && !isStaticM, ...)
+//test258;Unspecified: CallNonvirtualObjectMethodA(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJObjectM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test259;Unspecified: CallIntMethod(JNIEnv*@isNULLEnv, jobject, jmethodID@isJIntM && !isPrivateM && !isStaticM, ...)
+//test259;Unspecified: CallNonvirtualObjectMethodA(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJObjectM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test260;Unspecified: CallIntMethodA(JNIEnv*, jobject, jmethodID@isJBooleanM && isStaticM && !isPrivateM, jvalue*@isArrayPtrJV)
+//test260;Unspecified: CallNonvirtualObjectMethodV(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJObjectM && !isStaticM, va_list)
 
-//test261;Unspecified: CallIntMethodA(JNIEnv*, jobject, jmethodID@isNULLM, jvalue*@isArrayPtrJV)
+//test261;Unspecified: CallNonvirtualObjectMethodV(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJObjectM && !isStaticM, va_list)
 
-//test262;Unspecified: CallIntMethodA(JNIEnv*, jobject@isNULLO, jmethodID@isJIntM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
+//test262;Unspecified: CallNonvirtualObjectMethodV(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJObjectM && !isStaticM, va_list)
 
-//test263;Unspecified: CallIntMethodA(JNIEnv*@isNULLEnv, jobject, jmethodID@isJIntM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
+//test263;Unspecified: CallObjectMethod(JNIEnv*, jobject@isNULLO, jmethodID@isJObjectM && !isPrivateM && !isStaticM, ...)
 
-//test264;Unspecified: CallIntMethodV(JNIEnv*, jobject, jmethodID@isJBooleanM && isStaticM && !isPrivateM, va_list)
+//test264;Unspecified: CallObjectMethod(JNIEnv*@isNULLEnv, jobject, jmethodID@isJObjectM && !isPrivateM && !isStaticM, ...)
 
-//test265;Unspecified: CallIntMethodV(JNIEnv*, jobject, jmethodID@isNULLM, va_list)
+//test265;Unspecified: CallObjectMethodA(JNIEnv*, jobject@isNULLO, jmethodID@isJObjectM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test266;Unspecified: CallIntMethodV(JNIEnv*, jobject@isNULLO, jmethodID@isJIntM && !isPrivateM && !isStaticM, va_list)
+//test266;Unspecified: CallObjectMethodA(JNIEnv*@isNULLEnv, jobject, jmethodID@isJObjectM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test267;Unspecified: CallIntMethodV(JNIEnv*@isNULLEnv, jobject, jmethodID@isJIntM && !isPrivateM && !isStaticM, va_list)
+//test267;Unspecified: CallObjectMethodV(JNIEnv*, jobject@isNULLO, jmethodID@isJObjectM && !isPrivateM && !isStaticM, va_list)
 
-//test268;Unspecified: CallNonvirtualIntMethod(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJIntM && !isStaticM, ...)
+//test268;Unspecified: CallObjectMethodV(JNIEnv*@isNULLEnv, jobject, jmethodID@isJObjectM && !isPrivateM && !isStaticM, va_list)
 
-//test269;Unspecified: CallNonvirtualIntMethod(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJIntM && !isStaticM, ...)
+//test269;Unspecified: CallStaticObjectMethod(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJObjectM && isStaticM, ...)
 
-//test270;Unspecified: CallNonvirtualIntMethod(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJIntM && !isStaticM, ...)
+//test270;Unspecified: CallStaticObjectMethod(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJObjectM && isStaticM, ...)
 
-//test271;Unspecified: CallNonvirtualIntMethodA(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJIntM && !isStaticM, jvalue*@isArrayPtrJV)
+//test271;Unspecified: CallStaticObjectMethodA(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJObjectM && isStaticM, jvalue*@isArrayPtrJV)
 
-//test272;Unspecified: CallNonvirtualIntMethodA(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJIntM && !isStaticM, jvalue*@isArrayPtrJV)
+//test272;Unspecified: CallStaticObjectMethodA(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJObjectM && isStaticM, jvalue*@isArrayPtrJV)
 
-//test273;Unspecified: CallNonvirtualIntMethodA(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJIntM && !isStaticM, jvalue*@isArrayPtrJV)
+//test273;Unspecified: CallStaticObjectMethodV(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJObjectM && isStaticM, va_list)
 
-//test274;Unspecified: CallNonvirtualIntMethodV(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJIntM && !isStaticM, va_list)
+//test274;Unspecified: CallStaticObjectMethodV(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJObjectM && isStaticM, va_list)
 
-//test275;Unspecified: CallNonvirtualIntMethodV(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJIntM && !isStaticM, va_list)
+//test275;Unspecified: GetModule(JNIEnv*, jclass@isNULLCL)
 
-//test276;Unspecified: CallNonvirtualIntMethodV(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJIntM && !isStaticM, va_list)
+//test276;Unspecified: GetModule(JNIEnv*@isNULLEnv, jclass)
 
-//test277;Unspecified: CallStaticIntMethod(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, ...)
+//test277;Unspecified: GetObjectArrayElement(JNIEnv*, jobjectArray, jsize@isNegativeE)
 
-//test278;Unspecified: CallStaticIntMethod(JNIEnv*, jclass, jmethodID@isNULLM, ...)
+//test278;Unspecified: GetObjectArrayElement(JNIEnv*, jobjectArray@isNULLJOA, jsize)
 
-//test279;Unspecified: CallStaticIntMethod(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJIntM && isStaticM, ...)
+//test279;Unspecified: GetObjectArrayElement(JNIEnv*@isNULLEnv, jobjectArray, jsize)
 
-//test280;Unspecified: CallStaticIntMethod(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJIntM && isStaticM, ...)
+//test280;Unspecified: GetObjectField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF)
 
-//test281;Unspecified: CallStaticIntMethodA(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, jvalue*@isArrayPtrJV)
+//test281;Unspecified: GetStaticObjectField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF)
 
-//test282;Unspecified: CallStaticIntMethodA(JNIEnv*, jclass, jmethodID@isNULLM, jvalue*@isArrayPtrJV)
+//test282;Unspecified: GetStaticObjectField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF)
 
-//test283;Unspecified: CallStaticIntMethodA(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJIntM && isStaticM, jvalue*@isArrayPtrJV)
+//test283;Unspecified: NewGlobalRef(JNIEnv*@isNULLEnv, jobject@isGlobalO)
 
-//test284;Unspecified: CallStaticIntMethodA(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJIntM && isStaticM, jvalue*@isArrayPtrJV)
+//test284;Unspecified: NewLocalRef(JNIEnv*@isNULLEnv, jobject@isLocalO)
 
-//test285;Unspecified: CallStaticIntMethodV(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, va_list)
+//test285;Unspecified: NewObject(JNIEnv*, jclass@isNULLCL, jmethodID@isInitM, ...)
 
-//test286;Unspecified: CallStaticIntMethodV(JNIEnv*, jclass, jmethodID@isNULLM, va_list)
+//test286;Unspecified: NewObject(JNIEnv*@isNULLEnv, jclass@!isArrayCL, jmethodID@isInitM, ...)
 
-//test287;Unspecified: CallStaticIntMethodV(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJIntM && isStaticM, va_list)
+//test287;Unspecified: NewObjectA(JNIEnv*, jclass@isNULLCL, jmethodID@isInitM, jvalue*@isArrayPtrJV)
 
-//test288;Unspecified: CallStaticIntMethodV(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJIntM && isStaticM, va_list)
+//test288;Unspecified: NewObjectA(JNIEnv*@isNULLEnv, jclass@!isArrayCL, jmethodID@isInitM, jvalue*@isArrayPtrJV)
 
-//test289;Unspecified: EnsureLocalCapacity(JNIEnv*, jint@isNegativeJI)
+//test289;Unspecified: NewObjectV(JNIEnv*, jclass@isNULLCL, jmethodID@isInitM, va_list)
 
-//test290;Unspecified: EnsureLocalCapacity(JNIEnv*@isNULLEnv, jint@isPositiveJI)
+//test290;Unspecified: NewObjectV(JNIEnv*@isNULLEnv, jclass@!isArrayCL, jmethodID@isInitM, va_list)
 
-//test291;Unspecified: GetIntField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF)
+//test291;Unspecified: PopLocalFrame(JNIEnv*@isNULLEnv, jobject@isLocalO)
 
-//test292;Unspecified: GetJavaVM(JNIEnv*, JavaVM*@isNULLJVM)
+//test292;Unspecified: NewObjectArray(JNIEnv*, jsize@isNegativeE, jclass, jobject)
 
-//test293;Unspecified: GetJavaVM(JNIEnv*@isNULLEnv, JavaVM*)
+//test293;Unspecified: NewObjectArray(JNIEnv*, jsize@isPositiveE, jclass@isNULLCL, jobject)
 
-//test294;Unspecified: GetStaticIntField(JNIEnv*, jclass, jfieldID@isNULLF)
+//test294;Unspecified: NewObjectArray(JNIEnv*@isNULLEnv, jsize@isPositiveE, jclass, jobject)
 
-//test295;Unspecified: GetStaticIntField(JNIEnv*, jclass, jfieldID@!isStaticF)
+//test295;Unspecified: CallNonvirtualShortMethod(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJShortM && !isStaticM, ...)
 
-//test296;Unspecified: GetStaticIntField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF)
+//test296;Unspecified: CallNonvirtualShortMethod(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJShortM && !isStaticM, ...)
 
-//test297;Unspecified: GetStaticIntField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF)
+//test297;Unspecified: CallNonvirtualShortMethod(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJShortM && !isStaticM, ...)
 
-//test298;Unspecified: PushLocalFrame(JNIEnv*, jint@isNegativeJI)
+//test298;Unspecified: CallNonvirtualShortMethodA(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJShortM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test299;Unspecified: PushLocalFrame(JNIEnv*@isNULLEnv, jint@isPositiveJI)
+//test299;Unspecified: CallNonvirtualShortMethodA(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJShortM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test300;Unspecified: RegisterNatives(JNIEnv*, jclass, JNINativeMethod*, jint@isNegativeJI)
+//test300;Unspecified: CallNonvirtualShortMethodA(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJShortM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test301;Unspecified: RegisterNatives(JNIEnv*, jclass, JNINativeMethod*@isNULLNMD, jint@isThisArrayLenJI)
+//test301;Unspecified: CallNonvirtualShortMethodV(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJShortM && !isStaticM, va_list)
 
-//test302;Unspecified: RegisterNatives(JNIEnv*, jclass@isNULLCL, JNINativeMethod*, jint@isThisArrayLenJI)
+//test302;Unspecified: CallNonvirtualShortMethodV(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJShortM && !isStaticM, va_list)
 
-//test303;Unspecified: RegisterNatives(JNIEnv*@isNULLEnv, jclass, JNINativeMethod*, jint@isThisArrayLenJI)
+//test303;Unspecified: CallNonvirtualShortMethodV(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJShortM && !isStaticM, va_list)
 
-//test304;Unspecified: Throw(JNIEnv*@isNULLEnv, jthrowable@isNULLT)
+//test304;Unspecified: CallShortMethod(JNIEnv*, jobject@isNULLO, jmethodID@isJShortM && !isPrivateM && !isStaticM, ...)
 
-//test305;Unspecified: ThrowNew(JNIEnv*, jclass@isThrowableCL, char*@isNULLC)
+//test305;Unspecified: CallShortMethod(JNIEnv*@isNULLEnv, jobject, jmethodID@isJShortM && !isPrivateM && !isStaticM, ...)
 
-//test306;Unspecified: ThrowNew(JNIEnv*@isNULLEnv, jclass@isNULLCL, char*)
+//test306;Unspecified: CallShortMethodA(JNIEnv*, jobject@isNULLO, jmethodID@isJShortM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test307;Unspecified: UnregisterNatives(JNIEnv*, jclass@isNULLCL)
+//test307;Unspecified: CallShortMethodA(JNIEnv*@isNULLEnv, jobject, jmethodID@isJShortM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test308;Unspecified: UnregisterNatives(JNIEnv*@isNULLEnv, jclass)
+//test308;Unspecified: CallShortMethodV(JNIEnv*, jobject@isNULLO, jmethodID@isJShortM && !isPrivateM && !isStaticM, va_list)
 
-//test309;Unspecified: NewIntArray(JNIEnv*, jsize@isNegativeE)
+//test309;Unspecified: CallShortMethodV(JNIEnv*@isNULLEnv, jobject, jmethodID@isJShortM && !isPrivateM && !isStaticM, va_list)
 
-//test310;Unspecified: NewIntArray(JNIEnv*@isNULLEnv, jsize)
+//test310;Unspecified: CallStaticShortMethod(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJShortM && isStaticM, ...)
 
-//test311;Unspecified: GetIntArrayElements(JNIEnv*, jintArray, jboolean*@isNULLJB)
+//test311;Unspecified: CallStaticShortMethod(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJShortM && isStaticM, ...)
 
-//test312;Unspecified: GetIntArrayElements(JNIEnv*, jintArray@isNULLJIA, jboolean*)
+//test312;Unspecified: CallStaticShortMethodA(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJShortM && isStaticM, jvalue*@isArrayPtrJV)
 
-//test313;Unspecified: GetIntArrayElements(JNIEnv*@isNULLEnv, jintArray, jboolean*)
+//test313;Unspecified: CallStaticShortMethodA(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJShortM && isStaticM, jvalue*@isArrayPtrJV)
 
-//test314;Unspecified: CallLongMethod(JNIEnv*, jobject, jmethodID@isNULLM, ...)
+//test314;Unspecified: CallStaticShortMethodV(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJShortM && isStaticM, va_list)
 
-//test315;Unspecified: CallLongMethod(JNIEnv*, jobject, jmethodID@isStaticM && isVoidM && !isPrivateM, ...)
+//test315;Unspecified: CallStaticShortMethodV(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJShortM && isStaticM, va_list)
 
-//test316;Unspecified: CallLongMethod(JNIEnv*, jobject@isNULLO, jmethodID@isJLongM && !isPrivateM && !isStaticM, ...)
+//test316;Unspecified: GetShortField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF)
 
-//test317;Unspecified: CallLongMethod(JNIEnv*@isNULLEnv, jobject, jmethodID@isJLongM && !isPrivateM && !isStaticM, ...)
+//test317;Unspecified: GetStaticShortField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF)
 
-//test318;Unspecified: CallLongMethodA(JNIEnv*, jobject, jmethodID@isJBooleanM && isStaticM && !isPrivateM, jvalue*@isArrayPtrJV)
+//test318;Unspecified: GetStaticShortField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF)
 
-//test319;Unspecified: CallLongMethodA(JNIEnv*, jobject, jmethodID@isNULLM, jvalue*@isArrayPtrJV)
+//test319;Unspecified: NewShortArray(JNIEnv*, jsize@isNegativeE)
 
-//test320;Unspecified: CallLongMethodA(JNIEnv*, jobject@isNULLO, jmethodID@isJLongM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
+//test320;Unspecified: NewShortArray(JNIEnv*@isNULLEnv, jsize@isPositiveE)
 
-//test321;Unspecified: CallLongMethodA(JNIEnv*@isNULLEnv, jobject, jmethodID@isJLongM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
+//test321;Unspecified: GetShortArrayElements(JNIEnv*, jshortArray@isNULLJSA, jboolean*)
 
-//test322;Unspecified: CallLongMethodV(JNIEnv*, jobject, jmethodID@isJBooleanM && isStaticM && !isPrivateM, va_list)
+//test322;Unspecified: GetShortArrayElements(JNIEnv*@isNULLEnv, jshortArray, jboolean*)
 
-//test323;Unspecified: CallLongMethodV(JNIEnv*, jobject, jmethodID@isNULLM, va_list)
+//test323;Unspecified: GetArrayLength(JNIEnv*, jarray@isNULLJA)
 
-//test324;Unspecified: CallLongMethodV(JNIEnv*, jobject@isNULLO, jmethodID@isJLongM && !isPrivateM && !isStaticM, va_list)
+//test324;Unspecified: GetArrayLength(JNIEnv*@isNULLEnv, jarray)
 
-//test325;Unspecified: CallLongMethodV(JNIEnv*@isNULLEnv, jobject, jmethodID@isJLongM && !isPrivateM && !isStaticM, va_list)
+//test325;Unspecified: GetStringLength(JNIEnv*, jstring@isNULLS)
 
-//test326;Unspecified: CallNonvirtualLongMethod(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJLongM && !isStaticM, ...)
+//test326;Unspecified: GetStringLength(JNIEnv*@isNULLEnv, jstring@isUnicodeS)
 
-//test327;Unspecified: CallNonvirtualLongMethod(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJLongM && !isStaticM, ...)
+//test327;Unspecified: GetStringUTFLength(JNIEnv*, jstring@isNULLS)
 
-//test328;Unspecified: CallNonvirtualLongMethod(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJLongM && !isStaticM, ...)
+//test328;Unspecified: GetStringUTFLength(JNIEnv*@isNULLEnv, jstring)
 
-//test329;Unspecified: CallNonvirtualLongMethodA(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJLongM && !isStaticM, jvalue*@isArrayPtrJV)
+//test329;Unspecified: NewString(JNIEnv*@isNULLEnv, jchar*@isUnicodeJC, jsize)
 
-//test330;Unspecified: CallNonvirtualLongMethodA(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJLongM && !isStaticM, jvalue*@isArrayPtrJV)
+//test330;Unspecified: NewStringUTF(JNIEnv*, char*@isNULLC)
 
-//test331;Unspecified: CallNonvirtualLongMethodA(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJLongM && !isStaticM, jvalue*@isArrayPtrJV)
+//test331;Unspecified: NewStringUTF(JNIEnv*@isNULLEnv, char*@isUTF8C)
 
-//test332;Unspecified: CallNonvirtualLongMethodV(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJLongM && !isStaticM, va_list)
+//test332;Unspecified: ExceptionOccurred(JNIEnv*@isNULLEnv)
 
-//test333;Unspecified: CallNonvirtualLongMethodV(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJLongM && !isStaticM, va_list)
+//test333;Unspecified: NewWeakGlobalRef(JNIEnv*@isNULLEnv, jobject@isLocalO)
 
-//test334;Unspecified: CallNonvirtualLongMethodV(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJLongM && !isStaticM, va_list)
+//test334;Unspecified: CallNonvirtualVoidMethod(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isVoidM && !isStaticM, ...)
 
-//test335;Unspecified: CallStaticLongMethod(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, ...)
+//test335;Unspecified: CallNonvirtualVoidMethod(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, ...)
 
-//test336;Unspecified: CallStaticLongMethod(JNIEnv*, jclass, jmethodID@isNULLM, ...)
+//test336;Unspecified: CallNonvirtualVoidMethod(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, ...)
 
-//test337;Unspecified: CallStaticLongMethod(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJLongM && isStaticM, ...)
+//test337;Unspecified: CallNonvirtualVoidMethodA(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isVoidM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test338;Unspecified: CallStaticLongMethod(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJLongM && isStaticM, ...)
+//test338;Unspecified: CallNonvirtualVoidMethodA(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test339;Unspecified: CallStaticLongMethodA(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, jvalue*@isArrayPtrJV)
+//test339;Unspecified: CallNonvirtualVoidMethodA(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test340;Unspecified: CallStaticLongMethodA(JNIEnv*, jclass, jmethodID@isNULLM, jvalue*@isArrayPtrJV)
+//test340;Unspecified: CallNonvirtualVoidMethodV(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isVoidM && !isStaticM, va_list)
 
-//test341;Unspecified: CallStaticLongMethodA(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJLongM && isStaticM, jvalue*@isArrayPtrJV)
+//test341;Unspecified: CallNonvirtualVoidMethodV(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, va_list)
 
-//test342;Unspecified: CallStaticLongMethodA(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJLongM && isStaticM, jvalue*@isArrayPtrJV)
+//test342;Unspecified: CallNonvirtualVoidMethodV(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, va_list)
 
-//test343;Unspecified: CallStaticLongMethodV(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, va_list)
+//test343;Unspecified: CallStaticVoidMethod(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isStaticM && isVoidM, ...)
 
-//test344;Unspecified: CallStaticLongMethodV(JNIEnv*, jclass, jmethodID@isNULLM, va_list)
+//test344;Unspecified: CallStaticVoidMethod(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isStaticM && isVoidM, ...)
 
-//test345;Unspecified: CallStaticLongMethodV(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJLongM && isStaticM, va_list)
+//test345;Unspecified: CallStaticVoidMethodA(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isStaticM && isVoidM, jvalue*@isArrayPtrJV)
 
-//test346;Unspecified: CallStaticLongMethodV(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJLongM && isStaticM, va_list)
+//test346;Unspecified: CallStaticVoidMethodA(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isStaticM && isVoidM, jvalue*@isArrayPtrJV)
 
-//test347;Unspecified: GetLongField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF)
+//test347;Unspecified: CallStaticVoidMethodV(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isStaticM && isVoidM, va_list)
 
-//test348;Unspecified: GetStaticLongField(JNIEnv*, jclass, jfieldID@isNULLF)
+//test348;Unspecified: CallStaticVoidMethodV(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isStaticM && isVoidM, va_list)
 
-//test349;Unspecified: GetStaticLongField(JNIEnv*, jclass, jfieldID@!isStaticF)
+//test349;Unspecified: CallVoidMethod(JNIEnv*, jobject@isNULLO, jmethodID@isVoidM && !isPrivateM && !isStaticM, ...)
 
-//test350;Unspecified: GetStaticLongField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF)
+//test350;Unspecified: CallVoidMethod(JNIEnv*@isNULLEnv, jobject, jmethodID@isVoidM && !isPrivateM && !isStaticM, ...)
 
-//test351;Unspecified: GetStaticLongField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF)
+//test351;Unspecified: CallVoidMethodA(JNIEnv*, jobject@isNULLO, jmethodID@isVoidM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test352;Unspecified: NewLongArray(JNIEnv*, jsize@isNegativeE)
+//test352;Unspecified: CallVoidMethodA(JNIEnv*@isNULLEnv, jobject, jmethodID@isVoidM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
 
-//test353;Unspecified: NewLongArray(JNIEnv*@isNULLEnv, jsize)
+//test353;Unspecified: CallVoidMethodV(JNIEnv*, jobject@isNULLO, jmethodID@isVoidM && !isPrivateM && !isStaticM, va_list)
 
-//test354;Unspecified: GetLongArrayElements(JNIEnv*, jlongArray, jboolean*@isNULLJB)
+//test354;Unspecified: CallVoidMethodV(JNIEnv*@isNULLEnv, jobject, jmethodID@isVoidM && !isPrivateM && !isStaticM, va_list)
 
-//test355;Unspecified: GetLongArrayElements(JNIEnv*, jlongArray@isNULLJLA, jboolean*)
+//test355;Unspecified: DeleteGlobalRef(JNIEnv*@isNULLEnv, jobject@isGlobalO)
 
-//test356;Unspecified: GetLongArrayElements(JNIEnv*@isNULLEnv, jlongArray, jboolean*)
+//test356;Unspecified: DeleteLocalRef(JNIEnv*@isNULLEnv, jobject@isLocalO)
 
-//test357;Unspecified: GetMethodID(JNIEnv*, jclass@isContainMethod, char*@isNULLC, char*@isEndWithVC && isMethodSigC)
+//test357;Unspecified: DeleteWeakGlobalRef(JNIEnv*@isNULLEnv, jweak)
 
-//test358;Unspecified: GetMethodID(JNIEnv*, jclass@isContainMethod, char*@isUTF8C, char*@isNULLC)
+//test358;Unspecified: ExceptionClear(JNIEnv*@isNULLEnv)
 
-//test359;Unspecified: GetMethodID(JNIEnv*, jclass@isNULLCL, char*@isUTF8C, char*@isEndWithVC && isMethodSigC)
+//test359;Unspecified: ExceptionDescribe(JNIEnv*@isNULLEnv)
 
-//test360;Unspecified: GetMethodID(JNIEnv*@isNULLEnv, jclass@isContainMethod, char*@isUTF8C, char*@isEndWithVC && isMethodSigC)
+//test360;Unspecified: FatalError(JNIEnv*@isNULLEnv, char*)
 
-//test361;Unspecified: GetStaticMethodID(JNIEnv*, jclass, char*@isMethodNameC, char*@isNULLC)
+//test361;Unspecified: GetBooleanArrayRegion(JNIEnv*, jbooleanArray, jsize@isNegativeE, jsize@isValidIndexE, jboolean*)
 
-//test362;Unspecified: GetStaticMethodID(JNIEnv*, jclass, char*@isNULLC, char*@isEndWithZC && isMethodSigC)
+//test362;Unspecified: GetBooleanArrayRegion(JNIEnv*, jbooleanArray, jsize@isValidIndexE, jsize@isNegativeE, jboolean*)
 
-//test363;Unspecified: GetStaticMethodID(JNIEnv*, jclass@isNULLCL, char*@isMethodNameC, char*@isEndWithZC && isMethodSigC)
+//test363;Unspecified: GetBooleanArrayRegion(JNIEnv*, jbooleanArray, jsize@isValidIndexE, jsize@isValidIndexE, jboolean*@isNULLJB)
 
-//test364;Unspecified: GetStaticMethodID(JNIEnv*@isNULLEnv, jclass, char*@isMethodNameC, char*@isEndWithZC && isMethodSigC)
+//test364;Unspecified: GetBooleanArrayRegion(JNIEnv*, jbooleanArray@isNULLJZA, jsize@isValidIndexE, jsize@isValidIndexE, jboolean*)
 
-//test365;Unspecified: AllocObject(JNIEnv*, jclass@!isNULLCL)
+//test365;Unspecified: GetBooleanArrayRegion(JNIEnv*@isNULLEnv, jbooleanArray, jsize@isValidIndexE, jsize@isValidIndexE, jboolean*)
 
-//test366;Unspecified: AllocObject(JNIEnv*@isNULLEnv, jclass@!isArrayCL)
+//test366;Unspecified: GetByteArrayRegion(JNIEnv*, jbyteArray, jsize@isNegativeE, jsize@isValidIndexE, jbyte*)
 
-//test367;Unspecified: CallNonvirtualObjectMethod(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJObjectM && !isStaticM, ...)
+//test367;Unspecified: GetByteArrayRegion(JNIEnv*, jbyteArray, jsize@isValidIndexE, jsize@isNegativeE, jbyte*)
 
-//test368;Unspecified: CallNonvirtualObjectMethod(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJObjectM && !isStaticM, ...)
+//test368;Unspecified: GetByteArrayRegion(JNIEnv*, jbyteArray, jsize@isValidIndexE, jsize@isValidIndexE, jbyte*@isNULLB)
 
-//test369;Unspecified: CallNonvirtualObjectMethod(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJObjectM && !isStaticM, ...)
+//test369;Unspecified: GetByteArrayRegion(JNIEnv*, jbyteArray@isNULLJBA, jsize@isValidIndexE, jsize@isValidIndexE, jbyte*)
 
-//test370;Unspecified: CallNonvirtualObjectMethodA(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJObjectM && !isStaticM, jvalue*@isArrayPtrJV)
+//test370;Unspecified: GetByteArrayRegion(JNIEnv*@isNULLEnv, jbyteArray, jsize@isValidIndexE, jsize@isValidIndexE, jbyte*)
 
-//test371;Unspecified: CallNonvirtualObjectMethodA(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJObjectM && !isStaticM, jvalue*@isArrayPtrJV)
+//test371;Unspecified: GetCharArrayRegion(JNIEnv*, jcharArray, jsize@isNegativeE, jsize@isValidIndexE, jchar*)
 
-//test372;Unspecified: CallNonvirtualObjectMethodA(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJObjectM && !isStaticM, jvalue*@isArrayPtrJV)
+//test372;Unspecified: GetCharArrayRegion(JNIEnv*, jcharArray, jsize@isValidIndexE, jsize@isNegativeE, jchar*)
 
-//test373;Unspecified: CallNonvirtualObjectMethodV(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJObjectM && !isStaticM, va_list)
+//test373;Unspecified: GetCharArrayRegion(JNIEnv*, jcharArray, jsize@isValidIndexE, jsize@isValidIndexE, jchar*@isNULLJC)
 
-//test374;Unspecified: CallNonvirtualObjectMethodV(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJObjectM && !isStaticM, va_list)
+//test374;Unspecified: GetCharArrayRegion(JNIEnv*, jcharArray@isNULLJCA, jsize@isValidIndexE, jsize@isValidIndexE, jchar*)
 
-//test375;Unspecified: CallNonvirtualObjectMethodV(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJObjectM && !isStaticM, va_list)
+//test375;Unspecified: GetCharArrayRegion(JNIEnv*@isNULLEnv, jcharArray, jsize@isValidIndexE, jsize@isValidIndexE, jchar*)
 
-//test376;Unspecified: CallObjectMethod(JNIEnv*, jobject, jmethodID@isNULLM, ...)
+//test376;Unspecified: GetDoubleArrayRegion(JNIEnv*, jdoubleArray, jsize@isNegativeE, jsize@isValidIndexE, jdouble*)
 
-//test377;Unspecified: CallObjectMethod(JNIEnv*, jobject, jmethodID@isStaticM && isVoidM && !isPrivateM, ...)
+//test377;Unspecified: GetDoubleArrayRegion(JNIEnv*, jdoubleArray, jsize@isValidIndexE, jsize@isNegativeE, jdouble*)
 
-//test378;Unspecified: CallObjectMethod(JNIEnv*, jobject@isNULLO, jmethodID@isJObjectM && !isPrivateM && !isStaticM, ...)
+//test378;Unspecified: GetDoubleArrayRegion(JNIEnv*, jdoubleArray, jsize@isValidIndexE, jsize@isValidIndexE, jdouble*@isNULLJD)
 
-//test379;Unspecified: CallObjectMethod(JNIEnv*@isNULLEnv, jobject, jmethodID@isJObjectM && !isPrivateM && !isStaticM, ...)
+//test379;Unspecified: GetDoubleArrayRegion(JNIEnv*, jdoubleArray@isNULLJDA, jsize@isValidIndexE, jsize@isValidIndexE, jdouble*)
 
-//test380;Unspecified: CallObjectMethodA(JNIEnv*, jobject, jmethodID@isJBooleanM && isStaticM && !isPrivateM, jvalue*@isArrayPtrJV)
+//test380;Unspecified: GetDoubleArrayRegion(JNIEnv*@isNULLEnv, jdoubleArray, jsize@isValidIndexE, jsize@isValidIndexE, jdouble*)
 
-//test381;Unspecified: CallObjectMethodA(JNIEnv*, jobject, jmethodID@isNULLM, jvalue*@isArrayPtrJV)
+//test381;Unspecified: GetFloatArrayRegion(JNIEnv*, jfloatArray, jsize@isNegativeE, jsize@isValidIndexE, jfloat*)
 
-//test382;Unspecified: CallObjectMethodA(JNIEnv*, jobject@isNULLO, jmethodID@isJObjectM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
+//test382;Unspecified: GetFloatArrayRegion(JNIEnv*, jfloatArray, jsize@isValidIndexE, jsize@isNegativeE, jfloat*)
 
-//test383;Unspecified: CallObjectMethodA(JNIEnv*@isNULLEnv, jobject, jmethodID@isJObjectM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
+//test383;Unspecified: GetFloatArrayRegion(JNIEnv*, jfloatArray, jsize@isValidIndexE, jsize@isValidIndexE, jfloat*@isNULLJF)
 
-//test384;Unspecified: CallObjectMethodV(JNIEnv*, jobject, jmethodID@isJCharM && isStaticM && !isPrivateM, va_list)
+//test384;Unspecified: GetFloatArrayRegion(JNIEnv*, jfloatArray@isNULLJFA, jsize@isValidIndexE, jsize@isValidIndexE, jfloat*)
 
-//test385;Unspecified: CallObjectMethodV(JNIEnv*, jobject, jmethodID@isNULLM, va_list)
+//test385;Unspecified: GetFloatArrayRegion(JNIEnv*@isNULLEnv, jfloatArray, jsize@isValidIndexE, jsize@isValidIndexE, jfloat*)
 
-//test386;Unspecified: CallObjectMethodV(JNIEnv*, jobject@isNULLO, jmethodID@isJObjectM && !isPrivateM && !isStaticM, va_list)
+//test386;Unspecified: GetIntArrayRegion(JNIEnv*, jintArray, jsize@isNegativeE, jsize@isValidIndexE, jint*)
 
-//test387;Unspecified: CallObjectMethodV(JNIEnv*@isNULLEnv, jobject, jmethodID@isJObjectM && !isPrivateM && !isStaticM, va_list)
+//test387;Unspecified: GetIntArrayRegion(JNIEnv*, jintArray, jsize@isValidIndexE, jsize@isNegativeE, jint*)
 
-//test388;Unspecified: CallStaticObjectMethod(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, ...)
+//test388;Unspecified: GetIntArrayRegion(JNIEnv*, jintArray, jsize@isValidIndexE, jsize@isValidIndexE, jint*@isNULLJI)
 
-//test389;Unspecified: CallStaticObjectMethod(JNIEnv*, jclass, jmethodID@isNULLM, ...)
+//test389;Unspecified: GetIntArrayRegion(JNIEnv*, jintArray@isNULLJIA, jsize@isValidIndexE, jsize@isValidIndexE, jint*)
 
-//test390;Unspecified: CallStaticObjectMethod(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJObjectM && isStaticM, ...)
+//test390;Unspecified: GetIntArrayRegion(JNIEnv*@isNULLEnv, jintArray, jsize@isValidIndexE, jsize@isValidIndexE, jint*)
 
-//test391;Unspecified: CallStaticObjectMethod(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJObjectM && isStaticM, ...)
+//test391;Unspecified: GetLongArrayRegion(JNIEnv*, jlongArray, jsize@isNegativeE, jsize@isValidIndexE, jlong*)
 
-//test392;Unspecified: CallStaticObjectMethodA(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, jvalue*@isArrayPtrJV)
+//test392;Unspecified: GetLongArrayRegion(JNIEnv*, jlongArray, jsize@isValidIndexE, jsize@isNegativeE, jlong*)
 
-//test393;Unspecified: CallStaticObjectMethodA(JNIEnv*, jclass, jmethodID@isNULLM, jvalue*@isArrayPtrJV)
+//test393;Unspecified: GetLongArrayRegion(JNIEnv*, jlongArray, jsize@isValidIndexE, jsize@isValidIndexE, jlong*@isNULLJL)
 
-//test394;Unspecified: CallStaticObjectMethodA(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJObjectM && isStaticM, jvalue*@isArrayPtrJV)
+//test394;Unspecified: GetLongArrayRegion(JNIEnv*, jlongArray@isNULLJLA, jsize@isValidIndexE, jsize@isValidIndexE, jlong*)
 
-//test395;Unspecified: CallStaticObjectMethodA(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJObjectM && isStaticM, jvalue*@isArrayPtrJV)
+//test395;Unspecified: GetLongArrayRegion(JNIEnv*@isNULLEnv, jlongArray, jsize@isValidIndexE, jsize@isValidIndexE, jlong*)
 
-//test396;Unspecified: CallStaticObjectMethodV(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, va_list)
+//test396;Unspecified: GetShortArrayRegion(JNIEnv*, jshortArray, jsize@isNegativeE, jsize@isValidIndexE, jshort*)
 
-//test397;Unspecified: CallStaticObjectMethodV(JNIEnv*, jclass, jmethodID@isNULLM, va_list)
+//test397;Unspecified: GetShortArrayRegion(JNIEnv*, jshortArray, jsize@isValidIndexE, jsize@isNegativeE, jshort*)
 
-//test398;Unspecified: CallStaticObjectMethodV(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJObjectM && isStaticM, va_list)
+//test398;Unspecified: GetShortArrayRegion(JNIEnv*, jshortArray, jsize@isValidIndexE, jsize@isValidIndexE, jshort*@isNULLJS)
 
-//test399;Unspecified: CallStaticObjectMethodV(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJObjectM && isStaticM, va_list)
+//test399;Unspecified: GetShortArrayRegion(JNIEnv*, jshortArray@isNULLJSA, jsize@isValidIndexE, jsize@isValidIndexE, jshort*)
 
-//test400;Unspecified: GetModule(JNIEnv*, jclass@isNULLCL)
+//test400;Unspecified: GetShortArrayRegion(JNIEnv*@isNULLEnv, jshortArray, jsize@isValidIndexE, jsize@isValidIndexE, jshort*)
 
-//test401;Unspecified: GetModule(JNIEnv*@isNULLEnv, jclass)
+//test401;Unspecified: GetStringRegion(JNIEnv*, jstring@isNULLS, jsize@isValidIndexE, jsize@isValidIndexE, jchar*@isUnicodeJC && !isNULLJC)
 
-//test402;Unspecified: GetObjectArrayElement(JNIEnv*, jobjectArray, jsize@isNegativeE)
+//test402;Unspecified: GetStringRegion(JNIEnv*, jstring@isUnicodeS, jsize@isNegativeE, jsize@isValidIndexE, jchar*@isUnicodeJC && !isNULLJC)
 
-//test403;Unspecified: GetObjectArrayElement(JNIEnv*, jobjectArray@isNULLJOA, jsize)
+//test403;Unspecified: GetStringRegion(JNIEnv*, jstring@isUnicodeS, jsize@isValidIndexE, jsize@isNegativeE, jchar*@isUnicodeJC && !isNULLJC)
 
-//test404;Unspecified: GetObjectArrayElement(JNIEnv*@isNULLEnv, jobjectArray, jsize)
+//test404;Unspecified: GetStringRegion(JNIEnv*, jstring@isUnicodeS, jsize@isValidIndexE, jsize@isPositiveE, jchar*@isNULLJC)
 
-//test405;Unspecified: GetObjectField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF)
+//test405;Unspecified: GetStringRegion(JNIEnv*@isNULLEnv, jstring@isUnicodeS, jsize@isValidIndexE, jsize@isValidIndexE, jchar*@isUnicodeJC && !isNULLJC)
 
-//test406;Unspecified: GetStaticObjectField(JNIEnv*, jclass, jfieldID@isNULLF)
+//test406;Unspecified: GetStringUTFRegion(JNIEnv*, jstring@isNULLS, jsize@isValidIndexE, jsize@isValidIndexE, char*@isNULLC && isUTF8C)
 
-//test407;Unspecified: GetStaticObjectField(JNIEnv*, jclass, jfieldID@!isStaticF)
+//test407;Unspecified: GetStringUTFRegion(JNIEnv*, jstring@isUnicodeS, jsize@isNegativeE, jsize@isValidIndexE, char*@isNULLC && isUTF8C)
 
-//test408;Unspecified: GetStaticObjectField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF)
+//test408;Unspecified: GetStringUTFRegion(JNIEnv*, jstring@isUnicodeS, jsize@isValidIndexE, jsize@isNegativeE, char*@isNULLC && isUTF8C)
 
-//test409;Unspecified: GetStaticObjectField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF)
+//test409;Unspecified: GetStringUTFRegion(JNIEnv*, jstring@isUnicodeS, jsize@isValidIndexE, jsize@isPositiveE, char*@isNULLC)
 
-//test410;Unspecified: NewGlobalRef(JNIEnv*, jobject@isNULLO)
+//test410;Unspecified: GetStringUTFRegion(JNIEnv*@isNULLEnv, jstring@isUnicodeS, jsize@isValidIndexE, jsize@isValidIndexE, char*@isNULLC && isUTF8C)
 
-//test411;Unspecified: NewGlobalRef(JNIEnv*@isNULLEnv, jobject@isGlobalO)
+//test411;Unspecified: ReleaseBooleanArrayElements(JNIEnv*, jbooleanArray, jboolean*@isGetBooleanArrayElements && isThisBooleanArray, jint@isNegativeJI)
 
-//test412;Unspecified: NewLocalRef(JNIEnv*, jobject@isNULLO)
+//test412;Unspecified: ReleaseBooleanArrayElements(JNIEnv*, jbooleanArray, jboolean*@!isGetBooleanArrayElements, jint@isJNI_ABORTJI)
 
-//test413;Unspecified: NewLocalRef(JNIEnv*@isNULLEnv, jobject@!isNULLO)
+//test413;Unspecified: ReleaseBooleanArrayElements(JNIEnv*, jbooleanArray, jboolean*@!isGetBooleanArrayElements, jint@isJNI_COMMITJI)
 
-//test414;Unspecified: NewObject(JNIEnv*, jclass@isNULLCL, jmethodID@isInitM, ...)
+//test414;Unspecified: ReleaseBooleanArrayElements(JNIEnv*, jbooleanArray, jboolean*@!isGetBooleanArrayElements, jint@isZeroJI)
 
-//test415;Unspecified: NewObject(JNIEnv*, jclass@!isArrayCL, jmethodID@!isInitM, ...)
+//test415;Unspecified: ReleaseBooleanArrayElements(JNIEnv*, jbooleanArray@isNULLJZA, jboolean*@isGetBooleanArrayElements && isThisBooleanArray, jint@isJNI_ABORTJI)
 
-//test416;Unspecified: NewObject(JNIEnv*@isNULLEnv, jclass@!isArrayCL, jmethodID@isInitM, ...)
+//test416;Unspecified: ReleaseBooleanArrayElements(JNIEnv*, jbooleanArray@isNULLJZA, jboolean*@isGetBooleanArrayElements && isThisBooleanArray, jint@isJNI_COMMITJI)
 
-//test417;Unspecified: NewObjectA(JNIEnv*, jclass@isNULLCL, jmethodID@isInitM, jvalue*@isArrayPtrJV)
+//test417;Unspecified: ReleaseBooleanArrayElements(JNIEnv*, jbooleanArray@isNULLJZA, jboolean*@isGetBooleanArrayElements && isThisBooleanArray, jint@isZeroJI)
 
-//test418;Unspecified: NewObjectA(JNIEnv*, jclass@!isArrayCL, jmethodID@!isInitM, jvalue*@isArrayPtrJV)
+//test418;Unspecified: ReleaseBooleanArrayElements(JNIEnv*@isNULLEnv, jbooleanArray, jboolean*@isGetBooleanArrayElements && isThisBooleanArray, jint@isJNI_ABORTJI)
 
-//test419;Unspecified: NewObjectA(JNIEnv*@isNULLEnv, jclass@!isArrayCL, jmethodID@isInitM, jvalue*@isArrayPtrJV)
+//test419;Unspecified: ReleaseBooleanArrayElements(JNIEnv*@isNULLEnv, jbooleanArray, jboolean*@isGetBooleanArrayElements && isThisBooleanArray, jint@isJNI_COMMITJI)
 
-//test420;Unspecified: NewObjectV(JNIEnv*, jclass@isNULLCL, jmethodID@isInitM, va_list)
+//test420;Unspecified: ReleaseBooleanArrayElements(JNIEnv*@isNULLEnv, jbooleanArray, jboolean*@isGetBooleanArrayElements && isThisBooleanArray, jint@isZeroJI)
 
-//test421;Unspecified: NewObjectV(JNIEnv*, jclass@!isArrayCL, jmethodID@!isInitM, va_list)
+//test421;Unspecified: ReleaseByteArrayElements(JNIEnv*, jbyteArray, jbyte*@isGetByteArrayElements && isThisByteArray, jint@isNegativeJI)
 
-//test422;Unspecified: NewObjectV(JNIEnv*@isNULLEnv, jclass@!isArrayCL, jmethodID@isInitM, va_list)
+//test422;Unspecified: ReleaseByteArrayElements(JNIEnv*, jbyteArray, jbyte*@!isGetByteArrayElements, jint@isJNI_ABORTJI)
 
-//test423;Unspecified: PopLocalFrame(JNIEnv*, jobject@isNULLO)
+//test423;Unspecified: ReleaseByteArrayElements(JNIEnv*, jbyteArray, jbyte*@!isGetByteArrayElements, jint@isJNI_COMMITJI)
 
-//test424;Unspecified: PopLocalFrame(JNIEnv*@isNULLEnv, jobject@isLocalO)
+//test424;Unspecified: ReleaseByteArrayElements(JNIEnv*, jbyteArray, jbyte*@!isGetByteArrayElements, jint@isZeroJI)
 
-//test425;Unspecified: NewObjectArray(JNIEnv*, jsize@isNegativeE, jclass, jobject)
+//test425;Unspecified: ReleaseByteArrayElements(JNIEnv*, jbyteArray@isNULLJBA, jbyte*@isGetByteArrayElements && isThisByteArray, jint@isJNI_ABORTJI)
 
-//test426;Unspecified: NewObjectArray(JNIEnv*, jsize@isPositiveE, jclass, jobject)
+//test426;Unspecified: ReleaseByteArrayElements(JNIEnv*, jbyteArray@isNULLJBA, jbyte*@isGetByteArrayElements && isThisByteArray, jint@isJNI_COMMITJI)
 
-//test427;Unspecified: NewObjectArray(JNIEnv*, jsize@isPositiveE, jclass, jobject@isNULLO)
+//test427;Unspecified: ReleaseByteArrayElements(JNIEnv*, jbyteArray@isNULLJBA, jbyte*@isGetByteArrayElements && isThisByteArray, jint@isZeroJI)
 
-//test428;Unspecified: NewObjectArray(JNIEnv*, jsize@isPositiveE, jclass@isNULLCL, jobject)
+//test428;Unspecified: ReleaseByteArrayElements(JNIEnv*@isNULLEnv, jbyteArray, jbyte*@isGetByteArrayElements && isThisByteArray, jint@isJNI_ABORTJI)
 
-//test429;Unspecified: NewObjectArray(JNIEnv*@isNULLEnv, jsize@isPositiveE, jclass, jobject)
+//test429;Unspecified: ReleaseByteArrayElements(JNIEnv*@isNULLEnv, jbyteArray, jbyte*@isGetByteArrayElements && isThisByteArray, jint@isJNI_COMMITJI)
 
-//test430;Unspecified: CallNonvirtualShortMethod(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJShortM && !isStaticM, ...)
+//test430;Unspecified: ReleaseByteArrayElements(JNIEnv*@isNULLEnv, jbyteArray, jbyte*@isGetByteArrayElements && isThisByteArray, jint@isZeroJI)
 
-//test431;Unspecified: CallNonvirtualShortMethod(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJShortM && !isStaticM, ...)
+//test431;Unspecified: ReleaseCharArrayElements(JNIEnv*, jcharArray, jchar*@isGetCharArrayElementsJC && isThisCharArray, jint@isNegativeJI)
 
-//test432;Unspecified: CallNonvirtualShortMethod(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJShortM && !isStaticM, ...)
+//test432;Unspecified: ReleaseCharArrayElements(JNIEnv*, jcharArray, jchar*@!isGetCharArrayElementsJC, jint@isJNI_ABORTJI)
 
-//test433;Unspecified: CallNonvirtualShortMethodA(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJShortM && !isStaticM, jvalue*@isArrayPtrJV)
+//test433;Unspecified: ReleaseCharArrayElements(JNIEnv*, jcharArray, jchar*@!isGetCharArrayElementsJC, jint@isJNI_COMMITJI)
 
-//test434;Unspecified: CallNonvirtualShortMethodA(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJShortM && !isStaticM, jvalue*@isArrayPtrJV)
+//test434;Unspecified: ReleaseCharArrayElements(JNIEnv*, jcharArray, jchar*@!isGetCharArrayElementsJC, jint@isZeroJI)
 
-//test435;Unspecified: CallNonvirtualShortMethodA(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJShortM && !isStaticM, jvalue*@isArrayPtrJV)
+//test435;Unspecified: ReleaseCharArrayElements(JNIEnv*, jcharArray@isNULLJCA, jchar*@isGetCharArrayElementsJC && isThisCharArray, jint@isJNI_ABORTJI)
 
-//test436;Unspecified: CallNonvirtualShortMethodV(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isJShortM && !isStaticM, va_list)
+//test436;Unspecified: ReleaseCharArrayElements(JNIEnv*, jcharArray@isNULLJCA, jchar*@isGetCharArrayElementsJC && isThisCharArray, jint@isJNI_COMMITJI)
 
-//test437;Unspecified: CallNonvirtualShortMethodV(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isJShortM && !isStaticM, va_list)
+//test437;Unspecified: ReleaseCharArrayElements(JNIEnv*, jcharArray@isNULLJCA, jchar*@isGetCharArrayElementsJC && isThisCharArray, jint@isZeroJI)
 
-//test438;Unspecified: CallNonvirtualShortMethodV(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isJShortM && !isStaticM, va_list)
+//test438;Unspecified: ReleaseCharArrayElements(JNIEnv*@isNULLEnv, jcharArray, jchar*@isGetCharArrayElementsJC && isThisCharArray, jint@isJNI_ABORTJI)
 
-//test439;Unspecified: CallShortMethod(JNIEnv*, jobject, jmethodID@isJBooleanM && isStaticM && !isPrivateM, ...)
+//test439;Unspecified: ReleaseCharArrayElements(JNIEnv*@isNULLEnv, jcharArray, jchar*@isGetCharArrayElementsJC && isThisCharArray, jint@isJNI_COMMITJI)
 
-//test440;Unspecified: CallShortMethod(JNIEnv*, jobject, jmethodID@isNULLM, ...)
+//test440;Unspecified: ReleaseCharArrayElements(JNIEnv*@isNULLEnv, jcharArray, jchar*@isGetCharArrayElementsJC && isThisCharArray, jint@isZeroJI)
 
-//test441;Unspecified: CallShortMethod(JNIEnv*, jobject@isNULLO, jmethodID@isJShortM && !isPrivateM && !isStaticM, ...)
+//test441;Unspecified: ReleaseDoubleArrayElements(JNIEnv*, jdoubleArray, jdouble*@isGetDoubleArrayElements && isThisDoubleArray, jint@isNegativeJI)
 
-//test442;Unspecified: CallShortMethod(JNIEnv*@isNULLEnv, jobject, jmethodID@isJShortM && !isPrivateM && !isStaticM, ...)
+//test442;Unspecified: ReleaseDoubleArrayElements(JNIEnv*, jdoubleArray, jdouble*@!isGetDoubleArrayElements, jint@isJNI_ABORTJI)
 
-//test443;Unspecified: CallShortMethodA(JNIEnv*, jobject, jmethodID@isJBooleanM && isStaticM && !isPrivateM, jvalue*@isArrayPtrJV)
+//test443;Unspecified: ReleaseDoubleArrayElements(JNIEnv*, jdoubleArray, jdouble*@!isGetDoubleArrayElements, jint@isJNI_COMMITJI)
 
-//test444;Unspecified: CallShortMethodA(JNIEnv*, jobject, jmethodID@isNULLM, jvalue*@isArrayPtrJV)
+//test444;Unspecified: ReleaseDoubleArrayElements(JNIEnv*, jdoubleArray, jdouble*@!isGetDoubleArrayElements, jint@isZeroJI)
 
-//test445;Unspecified: CallShortMethodA(JNIEnv*, jobject@isNULLO, jmethodID@isJShortM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
+//test445;Unspecified: ReleaseDoubleArrayElements(JNIEnv*, jdoubleArray@isNULLJDA, jdouble*@isGetDoubleArrayElements && isThisDoubleArray, jint@isJNI_ABORTJI)
 
-//test446;Unspecified: CallShortMethodA(JNIEnv*@isNULLEnv, jobject, jmethodID@isJShortM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
+//test446;Unspecified: ReleaseDoubleArrayElements(JNIEnv*, jdoubleArray@isNULLJDA, jdouble*@isGetDoubleArrayElements && isThisDoubleArray, jint@isJNI_COMMITJI)
 
-//test447;Unspecified: CallShortMethodV(JNIEnv*, jobject, jmethodID@isJCharM && isStaticM && !isPrivateM, va_list)
+//test447;Unspecified: ReleaseDoubleArrayElements(JNIEnv*, jdoubleArray@isNULLJDA, jdouble*@isGetDoubleArrayElements && isThisDoubleArray, jint@isZeroJI)
 
-//test448;Unspecified: CallShortMethodV(JNIEnv*, jobject, jmethodID@isNULLM, va_list)
+//test448;Unspecified: ReleaseDoubleArrayElements(JNIEnv*@isNULLEnv, jdoubleArray, jdouble*@isGetDoubleArrayElements && isThisDoubleArray, jint@isJNI_ABORTJI)
 
-//test449;Unspecified: CallShortMethodV(JNIEnv*, jobject@isNULLO, jmethodID@isJShortM && !isPrivateM && !isStaticM, va_list)
+//test449;Unspecified: ReleaseDoubleArrayElements(JNIEnv*@isNULLEnv, jdoubleArray, jdouble*@isGetDoubleArrayElements && isThisDoubleArray, jint@isJNI_COMMITJI)
 
-//test450;Unspecified: CallShortMethodV(JNIEnv*@isNULLEnv, jobject, jmethodID@isJShortM && !isPrivateM && !isStaticM, va_list)
+//test450;Unspecified: ReleaseDoubleArrayElements(JNIEnv*@isNULLEnv, jdoubleArray, jdouble*@isGetDoubleArrayElements && isThisDoubleArray, jint@isZeroJI)
 
-//test451;Unspecified: CallStaticShortMethod(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, ...)
+//test451;Unspecified: ReleaseFloatArrayElements(JNIEnv*, jfloatArray, jfloat*@isGetFloatArrayElements && isThisFloatArray, jint@isNegativeJI)
 
-//test452;Unspecified: CallStaticShortMethod(JNIEnv*, jclass, jmethodID@isNULLM, ...)
+//test452;Unspecified: ReleaseFloatArrayElements(JNIEnv*, jfloatArray, jfloat*@!isGetFloatArrayElements, jint@isJNI_ABORTJI)
 
-//test453;Unspecified: CallStaticShortMethod(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJShortM && isStaticM, ...)
+//test453;Unspecified: ReleaseFloatArrayElements(JNIEnv*, jfloatArray, jfloat*@!isGetFloatArrayElements, jint@isJNI_COMMITJI)
 
-//test454;Unspecified: CallStaticShortMethod(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJShortM && isStaticM, ...)
+//test454;Unspecified: ReleaseFloatArrayElements(JNIEnv*, jfloatArray, jfloat*@!isGetFloatArrayElements, jint@isZeroJI)
 
-//test455;Unspecified: CallStaticShortMethodA(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, jvalue*@isArrayPtrJV)
+//test455;Unspecified: ReleaseFloatArrayElements(JNIEnv*, jfloatArray@isNULLJFA, jfloat*@isGetFloatArrayElements && isThisFloatArray, jint@isJNI_ABORTJI)
 
-//test456;Unspecified: CallStaticShortMethodA(JNIEnv*, jclass, jmethodID@isNULLM, jvalue*@isArrayPtrJV)
+//test456;Unspecified: ReleaseFloatArrayElements(JNIEnv*, jfloatArray@isNULLJFA, jfloat*@isGetFloatArrayElements && isThisFloatArray, jint@isJNI_COMMITJI)
 
-//test457;Unspecified: CallStaticShortMethodA(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJShortM && isStaticM, jvalue*@isArrayPtrJV)
+//test457;Unspecified: ReleaseFloatArrayElements(JNIEnv*, jfloatArray@isNULLJFA, jfloat*@isGetFloatArrayElements && isThisFloatArray, jint@isZeroJI)
 
-//test458;Unspecified: CallStaticShortMethodA(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJShortM && isStaticM, jvalue*@isArrayPtrJV)
+//test458;Unspecified: ReleaseFloatArrayElements(JNIEnv*@isNULLEnv, jfloatArray, jfloat*@isGetFloatArrayElements && isThisFloatArray, jint@isJNI_ABORTJI)
 
-//test459;Unspecified: CallStaticShortMethodV(JNIEnv*, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, va_list)
+//test459;Unspecified: ReleaseFloatArrayElements(JNIEnv*@isNULLEnv, jfloatArray, jfloat*@isGetFloatArrayElements && isThisFloatArray, jint@isJNI_COMMITJI)
 
-//test460;Unspecified: CallStaticShortMethodV(JNIEnv*, jclass, jmethodID@isNULLM, va_list)
+//test460;Unspecified: ReleaseFloatArrayElements(JNIEnv*@isNULLEnv, jfloatArray, jfloat*@isGetFloatArrayElements && isThisFloatArray, jint@isZeroJI)
 
-//test461;Unspecified: CallStaticShortMethodV(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isJShortM && isStaticM, va_list)
+//test461;Unspecified: ReleaseIntArrayElements(JNIEnv*, jintArray, jint*@isGetIntArrayElements && isThisIntArray, jint@isNegativeJI)
 
-//test462;Unspecified: CallStaticShortMethodV(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isJShortM && isStaticM, va_list)
+//test462;Unspecified: ReleaseIntArrayElements(JNIEnv*, jintArray, jint*@!isGetIntArrayElements, jint@isJNI_ABORTJI)
 
-//test463;Unspecified: GetShortField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF)
+//test463;Unspecified: ReleaseIntArrayElements(JNIEnv*, jintArray, jint*@!isGetIntArrayElements, jint@isJNI_COMMITJI)
 
-//test464;Unspecified: GetStaticShortField(JNIEnv*, jclass, jfieldID@isNULLF)
+//test464;Unspecified: ReleaseIntArrayElements(JNIEnv*, jintArray, jint*@!isGetIntArrayElements, jint@isZeroJI)
 
-//test465;Unspecified: GetStaticShortField(JNIEnv*, jclass, jfieldID@!isStaticF)
+//test465;Unspecified: ReleaseIntArrayElements(JNIEnv*, jintArray@isNULLJIA, jint*@isGetIntArrayElements && isThisIntArray, jint@isJNI_ABORTJI)
 
-//test466;Unspecified: GetStaticShortField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF)
+//test466;Unspecified: ReleaseIntArrayElements(JNIEnv*, jintArray@isNULLJIA, jint*@isGetIntArrayElements && isThisIntArray, jint@isJNI_COMMITJI)
 
-//test467;Unspecified: GetStaticShortField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF)
+//test467;Unspecified: ReleaseIntArrayElements(JNIEnv*, jintArray@isNULLJIA, jint*@isGetIntArrayElements && isThisIntArray, jint@isZeroJI)
 
-//test468;Unspecified: NewShortArray(JNIEnv*, jsize@isNegativeE)
+//test468;Unspecified: ReleaseIntArrayElements(JNIEnv*@isNULLEnv, jintArray, jint*@isGetIntArrayElements && isThisIntArray, jint@isJNI_ABORTJI)
 
-//test469;Unspecified: NewShortArray(JNIEnv*@isNULLEnv, jsize)
+//test469;Unspecified: ReleaseIntArrayElements(JNIEnv*@isNULLEnv, jintArray, jint*@isGetIntArrayElements && isThisIntArray, jint@isJNI_COMMITJI)
 
-//test470;Unspecified: GetShortArrayElements(JNIEnv*, jshortArray, jboolean*@isNULLJB)
+//test470;Unspecified: ReleaseIntArrayElements(JNIEnv*@isNULLEnv, jintArray, jint*@isGetIntArrayElements && isThisIntArray, jint@isZeroJI)
 
-//test471;Unspecified: GetShortArrayElements(JNIEnv*, jshortArray@isNULLJSA, jboolean*)
+//test471;Unspecified: ReleaseLongArrayElements(JNIEnv*, jlongArray, jlong*@isGetLongArrayElements && isThisLongArray, jint@isNegativeJI)
 
-//test472;Unspecified: GetShortArrayElements(JNIEnv*@isNULLEnv, jshortArray, jboolean*)
+//test472;Unspecified: ReleaseLongArrayElements(JNIEnv*, jlongArray, jlong*@!isGetLongArrayElements, jint@isJNI_ABORTJI)
 
-//test473;Unspecified: GetArrayLength(JNIEnv*, jarray@isNULLJA)
+//test473;Unspecified: ReleaseLongArrayElements(JNIEnv*, jlongArray, jlong*@!isGetLongArrayElements, jint@isJNI_COMMITJI)
 
-//test474;Unspecified: GetArrayLength(JNIEnv*@isNULLEnv, jarray)
+//test474;Unspecified: ReleaseLongArrayElements(JNIEnv*, jlongArray, jlong*@!isGetLongArrayElements, jint@isZeroJI)
 
-//test475;Unspecified: GetStringLength(JNIEnv*, jstring@isNULLS)
+//test475;Unspecified: ReleaseLongArrayElements(JNIEnv*, jlongArray@isNULLJLA, jlong*@isGetLongArrayElements && isThisLongArray, jint@isJNI_ABORTJI)
 
-//test476;Unspecified: GetStringLength(JNIEnv*@isNULLEnv, jstring@isUnicodeS)
+//test476;Unspecified: ReleaseLongArrayElements(JNIEnv*, jlongArray@isNULLJLA, jlong*@isGetLongArrayElements && isThisLongArray, jint@isJNI_COMMITJI)
 
-//test477;Unspecified: GetStringUTFLength(JNIEnv*, jstring@isNULLS)
+//test477;Unspecified: ReleaseLongArrayElements(JNIEnv*, jlongArray@isNULLJLA, jlong*@isGetLongArrayElements && isThisLongArray, jint@isZeroJI)
 
-//test478;Unspecified: GetStringUTFLength(JNIEnv*@isNULLEnv, jstring)
+//test478;Unspecified: ReleaseLongArrayElements(JNIEnv*@isNULLEnv, jlongArray, jlong*@isGetLongArrayElements && isThisLongArray, jint@isJNI_ABORTJI)
 
-//test479;Unspecified: NewString(JNIEnv*, jchar*@isNULLJC, jsize@!isZeorE)
+//test479;Unspecified: ReleaseLongArrayElements(JNIEnv*@isNULLEnv, jlongArray, jlong*@isGetLongArrayElements && isThisLongArray, jint@isJNI_COMMITJI)
 
-//test480;Unspecified: NewString(JNIEnv*, jchar*@isUnicodeJC, jsize@isZeorE)
+//test480;Unspecified: ReleaseLongArrayElements(JNIEnv*@isNULLEnv, jlongArray, jlong*@isGetLongArrayElements && isThisLongArray, jint@isZeroJI)
 
-//test481;Unspecified: NewString(JNIEnv*@isNULLEnv, jchar*@isUnicodeJC, jsize)
+//test481;Unspecified: ReleasePrimitiveArrayCritical(JNIEnv*, jarray, void*@isGetPrimitiveArrayCritical && isThisVoidArray, jint@isNegativeJI)
 
-//test482;Unspecified: NewStringUTF(JNIEnv*, char*@isNULLC)
+//test482;Unspecified: ReleasePrimitiveArrayCritical(JNIEnv*, jarray, void*@!isGetPrimitiveArrayCritical, jint@isJNI_ABORTJI)
 
-//test483;Unspecified: NewStringUTF(JNIEnv*@isNULLEnv, char*@isUTF8C)
+//test483;Unspecified: ReleasePrimitiveArrayCritical(JNIEnv*, jarray, void*@!isGetPrimitiveArrayCritical, jint@isJNI_COMMITJI)
 
-//test484;Unspecified: ExceptionOccurred(JNIEnv*@isNULLEnv)
+//test484;Unspecified: ReleasePrimitiveArrayCritical(JNIEnv*, jarray, void*@!isGetPrimitiveArrayCritical, jint@isZeroJI)
 
-//test485;Unspecified: NewWeakGlobalRef(JNIEnv*@isNULLEnv, jobject@!isNULLO)
+//test485;Unspecified: ReleasePrimitiveArrayCritical(JNIEnv*, jarray@isNULLJA, void*@isGetPrimitiveArrayCritical && isThisVoidArray, jint@isJNI_ABORTJI)
 
-//test486;Unspecified: CallNonvirtualVoidMethod(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isVoidM && !isStaticM, ...)
+//test486;Unspecified: ReleasePrimitiveArrayCritical(JNIEnv*, jarray@isNULLJA, void*@isGetPrimitiveArrayCritical && isThisVoidArray, jint@isJNI_COMMITJI)
 
-//test487;Unspecified: CallNonvirtualVoidMethod(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, ...)
+//test487;Unspecified: ReleasePrimitiveArrayCritical(JNIEnv*, jarray@isNULLJA, void*@isGetPrimitiveArrayCritical && isThisVoidArray, jint@isZeroJI)
 
-//test488;Unspecified: CallNonvirtualVoidMethod(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, ...)
+//test488;Unspecified: ReleasePrimitiveArrayCritical(JNIEnv*@isNULLEnv, jarray, void*@isGetPrimitiveArrayCritical && isThisVoidArray, jint@isJNI_ABORTJI)
 
-//test489;Unspecified: CallNonvirtualVoidMethodA(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isVoidM && !isStaticM, jvalue*@isArrayPtrJV)
+//test489;Unspecified: ReleasePrimitiveArrayCritical(JNIEnv*@isNULLEnv, jarray, void*@isGetPrimitiveArrayCritical && isThisVoidArray, jint@isJNI_COMMITJI)
 
-//test490;Unspecified: CallNonvirtualVoidMethodA(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, jvalue*@isArrayPtrJV)
+//test490;Unspecified: ReleasePrimitiveArrayCritical(JNIEnv*@isNULLEnv, jarray, void*@isGetPrimitiveArrayCritical && isThisVoidArray, jint@isZeroJI)
 
-//test491;Unspecified: CallNonvirtualVoidMethodA(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, jvalue*@isArrayPtrJV)
+//test491;Unspecified: ReleaseShortArrayElements(JNIEnv*, jshortArray, jshort*@isGetShortArrayElements && isThisShortArray, jint@isNegativeJI)
 
-//test492;Unspecified: CallNonvirtualVoidMethodV(JNIEnv*, jobject, jclass@isNULLCL, jmethodID@isInThisClassM && isVoidM && !isStaticM, va_list)
+//test492;Unspecified: ReleaseShortArrayElements(JNIEnv*, jshortArray, jshort*@!isGetShortArrayElements, jint@isJNI_ABORTJI)
 
-//test493;Unspecified: CallNonvirtualVoidMethodV(JNIEnv*, jobject@isNULLO, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, va_list)
+//test493;Unspecified: ReleaseShortArrayElements(JNIEnv*, jshortArray, jshort*@!isGetShortArrayElements, jint@isJNI_COMMITJI)
 
-//test494;Unspecified: CallNonvirtualVoidMethodV(JNIEnv*@isNULLEnv, jobject, jclass, jmethodID@isInThisClassM && isVoidM && !isStaticM, va_list)
+//test494;Unspecified: ReleaseShortArrayElements(JNIEnv*, jshortArray, jshort*@!isGetShortArrayElements, jint@isZeroJI)
 
-//test495;Unspecified: CallStaticVoidMethod(JNIEnv*, jclass, jmethodID@isInThisClassM && isJCharM && !isStaticM, ...)
+//test495;Unspecified: ReleaseShortArrayElements(JNIEnv*, jshortArray@isNULLJSA, jshort*@isGetShortArrayElements && isThisShortArray, jint@isJNI_ABORTJI)
 
-//test496;Unspecified: CallStaticVoidMethod(JNIEnv*, jclass, jmethodID@isNULLM, ...)
+//test496;Unspecified: ReleaseShortArrayElements(JNIEnv*, jshortArray@isNULLJSA, jshort*@isGetShortArrayElements && isThisShortArray, jint@isJNI_COMMITJI)
 
-//test497;Unspecified: CallStaticVoidMethod(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isStaticM && isVoidM, ...)
+//test497;Unspecified: ReleaseShortArrayElements(JNIEnv*, jshortArray@isNULLJSA, jshort*@isGetShortArrayElements && isThisShortArray, jint@isZeroJI)
 
-//test498;Unspecified: CallStaticVoidMethod(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isStaticM && isVoidM, ...)
+//test498;Unspecified: ReleaseShortArrayElements(JNIEnv*@isNULLEnv, jshortArray, jshort*@isGetShortArrayElements && isThisShortArray, jint@isJNI_ABORTJI)
 
-//test499;Unspecified: CallStaticVoidMethodA(JNIEnv*, jclass, jmethodID@isInThisClassM && isJCharM && !isStaticM, jvalue*@isArrayPtrJV)
+//test499;Unspecified: ReleaseShortArrayElements(JNIEnv*@isNULLEnv, jshortArray, jshort*@isGetShortArrayElements && isThisShortArray, jint@isJNI_COMMITJI)
 
-//test500;Unspecified: CallStaticVoidMethodA(JNIEnv*, jclass, jmethodID@isNULLM, jvalue*@isArrayPtrJV)
+//test500;Unspecified: ReleaseShortArrayElements(JNIEnv*@isNULLEnv, jshortArray, jshort*@isGetShortArrayElements && isThisShortArray, jint@isZeroJI)
 
-//test501;Unspecified: CallStaticVoidMethodA(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isStaticM && isVoidM, jvalue*@isArrayPtrJV)
+//test501;Unspecified: ReleaseStringChars(JNIEnv*, jstring, jchar*@isUnicodeJC && !isGetStringCharsJC)
 
-//test502;Unspecified: CallStaticVoidMethodA(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isStaticM && isVoidM, jvalue*@isArrayPtrJV)
+//test502;Unspecified: ReleaseStringChars(JNIEnv*, jstring@isNULLS, jchar*@isGetStringCharsJC && isUnicodeJC)
 
-//test503;Unspecified: CallStaticVoidMethodV(JNIEnv*, jclass, jmethodID@isInThisClassM && isJBooleanM && !isStaticM, va_list)
+//test503;Unspecified: ReleaseStringChars(JNIEnv*@isNULLEnv, jstring, jchar*@isGetStringCharsJC && isUnicodeJC)
 
-//test504;Unspecified: CallStaticVoidMethodV(JNIEnv*, jclass, jmethodID@isNULLM, va_list)
+//test504;Unspecified: ReleaseStringCritical(JNIEnv*, jstring, jchar*@isUnicodeJC && !isGetStringCriticalJC)
 
-//test505;Unspecified: CallStaticVoidMethodV(JNIEnv*, jclass@isNULLCL, jmethodID@isInThisClassM && isStaticM && isVoidM, va_list)
+//test505;Unspecified: ReleaseStringCritical(JNIEnv*, jstring@isNULLS, jchar*@isGetStringCriticalJC && isUnicodeJC)
 
-//test506;Unspecified: CallStaticVoidMethodV(JNIEnv*@isNULLEnv, jclass, jmethodID@isInThisClassM && isStaticM && isVoidM, va_list)
+//test506;Unspecified: ReleaseStringCritical(JNIEnv*@isNULLEnv, jstring, jchar*@isGetStringCriticalJC && isUnicodeJC)
 
-//test507;Unspecified: CallVoidMethod(JNIEnv*, jobject, jmethodID@isJBooleanM && isStaticM && !isPrivateM, ...)
+//test507;Unspecified: ReleaseStringUTFChars(JNIEnv*, jstring, char*@isUTF8C && !isGetStringUTFCharC)
 
-//test508;Unspecified: CallVoidMethod(JNIEnv*, jobject, jmethodID@isNULLM, ...)
+//test508;Unspecified: ReleaseStringUTFChars(JNIEnv*, jstring@isNULLS, char*@isGetStringUTFCharC && isUTF8C)
 
-//test509;Unspecified: CallVoidMethod(JNIEnv*, jobject@isNULLO, jmethodID@isVoidM && !isPrivateM && !isStaticM, ...)
+//test509;Unspecified: ReleaseStringUTFChars(JNIEnv*@isNULLEnv, jstring, char*@isGetStringUTFCharC && isUTF8C)
 
-//test510;Unspecified: CallVoidMethod(JNIEnv*@isNULLEnv, jobject, jmethodID@isVoidM && !isPrivateM && !isStaticM, ...)
+//test510;Unspecified: SetBooleanArrayRegion(JNIEnv*, jbooleanArray, jsize@isNegativeE, jsize@isValidIndexE, jboolean*)
 
-//test511;Unspecified: CallVoidMethodA(JNIEnv*, jobject, jmethodID@isJCharM && isStaticM && !isPrivateM, jvalue*@isArrayPtrJV)
+//test511;Unspecified: SetBooleanArrayRegion(JNIEnv*, jbooleanArray, jsize@isValidIndexE, jsize@isNegativeE, jboolean*)
 
-//test512;Unspecified: CallVoidMethodA(JNIEnv*, jobject, jmethodID@isNULLM, jvalue*@isArrayPtrJV)
+//test512;Unspecified: SetBooleanArrayRegion(JNIEnv*, jbooleanArray, jsize@isValidIndexE, jsize@isValidIndexE, jboolean*@isNULLJB)
 
-//test513;Unspecified: CallVoidMethodA(JNIEnv*, jobject@isNULLO, jmethodID@isVoidM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
+//test513;Unspecified: SetBooleanArrayRegion(JNIEnv*, jbooleanArray@isNULLJZA, jsize@isValidIndexE, jsize@isValidIndexE, jboolean*)
 
-//test514;Unspecified: CallVoidMethodA(JNIEnv*@isNULLEnv, jobject, jmethodID@isVoidM && !isPrivateM && !isStaticM, jvalue*@isArrayPtrJV)
+//test514;Unspecified: SetBooleanArrayRegion(JNIEnv*@isNULLEnv, jbooleanArray, jsize@isValidIndexE, jsize@isValidIndexE, jboolean*)
 
-//test515;Unspecified: CallVoidMethodV(JNIEnv*, jobject, jmethodID@isJBooleanM && isStaticM && !isPrivateM, va_list)
+//test515;Unspecified: SetBooleanField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF, jboolean)
 
-//test516;Unspecified: CallVoidMethodV(JNIEnv*, jobject, jmethodID@isNULLM, va_list)
+//test516;Unspecified: SetByteArrayRegion(JNIEnv*, jbyteArray, jsize@isNegativeE, jsize@isValidIndexE, jbyte*)
 
-//test517;Unspecified: CallVoidMethodV(JNIEnv*, jobject@isNULLO, jmethodID@isVoidM && !isPrivateM && !isStaticM, va_list)
+//test517;Unspecified: SetByteArrayRegion(JNIEnv*, jbyteArray, jsize@isValidIndexE, jsize@isNegativeE, jbyte*)
 
-//test518;Unspecified: CallVoidMethodV(JNIEnv*@isNULLEnv, jobject, jmethodID@isVoidM && !isPrivateM && !isStaticM, va_list)
+//test518;Unspecified: SetByteArrayRegion(JNIEnv*, jbyteArray, jsize@isValidIndexE, jsize@isValidIndexE, jbyte*@isNULLB)
 
-//test519;Unspecified: DeleteGlobalRef(JNIEnv*, jobject@isNULLO)
+//test519;Unspecified: SetByteArrayRegion(JNIEnv*, jbyteArray@isNULLJBA, jsize@isValidIndexE, jsize@isValidIndexE, jbyte*)
 
-//test520;Unspecified: DeleteGlobalRef(JNIEnv*@isNULLEnv, jobject@isGlobalO)
+//test520;Unspecified: SetByteArrayRegion(JNIEnv*@isNULLEnv, jbyteArray, jsize@isValidIndexE, jsize@isValidIndexE, jbyte*)
 
-//test521;Unspecified: DeleteLocalRef(JNIEnv*, jobject@isNULLO)
+//test521;Unspecified: SetByteField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF, jbyte)
 
-//test522;Unspecified: DeleteLocalRef(JNIEnv*@isNULLEnv, jobject@isLocalO)
+//test522;Unspecified: SetCharArrayRegion(JNIEnv*, jcharArray, jsize@isNegativeE, jsize@isValidIndexE, jchar*)
 
-//test523;Unspecified: DeleteWeakGlobalRef(JNIEnv*, jweak@isNULLJW)
+//test523;Unspecified: SetCharArrayRegion(JNIEnv*, jcharArray, jsize@isValidIndexE, jsize@isNegativeE, jchar*)
 
-//test524;Unspecified: DeleteWeakGlobalRef(JNIEnv*@isNULLEnv, jweak)
+//test524;Unspecified: SetCharArrayRegion(JNIEnv*, jcharArray, jsize@isValidIndexE, jsize@isValidIndexE, jchar*@isNULLJC)
 
-//test525;Unspecified: ExceptionClear(JNIEnv*@isNULLEnv)
+//test525;Unspecified: SetCharArrayRegion(JNIEnv*, jcharArray@isNULLJCA, jsize@isValidIndexE, jsize@isValidIndexE, jchar*)
 
-//test526;Unspecified: ExceptionDescribe(JNIEnv*@isNULLEnv)
+//test526;Unspecified: SetCharArrayRegion(JNIEnv*@isNULLEnv, jcharArray, jsize@isValidIndexE, jsize@isValidIndexE, jchar*)
 
-//test527;Unspecified: FatalError(JNIEnv*, char*@isNULLC)
+//test527;Unspecified: SetCharField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF, jchar)
 
-//test528;Unspecified: FatalError(JNIEnv*@isNULLEnv, char*)
+//test528;Unspecified: SetDoubleArrayRegion(JNIEnv*, jdoubleArray, jsize@isNegativeE, jsize@isValidIndexE, jdouble*)
 
-//test529;Unspecified: GetBooleanArrayRegion(JNIEnv*, jbooleanArray, jsize@isNegativeE, jsize@isValidIndexE, jboolean*)
+//test529;Unspecified: SetDoubleArrayRegion(JNIEnv*, jdoubleArray, jsize@isValidIndexE, jsize@isNegativeE, jdouble*)
 
-//test530;Unspecified: GetBooleanArrayRegion(JNIEnv*, jbooleanArray, jsize@isValidIndexE, jsize@isNegativeE, jboolean*)
+//test530;Unspecified: SetDoubleArrayRegion(JNIEnv*, jdoubleArray, jsize@isValidIndexE, jsize@isNegativeE, jdouble*@isNULLJD)
 
-//test531;Unspecified: GetBooleanArrayRegion(JNIEnv*, jbooleanArray, jsize@isValidIndexE, jsize@isValidIndexE, jboolean*@isNULLJB)
+//test531;Unspecified: SetDoubleArrayRegion(JNIEnv*, jdoubleArray@isNULLJDA, jsize@isValidIndexE, jsize@isValidIndexE, jdouble*)
 
-//test532;Unspecified: GetBooleanArrayRegion(JNIEnv*, jbooleanArray@isNULLJZA, jsize@isValidIndexE, jsize@isValidIndexE, jboolean*)
+//test532;Unspecified: SetDoubleArrayRegion(JNIEnv*@isNULLEnv, jdoubleArray, jsize@isValidIndexE, jsize, jdouble*)
 
-//test533;Unspecified: GetBooleanArrayRegion(JNIEnv*@isNULLEnv, jbooleanArray, jsize@isValidIndexE, jsize@isValidIndexE, jboolean*)
+//test533;Unspecified: SetDoubleField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF, jdouble)
 
-//test534;Unspecified: GetByteArrayRegion(JNIEnv*, jbyteArray, jsize@isNegativeE, jsize@isValidIndexE, jbyte*)
+//test534;Unspecified: SetFloatArrayRegion(JNIEnv*, jfloatArray, jsize@isNegativeE, jsize@isValidIndexE, jfloat*)
 
-//test535;Unspecified: GetByteArrayRegion(JNIEnv*, jbyteArray, jsize@isValidIndexE, jsize@isNegativeE, jbyte*)
+//test535;Unspecified: SetFloatArrayRegion(JNIEnv*, jfloatArray, jsize@isValidIndexE, jsize@isNegativeE, jfloat*)
 
-//test536;Unspecified: GetByteArrayRegion(JNIEnv*, jbyteArray, jsize@isValidIndexE, jsize@isValidIndexE, jbyte*@isNULLB)
+//test536;Unspecified: SetFloatArrayRegion(JNIEnv*, jfloatArray, jsize@isValidIndexE, jsize@isValidIndexE, jfloat*@isNULLJF)
 
-//test537;Unspecified: GetByteArrayRegion(JNIEnv*, jbyteArray@isNULLJBA, jsize@isValidIndexE, jsize@isValidIndexE, jbyte*)
+//test537;Unspecified: SetFloatArrayRegion(JNIEnv*, jfloatArray@isNULLJFA, jsize@isValidIndexE, jsize@isValidIndexE, jfloat*)
 
-//test538;Unspecified: GetByteArrayRegion(JNIEnv*@isNULLEnv, jbyteArray, jsize@isValidIndexE, jsize@isValidIndexE, jbyte*)
+//test538;Unspecified: SetFloatArrayRegion(JNIEnv*@isNULLEnv, jfloatArray, jsize@isValidIndexE, jsize@isValidIndexE, jfloat*)
 
-//test539;Unspecified: GetCharArrayRegion(JNIEnv*, jcharArray, jsize@isNegativeE, jsize@isValidIndexE, jchar*)
+//test539;Unspecified: SetFloatField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF, jfloat)
 
-//test540;Unspecified: GetCharArrayRegion(JNIEnv*, jcharArray, jsize@isValidIndexE, jsize@isNegativeE, jchar*)
+//test540;Unspecified: SetIntArrayRegion(JNIEnv*, jintArray, jsize@isNegativeE, jsize@isValidIndexE, jint*)
 
-//test541;Unspecified: GetCharArrayRegion(JNIEnv*, jcharArray, jsize@isValidIndexE, jsize@isValidIndexE, jchar*@isNULLJC)
+//test541;Unspecified: SetIntArrayRegion(JNIEnv*, jintArray, jsize@isValidIndexE, jsize@isNegativeE, jint*)
 
-//test542;Unspecified: GetCharArrayRegion(JNIEnv*, jcharArray@isNULLJCA, jsize@isValidIndexE, jsize@isValidIndexE, jchar*)
+//test542;Unspecified: SetIntArrayRegion(JNIEnv*, jintArray, jsize@isValidIndexE, jsize@isValidIndexE, jint*@isNULLJI)
 
-//test543;Unspecified: GetCharArrayRegion(JNIEnv*@isNULLEnv, jcharArray, jsize@isValidIndexE, jsize@isValidIndexE, jchar*)
+//test543;Unspecified: SetIntArrayRegion(JNIEnv*, jintArray@isNULLJIA, jsize@isValidIndexE, jsize@isValidIndexE, jint*)
 
-//test544;Unspecified: GetDoubleArrayRegion(JNIEnv*, jdoubleArray, jsize@isNegativeE, jsize@isValidIndexE, jdouble*)
+//test544;Unspecified: SetIntArrayRegion(JNIEnv*@isNULLEnv, jintArray, jsize@isValidIndexE, jsize@isValidIndexE, jint*)
 
-//test545;Unspecified: GetDoubleArrayRegion(JNIEnv*, jdoubleArray, jsize@isValidIndexE, jsize@isNegativeE, jdouble*)
+//test545;Unspecified: SetIntField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF, jint)
 
-//test546;Unspecified: GetDoubleArrayRegion(JNIEnv*, jdoubleArray, jsize@isValidIndexE, jsize@isValidIndexE, jdouble*@isNULLJD)
+//test546;Unspecified: SetLongArrayRegion(JNIEnv*, jlongArray, jsize@isNegativeE, jsize@isValidIndexE, jlong*)
 
-//test547;Unspecified: GetDoubleArrayRegion(JNIEnv*, jdoubleArray@isNULLJDA, jsize@isValidIndexE, jsize@isValidIndexE, jdouble*)
+//test547;Unspecified: SetLongArrayRegion(JNIEnv*, jlongArray, jsize@isValidIndexE, jsize@isNegativeE, jlong*)
 
-//test548;Unspecified: GetDoubleArrayRegion(JNIEnv*@isNULLEnv, jdoubleArray, jsize@isValidIndexE, jsize@isValidIndexE, jdouble*)
+//test548;Unspecified: SetLongArrayRegion(JNIEnv*, jlongArray, jsize@isValidIndexE, jsize@isValidIndexE, jlong*@isNULLJL)
 
-//test549;Unspecified: GetFloatArrayRegion(JNIEnv*, jfloatArray, jsize@isNegativeE, jsize@isValidIndexE, jfloat*)
+//test549;Unspecified: SetLongArrayRegion(JNIEnv*, jlongArray@isNULLJLA, jsize@isValidIndexE, jsize@isValidIndexE, jlong*)
 
-//test550;Unspecified: GetFloatArrayRegion(JNIEnv*, jfloatArray, jsize@isValidIndexE, jsize@isNegativeE, jfloat*)
+//test550;Unspecified: SetLongArrayRegion(JNIEnv*@isNULLEnv, jlongArray, jsize@isValidIndexE, jsize@isValidIndexE, jlong*)
 
-//test551;Unspecified: GetFloatArrayRegion(JNIEnv*, jfloatArray, jsize@isValidIndexE, jsize@isValidIndexE, jfloat*@isNULLJF)
+//test551;Unspecified: SetLongField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF, jlong)
 
-//test552;Unspecified: GetFloatArrayRegion(JNIEnv*, jfloatArray@isNULLJFA, jsize@isValidIndexE, jsize@isValidIndexE, jfloat*)
+//test552;Unspecified: SetObjectArrayElement(JNIEnv*, jobjectArray, jsize@isNegativeE, jobject@isSubClassO)
 
-//test553;Unspecified: GetFloatArrayRegion(JNIEnv*@isNULLEnv, jfloatArray, jsize@isValidIndexE, jsize@isValidIndexE, jfloat*)
+//test553;Unspecified: SetObjectArrayElement(JNIEnv*, jobjectArray@isNULLJOA, jsize@isValidIndexE, jobject@isSubClassO)
 
-//test554;Unspecified: GetIntArrayRegion(JNIEnv*, jintArray, jsize@isNegativeE, jsize@isValidIndexE, jint*)
+//test554;Unspecified: SetObjectArrayElement(JNIEnv*@isNULLEnv, jobjectArray, jsize@isValidIndexE, jobject@isSubClassO)
 
-//test555;Unspecified: GetIntArrayRegion(JNIEnv*, jintArray, jsize@isValidIndexE, jsize@isNegativeE, jint*)
+//test555;Unspecified: SetObjectField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF, jobject)
 
-//test556;Unspecified: GetIntArrayRegion(JNIEnv*, jintArray, jsize@isValidIndexE, jsize@isValidIndexE, jint*@isNULLJI)
+//test556;Unspecified: SetShortArrayRegion(JNIEnv*, jshortArray, jsize@isNegativeE, jsize@isValidIndexE, jshort*)
 
-//test557;Unspecified: GetIntArrayRegion(JNIEnv*, jintArray@isNULLJIA, jsize@isValidIndexE, jsize@isValidIndexE, jint*)
+//test557;Unspecified: SetShortArrayRegion(JNIEnv*, jshortArray, jsize@isValidIndexE, jsize@isNegativeE, jshort*)
 
-//test558;Unspecified: GetIntArrayRegion(JNIEnv*@isNULLEnv, jintArray, jsize@isValidIndexE, jsize@isValidIndexE, jint*)
+//test558;Unspecified: SetShortArrayRegion(JNIEnv*, jshortArray, jsize@isValidIndexE, jsize@isValidIndexE, jshort*@isNULLJS)
 
-//test559;Unspecified: GetLongArrayRegion(JNIEnv*, jlongArray, jsize@isNegativeE, jsize@isValidIndexE, jlong*)
+//test559;Unspecified: SetShortArrayRegion(JNIEnv*, jshortArray@isNULLJSA, jsize@isValidIndexE, jsize@isValidIndexE, jshort*)
 
-//test560;Unspecified: GetLongArrayRegion(JNIEnv*, jlongArray, jsize@isValidIndexE, jsize@isNegativeE, jlong*)
+//test560;Unspecified: SetShortArrayRegion(JNIEnv*@isNULLEnv, jshortArray, jsize@isValidIndexE, jsize@isValidIndexE, jshort*)
 
-//test561;Unspecified: GetLongArrayRegion(JNIEnv*, jlongArray, jsize@isValidIndexE, jsize@isValidIndexE, jlong*@isNULLJL)
+//test561;Unspecified: SetShortField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF, jshort)
 
-//test562;Unspecified: GetLongArrayRegion(JNIEnv*, jlongArray@isNULLJLA, jsize@isValidIndexE, jsize@isValidIndexE, jlong*)
+//test562;Unspecified: SetStaticBooleanField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF, jboolean)
 
-//test563;Unspecified: GetLongArrayRegion(JNIEnv*@isNULLEnv, jlongArray, jsize@isValidIndexE, jsize@isValidIndexE, jlong*)
+//test563;Unspecified: SetStaticBooleanField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF, jboolean)
 
-//test564;Unspecified: GetShortArrayRegion(JNIEnv*, jshortArray, jsize@isNegativeE, jsize@isValidIndexE, jshort*)
+//test564;Unspecified: SetStaticByteField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF, jbyte)
 
-//test565;Unspecified: GetShortArrayRegion(JNIEnv*, jshortArray, jsize@isValidIndexE, jsize@isNegativeE, jshort*)
+//test565;Unspecified: SetStaticByteField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF, jbyte)
 
-//test566;Unspecified: GetShortArrayRegion(JNIEnv*, jshortArray, jsize@isValidIndexE, jsize@isValidIndexE, jshort*@isNULLJS)
+//test566;Unspecified: SetStaticCharField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF, jchar)
 
-//test567;Unspecified: GetShortArrayRegion(JNIEnv*, jshortArray@isNULLJSA, jsize@isValidIndexE, jsize@isValidIndexE, jshort*)
+//test567;Unspecified: SetStaticCharField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF, jchar)
 
-//test568;Unspecified: GetShortArrayRegion(JNIEnv*@isNULLEnv, jshortArray, jsize@isValidIndexE, jsize@isValidIndexE, jshort*)
+//test568;Unspecified: SetStaticDoubleField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF, jdouble)
 
-//test569;Unspecified: GetStringRegion(JNIEnv*, jstring@isNULLS, jsize@isValidIndexE, jsize@isValidIndexE, jchar*@isUnicodeJC && !isNULLJC)
+//test569;Unspecified: SetStaticDoubleField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF, jdouble)
 
-//test570;Unspecified: GetStringRegion(JNIEnv*, jstring@isUnicodeS, jsize@isNegativeE, jsize@isValidIndexE, jchar*@isUnicodeJC && !isNULLJC)
+//test570;Unspecified: SetStaticFloatField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF, jfloat)
 
-//test571;Unspecified: GetStringRegion(JNIEnv*, jstring@isUnicodeS, jsize@isValidIndexE, jsize@isNegativeE, jchar*@isUnicodeJC && !isNULLJC)
+//test571;Unspecified: SetStaticFloatField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF, jfloat)
 
-//test572;Unspecified: GetStringRegion(JNIEnv*, jstring@isUnicodeS, jsize@isValidIndexE, jsize@isPositiveE, jchar*@isNULLJC)
+//test572;Unspecified: SetStaticIntField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF, jint)
 
-//test573;Unspecified: GetStringRegion(JNIEnv*@isNULLEnv, jstring@isUnicodeS, jsize@isValidIndexE, jsize@isValidIndexE, jchar*@isUnicodeJC && !isNULLJC)
+//test573;Unspecified: SetStaticIntField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF, jint)
 
-//test574;Unspecified: GetStringUTFRegion(JNIEnv*, jstring@isNULLS, jsize@isValidIndexE, jsize@isValidIndexE, char*@isNULLC && isUTF8C)
+//test574;Unspecified: SetStaticLongField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF, jlong)
 
-//test575;Unspecified: GetStringUTFRegion(JNIEnv*, jstring@isUnicodeS, jsize@isNegativeE, jsize@isValidIndexE, char*@isNULLC && isUTF8C)
+//test575;Unspecified: SetStaticLongField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF, jlong)
 
-//test576;Unspecified: GetStringUTFRegion(JNIEnv*, jstring@isUnicodeS, jsize@isValidIndexE, jsize@isNegativeE, char*@isNULLC && isUTF8C)
+//test576;Unspecified: SetStaticObjectField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF, jobject)
 
-//test577;Unspecified: GetStringUTFRegion(JNIEnv*, jstring@isUnicodeS, jsize@isValidIndexE, jsize@isPositiveE, char*@isNULLC)
+//test577;Unspecified: SetStaticObjectField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF, jobject)
 
-//test578;Unspecified: GetStringUTFRegion(JNIEnv*@isNULLEnv, jstring@isUnicodeS, jsize@isValidIndexE, jsize@isValidIndexE, char*@isNULLC && isUTF8C)
+//test578;Unspecified: SetStaticShortField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF, jshort)
 
-//test579;Unspecified: ReleaseBooleanArrayElements(JNIEnv*, jbooleanArray, jboolean*@isGetBooleanArrayElements && isThisBooleanArray, jint@isNegativeJI)
+//test579;Unspecified: SetStaticShortField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF, jshort)
 
-//test580;Unspecified: ReleaseBooleanArrayElements(JNIEnv*, jbooleanArray, jboolean*@!isGetBooleanArrayElements, jint@isJNI_ABORTJI)
+//test580;Unspecified: GetPrimitiveArrayCritical(JNIEnv*, jarray@isNULLJA, jboolean*)
 
-//test581;Unspecified: ReleaseBooleanArrayElements(JNIEnv*, jbooleanArray, jboolean*@!isGetBooleanArrayElements, jint@isJNI_COMMITJI)
+//test581;Unspecified: GetPrimitiveArrayCritical(JNIEnv*@isNULLEnv, jarray, jboolean*)
 
-//test582;Unspecified: ReleaseBooleanArrayElements(JNIEnv*, jbooleanArray, jboolean*@!isGetBooleanArrayElements, jint@isZeroJI)
-
-//test583;Unspecified: ReleaseBooleanArrayElements(JNIEnv*, jbooleanArray@isNULLJZA, jboolean*@isGetBooleanArrayElements && isThisBooleanArray, jint@isJNI_ABORTJI)
-
-//test584;Unspecified: ReleaseBooleanArrayElements(JNIEnv*, jbooleanArray@isNULLJZA, jboolean*@isGetBooleanArrayElements && isThisBooleanArray, jint@isJNI_COMMITJI)
-
-//test585;Unspecified: ReleaseBooleanArrayElements(JNIEnv*, jbooleanArray@isNULLJZA, jboolean*@isGetBooleanArrayElements && isThisBooleanArray, jint@isZeroJI)
-
-//test586;Unspecified: ReleaseBooleanArrayElements(JNIEnv*@isNULLEnv, jbooleanArray, jboolean*@isGetBooleanArrayElements && isThisBooleanArray, jint@isJNI_ABORTJI)
-
-//test587;Unspecified: ReleaseBooleanArrayElements(JNIEnv*@isNULLEnv, jbooleanArray, jboolean*@isGetBooleanArrayElements && isThisBooleanArray, jint@isJNI_COMMITJI)
-
-//test588;Unspecified: ReleaseBooleanArrayElements(JNIEnv*@isNULLEnv, jbooleanArray, jboolean*@isGetBooleanArrayElements && isThisBooleanArray, jint@isZeroJI)
-
-//test589;Unspecified: ReleaseByteArrayElements(JNIEnv*, jbyteArray, jbyte*@isGetByteArrayElements && isThisByteArray, jint@isNegativeJI)
-
-//test590;Unspecified: ReleaseByteArrayElements(JNIEnv*, jbyteArray, jbyte*@!isGetByteArrayElements, jint@isJNI_ABORTJI)
-
-//test591;Unspecified: ReleaseByteArrayElements(JNIEnv*, jbyteArray, jbyte*@!isGetByteArrayElements, jint@isJNI_COMMITJI)
-
-//test592;Unspecified: ReleaseByteArrayElements(JNIEnv*, jbyteArray, jbyte*@!isGetByteArrayElements, jint@isZeroJI)
-
-//test593;Unspecified: ReleaseByteArrayElements(JNIEnv*, jbyteArray@isNULLJBA, jbyte*@isGetByteArrayElements && isThisByteArray, jint@isJNI_ABORTJI)
-
-//test594;Unspecified: ReleaseByteArrayElements(JNIEnv*, jbyteArray@isNULLJBA, jbyte*@isGetByteArrayElements && isThisByteArray, jint@isJNI_COMMITJI)
-
-//test595;Unspecified: ReleaseByteArrayElements(JNIEnv*, jbyteArray@isNULLJBA, jbyte*@isGetByteArrayElements && isThisByteArray, jint@isZeroJI)
-
-//test596;Unspecified: ReleaseByteArrayElements(JNIEnv*@isNULLEnv, jbyteArray, jbyte*@isGetByteArrayElements && isThisByteArray, jint@isJNI_ABORTJI)
-
-//test597;Unspecified: ReleaseByteArrayElements(JNIEnv*@isNULLEnv, jbyteArray, jbyte*@isGetByteArrayElements && isThisByteArray, jint@isJNI_COMMITJI)
-
-//test598;Unspecified: ReleaseByteArrayElements(JNIEnv*@isNULLEnv, jbyteArray, jbyte*@isGetByteArrayElements && isThisByteArray, jint@isZeroJI)
-
-//test599;Unspecified: ReleaseCharArrayElements(JNIEnv*, jcharArray, jchar*@isGetCharArrayElementsJC && isThisCharArray, jint@isNegativeJI)
-
-//test600;Unspecified: ReleaseCharArrayElements(JNIEnv*, jcharArray, jchar*@!isGetCharArrayElementsJC, jint@isJNI_ABORTJI)
-
-//test601;Unspecified: ReleaseCharArrayElements(JNIEnv*, jcharArray, jchar*@!isGetCharArrayElementsJC, jint@isJNI_COMMITJI)
-
-//test602;Unspecified: ReleaseCharArrayElements(JNIEnv*, jcharArray, jchar*@!isGetCharArrayElementsJC, jint@isZeroJI)
-
-//test603;Unspecified: ReleaseCharArrayElements(JNIEnv*, jcharArray@isNULLJCA, jchar*@isGetCharArrayElementsJC && isThisCharArray, jint@isJNI_ABORTJI)
-
-//test604;Unspecified: ReleaseCharArrayElements(JNIEnv*, jcharArray@isNULLJCA, jchar*@isGetCharArrayElementsJC && isThisCharArray, jint@isJNI_COMMITJI)
-
-//test605;Unspecified: ReleaseCharArrayElements(JNIEnv*, jcharArray@isNULLJCA, jchar*@isGetCharArrayElementsJC && isThisCharArray, jint@isZeroJI)
-
-//test606;Unspecified: ReleaseCharArrayElements(JNIEnv*@isNULLEnv, jcharArray, jchar*@isGetCharArrayElementsJC && isThisCharArray, jint@isJNI_ABORTJI)
-
-//test607;Unspecified: ReleaseCharArrayElements(JNIEnv*@isNULLEnv, jcharArray, jchar*@isGetCharArrayElementsJC && isThisCharArray, jint@isJNI_COMMITJI)
-
-//test608;Unspecified: ReleaseCharArrayElements(JNIEnv*@isNULLEnv, jcharArray, jchar*@isGetCharArrayElementsJC && isThisCharArray, jint@isZeroJI)
-
-//test609;Unspecified: ReleaseDoubleArrayElements(JNIEnv*, jdoubleArray, jdouble*@isGetDoubleArrayElements && isThisDoubleArray, jint@isNegativeJI)
-
-//test610;Unspecified: ReleaseDoubleArrayElements(JNIEnv*, jdoubleArray, jdouble*@!isGetDoubleArrayElements, jint@isJNI_ABORTJI)
-
-//test611;Unspecified: ReleaseDoubleArrayElements(JNIEnv*, jdoubleArray, jdouble*@!isGetDoubleArrayElements, jint@isJNI_COMMITJI)
-
-//test612;Unspecified: ReleaseDoubleArrayElements(JNIEnv*, jdoubleArray, jdouble*@!isGetDoubleArrayElements, jint@isZeroJI)
-
-//test613;Unspecified: ReleaseDoubleArrayElements(JNIEnv*, jdoubleArray@isNULLJDA, jdouble*@isGetDoubleArrayElements && isThisDoubleArray, jint@isJNI_ABORTJI)
-
-//test614;Unspecified: ReleaseDoubleArrayElements(JNIEnv*, jdoubleArray@isNULLJDA, jdouble*@isGetDoubleArrayElements && isThisDoubleArray, jint@isJNI_COMMITJI)
-
-//test615;Unspecified: ReleaseDoubleArrayElements(JNIEnv*, jdoubleArray@isNULLJDA, jdouble*@isGetDoubleArrayElements && isThisDoubleArray, jint@isZeroJI)
-
-//test616;Unspecified: ReleaseDoubleArrayElements(JNIEnv*@isNULLEnv, jdoubleArray, jdouble*@isGetDoubleArrayElements && isThisDoubleArray, jint@isJNI_ABORTJI)
-
-//test617;Unspecified: ReleaseDoubleArrayElements(JNIEnv*@isNULLEnv, jdoubleArray, jdouble*@isGetDoubleArrayElements && isThisDoubleArray, jint@isJNI_COMMITJI)
-
-//test618;Unspecified: ReleaseDoubleArrayElements(JNIEnv*@isNULLEnv, jdoubleArray, jdouble*@isGetDoubleArrayElements && isThisDoubleArray, jint@isZeroJI)
-
-//test619;Unspecified: ReleaseFloatArrayElements(JNIEnv*, jfloatArray, jfloat*@isGetFloatArrayElements && isThisFloatArray, jint@isNegativeJI)
-
-//test620;Unspecified: ReleaseFloatArrayElements(JNIEnv*, jfloatArray, jfloat*@!isGetFloatArrayElements, jint@isJNI_ABORTJI)
-
-//test621;Unspecified: ReleaseFloatArrayElements(JNIEnv*, jfloatArray, jfloat*@!isGetFloatArrayElements, jint@isJNI_COMMITJI)
-
-//test622;Unspecified: ReleaseFloatArrayElements(JNIEnv*, jfloatArray, jfloat*@!isGetFloatArrayElements, jint@isZeroJI)
-
-//test623;Unspecified: ReleaseFloatArrayElements(JNIEnv*, jfloatArray@isNULLJFA, jfloat*@isGetFloatArrayElements && isThisFloatArray, jint@isJNI_ABORTJI)
-
-//test624;Unspecified: ReleaseFloatArrayElements(JNIEnv*, jfloatArray@isNULLJFA, jfloat*@isGetFloatArrayElements && isThisFloatArray, jint@isJNI_COMMITJI)
-
-//test625;Unspecified: ReleaseFloatArrayElements(JNIEnv*, jfloatArray@isNULLJFA, jfloat*@isGetFloatArrayElements && isThisFloatArray, jint@isZeroJI)
-
-//test626;Unspecified: ReleaseFloatArrayElements(JNIEnv*@isNULLEnv, jfloatArray, jfloat*@isGetFloatArrayElements && isThisFloatArray, jint@isJNI_ABORTJI)
-
-//test627;Unspecified: ReleaseFloatArrayElements(JNIEnv*@isNULLEnv, jfloatArray, jfloat*@isGetFloatArrayElements && isThisFloatArray, jint@isJNI_COMMITJI)
-
-//test628;Unspecified: ReleaseFloatArrayElements(JNIEnv*@isNULLEnv, jfloatArray, jfloat*@isGetFloatArrayElements && isThisFloatArray, jint@isZeroJI)
-
-//test629;Unspecified: ReleaseIntArrayElements(JNIEnv*, jintArray, jint*@isGetIntArrayElements && isThisIntArray, jint@isNegativeJI)
-
-//test630;Unspecified: ReleaseIntArrayElements(JNIEnv*, jintArray, jint*@!isGetIntArrayElements, jint@isJNI_ABORTJI)
-
-//test631;Unspecified: ReleaseIntArrayElements(JNIEnv*, jintArray, jint*@!isGetIntArrayElements, jint@isJNI_COMMITJI)
-
-//test632;Unspecified: ReleaseIntArrayElements(JNIEnv*, jintArray, jint*@!isGetIntArrayElements, jint@isZeroJI)
-
-//test633;Unspecified: ReleaseIntArrayElements(JNIEnv*, jintArray@isNULLJIA, jint*@isGetIntArrayElements && isThisIntArray, jint@isJNI_ABORTJI)
-
-//test634;Unspecified: ReleaseIntArrayElements(JNIEnv*, jintArray@isNULLJIA, jint*@isGetIntArrayElements && isThisIntArray, jint@isJNI_COMMITJI)
-
-//test635;Unspecified: ReleaseIntArrayElements(JNIEnv*, jintArray@isNULLJIA, jint*@isGetIntArrayElements && isThisIntArray, jint@isZeroJI)
-
-//test636;Unspecified: ReleaseIntArrayElements(JNIEnv*@isNULLEnv, jintArray, jint*@isGetIntArrayElements && isThisIntArray, jint@isJNI_ABORTJI)
-
-//test637;Unspecified: ReleaseIntArrayElements(JNIEnv*@isNULLEnv, jintArray, jint*@isGetIntArrayElements && isThisIntArray, jint@isJNI_COMMITJI)
-
-//test638;Unspecified: ReleaseIntArrayElements(JNIEnv*@isNULLEnv, jintArray, jint*@isGetIntArrayElements && isThisIntArray, jint@isZeroJI)
-
-//test639;Unspecified: ReleaseLongArrayElements(JNIEnv*, jlongArray, jlong*@isGetLongArrayElements && isThisLongArray, jint@isNegativeJI)
-
-//test640;Unspecified: ReleaseLongArrayElements(JNIEnv*, jlongArray, jlong*@!isGetLongArrayElements, jint@isJNI_ABORTJI)
-
-//test641;Unspecified: ReleaseLongArrayElements(JNIEnv*, jlongArray, jlong*@!isGetLongArrayElements, jint@isJNI_COMMITJI)
-
-//test642;Unspecified: ReleaseLongArrayElements(JNIEnv*, jlongArray, jlong*@!isGetLongArrayElements, jint@isZeroJI)
-
-//test643;Unspecified: ReleaseLongArrayElements(JNIEnv*, jlongArray@isNULLJLA, jlong*@isGetLongArrayElements && isThisLongArray, jint@isJNI_ABORTJI)
-
-//test644;Unspecified: ReleaseLongArrayElements(JNIEnv*, jlongArray@isNULLJLA, jlong*@isGetLongArrayElements && isThisLongArray, jint@isJNI_COMMITJI)
-
-//test645;Unspecified: ReleaseLongArrayElements(JNIEnv*, jlongArray@isNULLJLA, jlong*@isGetLongArrayElements && isThisLongArray, jint@isZeroJI)
-
-//test646;Unspecified: ReleaseLongArrayElements(JNIEnv*@isNULLEnv, jlongArray, jlong*@isGetLongArrayElements && isThisLongArray, jint@isJNI_ABORTJI)
-
-//test647;Unspecified: ReleaseLongArrayElements(JNIEnv*@isNULLEnv, jlongArray, jlong*@isGetLongArrayElements && isThisLongArray, jint@isJNI_COMMITJI)
-
-//test648;Unspecified: ReleaseLongArrayElements(JNIEnv*@isNULLEnv, jlongArray, jlong*@isGetLongArrayElements && isThisLongArray, jint@isZeroJI)
-
-//test649;Unspecified: ReleasePrimitiveArrayCritical(JNIEnv*, jarray, void*@isGetPrimitiveArrayCritical && isThisVoidArray, jint@isNegativeJI)
-
-//test650;Unspecified: ReleasePrimitiveArrayCritical(JNIEnv*, jarray, void*@!isGetPrimitiveArrayCritical, jint@isJNI_ABORTJI)
-
-//test651;Unspecified: ReleasePrimitiveArrayCritical(JNIEnv*, jarray, void*@!isGetPrimitiveArrayCritical, jint@isJNI_COMMITJI)
-
-//test652;Unspecified: ReleasePrimitiveArrayCritical(JNIEnv*, jarray, void*@!isGetPrimitiveArrayCritical, jint@isZeroJI)
-
-//test653;Unspecified: ReleasePrimitiveArrayCritical(JNIEnv*, jarray@isNULLJA, void*@isGetPrimitiveArrayCritical && isThisVoidArray, jint@isJNI_ABORTJI)
-
-//test654;Unspecified: ReleasePrimitiveArrayCritical(JNIEnv*, jarray@isNULLJA, void*@isGetPrimitiveArrayCritical && isThisVoidArray, jint@isJNI_COMMITJI)
-
-//test655;Unspecified: ReleasePrimitiveArrayCritical(JNIEnv*, jarray@isNULLJA, void*@isGetPrimitiveArrayCritical && isThisVoidArray, jint@isZeroJI)
-
-//test656;Unspecified: ReleasePrimitiveArrayCritical(JNIEnv*@isNULLEnv, jarray, void*@isGetPrimitiveArrayCritical && isThisVoidArray, jint@isJNI_ABORTJI)
-
-//test657;Unspecified: ReleasePrimitiveArrayCritical(JNIEnv*@isNULLEnv, jarray, void*@isGetPrimitiveArrayCritical && isThisVoidArray, jint@isJNI_COMMITJI)
-
-//test658;Unspecified: ReleasePrimitiveArrayCritical(JNIEnv*@isNULLEnv, jarray, void*@isGetPrimitiveArrayCritical && isThisVoidArray, jint@isZeroJI)
-
-//test659;Unspecified: ReleaseShortArrayElements(JNIEnv*, jshortArray, jshort*@isGetShortArrayElements && isThisShortArray, jint@isNegativeJI)
-
-//test660;Unspecified: ReleaseShortArrayElements(JNIEnv*, jshortArray, jshort*@!isGetShortArrayElements, jint@isJNI_ABORTJI)
-
-//test661;Unspecified: ReleaseShortArrayElements(JNIEnv*, jshortArray, jshort*@!isGetShortArrayElements, jint@isJNI_COMMITJI)
-
-//test662;Unspecified: ReleaseShortArrayElements(JNIEnv*, jshortArray, jshort*@!isGetShortArrayElements, jint@isZeroJI)
-
-//test663;Unspecified: ReleaseShortArrayElements(JNIEnv*, jshortArray@isNULLJSA, jshort*@isGetShortArrayElements && isThisShortArray, jint@isJNI_ABORTJI)
-
-//test664;Unspecified: ReleaseShortArrayElements(JNIEnv*, jshortArray@isNULLJSA, jshort*@isGetShortArrayElements && isThisShortArray, jint@isJNI_COMMITJI)
-
-//test665;Unspecified: ReleaseShortArrayElements(JNIEnv*, jshortArray@isNULLJSA, jshort*@isGetShortArrayElements && isThisShortArray, jint@isZeroJI)
-
-//test666;Unspecified: ReleaseShortArrayElements(JNIEnv*@isNULLEnv, jshortArray, jshort*@isGetShortArrayElements && isThisShortArray, jint@isJNI_ABORTJI)
-
-//test667;Unspecified: ReleaseShortArrayElements(JNIEnv*@isNULLEnv, jshortArray, jshort*@isGetShortArrayElements && isThisShortArray, jint@isJNI_COMMITJI)
-
-//test668;Unspecified: ReleaseShortArrayElements(JNIEnv*@isNULLEnv, jshortArray, jshort*@isGetShortArrayElements && isThisShortArray, jint@isZeroJI)
-
-//test669;Unspecified: ReleaseStringChars(JNIEnv*, jstring, jchar*@isUnicodeJC && !isGetStringCharsJC)
-
-//test670;Unspecified: ReleaseStringChars(JNIEnv*, jstring@isNULLS, jchar*@isGetStringCharsJC && isUnicodeJC)
-
-//test671;Unspecified: ReleaseStringChars(JNIEnv*@isNULLEnv, jstring, jchar*@isGetStringCharsJC && isUnicodeJC)
-
-//test672;Unspecified: ReleaseStringCritical(JNIEnv*, jstring, jchar*@isUnicodeJC && !isGetStringCriticalJC)
-
-//test673;Unspecified: ReleaseStringCritical(JNIEnv*, jstring@isNULLS, jchar*@isGetStringCriticalJC && isUnicodeJC)
-
-//test674;Unspecified: ReleaseStringCritical(JNIEnv*@isNULLEnv, jstring, jchar*@isGetStringCriticalJC && isUnicodeJC)
-
-//test675;Unspecified: ReleaseStringUTFChars(JNIEnv*, jstring, char*@isUTF8C && !isGetStringUTFCharC)
-
-//test676;Unspecified: ReleaseStringUTFChars(JNIEnv*, jstring@isNULLS, char*@isGetStringUTFCharC && isUTF8C)
-
-//test677;Unspecified: ReleaseStringUTFChars(JNIEnv*@isNULLEnv, jstring, char*@isGetStringUTFCharC && isUTF8C)
-
-//test678;Unspecified: SetBooleanArrayRegion(JNIEnv*, jbooleanArray, jsize@isNegativeE, jsize@isValidIndexE, jboolean*)
-
-//test679;Unspecified: SetBooleanArrayRegion(JNIEnv*, jbooleanArray, jsize@isValidIndexE, jsize@isNegativeE, jboolean*)
-
-//test680;Unspecified: SetBooleanArrayRegion(JNIEnv*, jbooleanArray, jsize@isValidIndexE, jsize@isValidIndexE, jboolean*@isNULLJB)
-
-//test681;Unspecified: SetBooleanArrayRegion(JNIEnv*, jbooleanArray@isNULLJZA, jsize@isValidIndexE, jsize@isValidIndexE, jboolean*)
-
-//test682;Unspecified: SetBooleanArrayRegion(JNIEnv*@isNULLEnv, jbooleanArray, jsize@isValidIndexE, jsize@isValidIndexE, jboolean*)
-
-//test683;Unspecified: SetBooleanField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF, jboolean)
-
-//test684;Unspecified: SetByteArrayRegion(JNIEnv*, jbyteArray, jsize@isNegativeE, jsize@isValidIndexE, jbyte*)
-
-//test685;Unspecified: SetByteArrayRegion(JNIEnv*, jbyteArray, jsize@isValidIndexE, jsize@isNegativeE, jbyte*)
-
-//test686;Unspecified: SetByteArrayRegion(JNIEnv*, jbyteArray, jsize@isValidIndexE, jsize@isValidIndexE, jbyte*@isNULLB)
-
-//test687;Unspecified: SetByteArrayRegion(JNIEnv*, jbyteArray@isNULLJBA, jsize@isValidIndexE, jsize@isValidIndexE, jbyte*)
-
-//test688;Unspecified: SetByteArrayRegion(JNIEnv*@isNULLEnv, jbyteArray, jsize@isValidIndexE, jsize@isValidIndexE, jbyte*)
-
-//test689;Unspecified: SetByteField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF, jbyte)
-
-//test690;Unspecified: SetCharArrayRegion(JNIEnv*, jcharArray, jsize@isNegativeE, jsize@isValidIndexE, jchar*)
-
-//test691;Unspecified: SetCharArrayRegion(JNIEnv*, jcharArray, jsize@isValidIndexE, jsize@isNegativeE, jchar*)
-
-//test692;Unspecified: SetCharArrayRegion(JNIEnv*, jcharArray, jsize@isValidIndexE, jsize@isValidIndexE, jchar*@isNULLJC)
-
-//test693;Unspecified: SetCharArrayRegion(JNIEnv*, jcharArray@isNULLJCA, jsize@isValidIndexE, jsize@isValidIndexE, jchar*)
-
-//test694;Unspecified: SetCharArrayRegion(JNIEnv*@isNULLEnv, jcharArray, jsize@isValidIndexE, jsize@isValidIndexE, jchar*)
-
-//test695;Unspecified: SetCharField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF, jchar)
-
-//test696;Unspecified: SetDoubleArrayRegion(JNIEnv*, jdoubleArray, jsize@isNegativeE, jsize@isValidIndexE, jdouble*)
-
-//test697;Unspecified: SetDoubleArrayRegion(JNIEnv*, jdoubleArray, jsize@isValidIndexE, jsize@isNegativeE, jdouble*)
-
-//test698;Unspecified: SetDoubleArrayRegion(JNIEnv*, jdoubleArray, jsize@isValidIndexE, jsize@isNegativeE, jdouble*@isNULLJD)
-
-//test699;Unspecified: SetDoubleArrayRegion(JNIEnv*, jdoubleArray@isNULLJDA, jsize@isValidIndexE, jsize@isValidIndexE, jdouble*)
-
-//test700;Unspecified: SetDoubleArrayRegion(JNIEnv*@isNULLEnv, jdoubleArray, jsize@isValidIndexE, jsize, jdouble*)
-
-//test701;Unspecified: SetDoubleField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF, jdouble)
-
-//test702;Unspecified: SetFloatArrayRegion(JNIEnv*, jfloatArray, jsize@isNegativeE, jsize@isValidIndexE, jfloat*)
-
-//test703;Unspecified: SetFloatArrayRegion(JNIEnv*, jfloatArray, jsize@isValidIndexE, jsize@isNegativeE, jfloat*)
-
-//test704;Unspecified: SetFloatArrayRegion(JNIEnv*, jfloatArray, jsize@isValidIndexE, jsize@isValidIndexE, jfloat*@isNULLJF)
-
-//test705;Unspecified: SetFloatArrayRegion(JNIEnv*, jfloatArray@isNULLJFA, jsize@isValidIndexE, jsize@isValidIndexE, jfloat*)
-
-//test706;Unspecified: SetFloatArrayRegion(JNIEnv*@isNULLEnv, jfloatArray, jsize@isValidIndexE, jsize@isValidIndexE, jfloat*)
-
-//test707;Unspecified: SetFloatField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF, jfloat)
-
-//test708;Unspecified: SetIntArrayRegion(JNIEnv*, jintArray, jsize@isNegativeE, jsize@isValidIndexE, jint*)
-
-//test709;Unspecified: SetIntArrayRegion(JNIEnv*, jintArray, jsize@isValidIndexE, jsize@isNegativeE, jint*)
-
-//test710;Unspecified: SetIntArrayRegion(JNIEnv*, jintArray, jsize@isValidIndexE, jsize@isValidIndexE, jint*@isNULLJI)
-
-//test711;Unspecified: SetIntArrayRegion(JNIEnv*, jintArray@isNULLJIA, jsize@isValidIndexE, jsize@isValidIndexE, jint*)
-
-//test712;Unspecified: SetIntArrayRegion(JNIEnv*@isNULLEnv, jintArray, jsize@isValidIndexE, jsize@isValidIndexE, jint*)
-
-//test713;Unspecified: SetIntField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF, jint)
-
-//test714;Unspecified: SetLongArrayRegion(JNIEnv*, jlongArray, jsize@isNegativeE, jsize@isValidIndexE, jlong*)
-
-//test715;Unspecified: SetLongArrayRegion(JNIEnv*, jlongArray, jsize@isValidIndexE, jsize@isNegativeE, jlong*)
-
-//test716;Unspecified: SetLongArrayRegion(JNIEnv*, jlongArray, jsize@isValidIndexE, jsize@isValidIndexE, jlong*@isNULLJL)
-
-//test717;Unspecified: SetLongArrayRegion(JNIEnv*, jlongArray@isNULLJLA, jsize@isValidIndexE, jsize@isValidIndexE, jlong*)
-
-//test718;Unspecified: SetLongArrayRegion(JNIEnv*@isNULLEnv, jlongArray, jsize@isValidIndexE, jsize@isValidIndexE, jlong*)
-
-//test719;Unspecified: SetLongField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF, jlong)
-
-//test720;Unspecified: SetObjectArrayElement(JNIEnv*, jobjectArray, jsize@isNegativeE, jobject@isSubClassO)
-
-//test721;Unspecified: SetObjectArrayElement(JNIEnv*, jobjectArray, jsize@isValidIndexE, jobject@isNULLO)
-
-//test722;Unspecified: SetObjectArrayElement(JNIEnv*, jobjectArray@isNULLJOA, jsize@isValidIndexE, jobject@isSubClassO)
-
-//test723;Unspecified: SetObjectArrayElement(JNIEnv*@isNULLEnv, jobjectArray, jsize@isValidIndexE, jobject@isSubClassO)
-
-//test724;Unspecified: SetObjectField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF, jobject)
-
-//test725;Unspecified: SetShortArrayRegion(JNIEnv*, jshortArray, jsize@isNegativeE, jsize@isValidIndexE, jshort*)
-
-//test726;Unspecified: SetShortArrayRegion(JNIEnv*, jshortArray, jsize@isValidIndexE, jsize@isNegativeE, jshort*)
-
-//test727;Unspecified: SetShortArrayRegion(JNIEnv*, jshortArray, jsize@isValidIndexE, jsize@isValidIndexE, jshort*@isNULLJS)
-
-//test728;Unspecified: SetShortArrayRegion(JNIEnv*, jshortArray@isNULLJSA, jsize@isValidIndexE, jsize@isValidIndexE, jshort*)
-
-//test729;Unspecified: SetShortArrayRegion(JNIEnv*@isNULLEnv, jshortArray, jsize@isValidIndexE, jsize@isValidIndexE, jshort*)
-
-//test730;Unspecified: SetShortField(JNIEnv*@isNULLEnv, jobject@!isNULLO, jfieldID@!isStaticF, jshort)
-
-//test731;Unspecified: SetStaticBooleanField(JNIEnv*, jclass, jfieldID@isNULLF, jboolean)
-
-//test732;Unspecified: SetStaticBooleanField(JNIEnv*, jclass, jfieldID@!isStaticF, jboolean)
-
-//test733;Unspecified: SetStaticBooleanField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF, jboolean)
-
-//test734;Unspecified: SetStaticBooleanField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF, jboolean)
-
-//test735;Unspecified: SetStaticByteField(JNIEnv*, jclass, jfieldID@isNULLF, jbyte)
-
-//test736;Unspecified: SetStaticByteField(JNIEnv*, jclass, jfieldID@!isStaticF, jbyte)
-
-//test737;Unspecified: SetStaticByteField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF, jbyte)
-
-//test738;Unspecified: SetStaticByteField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF, jbyte)
-
-//test739;Unspecified: SetStaticCharField(JNIEnv*, jclass, jfieldID@isNULLF, jchar)
-
-//test740;Unspecified: SetStaticCharField(JNIEnv*, jclass, jfieldID@!isStaticF, jchar)
-
-//test741;Unspecified: SetStaticCharField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF, jchar)
-
-//test742;Unspecified: SetStaticCharField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF, jchar)
-
-//test743;Unspecified: SetStaticDoubleField(JNIEnv*, jclass, jfieldID@isNULLF, jdouble)
-
-//test744;Unspecified: SetStaticDoubleField(JNIEnv*, jclass, jfieldID@!isStaticF, jdouble)
-
-//test745;Unspecified: SetStaticDoubleField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF, jdouble)
-
-//test746;Unspecified: SetStaticDoubleField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF, jdouble)
-
-//test747;Unspecified: SetStaticFloatField(JNIEnv*, jclass, jfieldID@isNULLF, jfloat)
-
-//test748;Unspecified: SetStaticFloatField(JNIEnv*, jclass, jfieldID@!isStaticF, jfloat)
-
-//test749;Unspecified: SetStaticFloatField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF, jfloat)
-
-//test750;Unspecified: SetStaticFloatField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF, jfloat)
-
-//test751;Unspecified: SetStaticIntField(JNIEnv*, jclass, jfieldID@isNULLF, jint)
-
-//test752;Unspecified: SetStaticIntField(JNIEnv*, jclass, jfieldID@!isStaticF, jint)
-
-//test753;Unspecified: SetStaticIntField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF, jint)
-
-//test754;Unspecified: SetStaticIntField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF, jint)
-
-//test755;Unspecified: SetStaticLongField(JNIEnv*, jclass, jfieldID@isNULLF, jlong)
-
-//test756;Unspecified: SetStaticLongField(JNIEnv*, jclass, jfieldID@!isStaticF, jlong)
-
-//test757;Unspecified: SetStaticLongField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF, jlong)
-
-//test758;Unspecified: SetStaticLongField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF, jlong)
-
-//test759;Unspecified: SetStaticObjectField(JNIEnv*, jclass, jfieldID@isNULLF, jobject)
-
-//test760;Unspecified: SetStaticObjectField(JNIEnv*, jclass, jfieldID@!isStaticF, jobject)
-
-//test761;Unspecified: SetStaticObjectField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF, jobject)
-
-//test762;Unspecified: SetStaticObjectField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF, jobject)
-
-//test763;Unspecified: SetStaticShortField(JNIEnv*, jclass, jfieldID@isNULLF, jshort)
-
-//test764;Unspecified: SetStaticShortField(JNIEnv*, jclass, jfieldID@!isStaticF, jshort)
-
-//test765;Unspecified: SetStaticShortField(JNIEnv*, jclass@isNULLCL, jfieldID@isStaticF, jshort)
-
-//test766;Unspecified: SetStaticShortField(JNIEnv*@isNULLEnv, jclass, jfieldID@isStaticF, jshort)
-
-//test767;Unspecified: GetPrimitiveArrayCritical(JNIEnv*, jarray, jboolean*@isNULLJB)
-
-//test768;Unspecified: GetPrimitiveArrayCritical(JNIEnv*, jarray@isNULLJA, jboolean*)
-
-//test769;Unspecified: GetPrimitiveArrayCritical(JNIEnv*@isNULLEnv, jarray, jboolean*)
-
-Last No. 769
+Last No. 581
