@@ -1,229 +1,679 @@
 \documentclass[10pt]{article}
 
+\usepackage{array,color}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+\newcommand{\inred}[1]{{\color{red}{#1}}}
+\newcommand{\tc}[1]{\noindent\textbf{\underline{#1}}}
+\newcolumntype{Y}[1]{>{\raggedright\arraybackslash}m{#1}}
+\newcommand{\mytable}[1]{{\renewcommand{\arraystretch}{2.0}
+      \begin{tabular}{ c | Y{14cm}} #1
+    \end{tabular}}\hfill}
+\newcommand{\tctable}[4]{\mytable{#1 & #2 \\\hline #3 & \texttt{#4} \\}}
+
 \begin{document}
 
-\title{A Study of Unspecified Cases in the JNI Specification}
+\title{\textbf{An Empirical Study of JVMs’ Behaviors on Erroneous JNI Interoperations}}
 
-\author{Sungjae Hwang \\ sjhwang87@kaist.ac.kr \\ KAIST \\ South Korea \\ \\ \\ \\ 
-   \and Sungho Lee \\  eshaj@cnu.ac.kr \\ CNU \\ South Korea \\ \\ \\ \\ 
-   \and Jihoon Kim \\  kjh618@kaist.ac.kr \\ KAIST \\ South Korea \\ \\ \\ \\ 
-   \and Sukyoung Ryu \\  sryu.cs@kaist.ac.kr \\ KAIST \\ South Korea \\ \\ \\ \\ }
+\author{Sungjae Hwang \\ College of Computing and Informatics \\ SKKU \\ Suwon, South Korea \\ sungjaeh@skku.edu \\
+   \and Sungho Lee \\ Dept. Computer Science and Engineering \\ CNU \\ Daejeon, South Korea \\  eshaj@cnu.ac.kr   \\ 
+   \and Sukyoung Ryu \\ School of Computing \\ KAIST \\ Daejeon, South Korea \\ sryu.cs@kaist.ac.kr \\}
 
 \maketitle
 
-\section{List of Segmentation Faults} 
+\section{Segmentation Faults} 
+\subsection{Type Check}
+\tc{Use reflection with ill-typed objects}
 
-\subsection{Missing Type Check}
-\noindent \textbf{Call methods with a wrong receiver object:} 
+\tctable
+{Description}
+{Call {\tt FromReflectedMethod} or {\tt FromReflectedField} with an
+object that is not {\tt java.lang.reflect.Method} nor {\tt  java.lang.reflect.Constructor}
+as the second argument}
+{Example}
+{FromReflectedMethod(JNIEnv*@!isNULLEnv, jobject@isGlobalO \&\& isLoaderO \&\& !isDeletedO \&\& !isLocalO \&\& !isNULLO \&\& !isReflectConstructorO \&\& !isReflectFieldO \&\& !isReflectMethodO \&\& !isSubClassO)}
 
-Calling a private function with java object that does not consist of the private function through {\tt call<type>method}, {\tt call<type>methodV}, {\tt call<type>methodA}.
+\vspace*{3mm}
+\tc{Store strings into invalid buffers}
 
-\vspace{3mm}
-\noindent \textbf{Define classes with a non classloader object:}
+\tctable
+{Description}
+{Store translated UTF-8 encoded characters into an invalid buffer given as the last argument of {\tt GetStringUTFRegion}}
+{Example}
+{GetStringUTFRegion(JNIEnv*@!isNULLEnv, jstring@!isNULLS, jsize@!isNegativeE \&\& !isPositiveE \&\& !isValidIndexE \&\& !isZeorE, jsize@isPositiveE \&\& isValidIndexE, char*@!isNULLC)}
 
-Passing non classloader object when calling {\tt DefineClass}.
+\subsection{{\tt NULL} Check}
+\tc{Call methods with NULL arguments}
 
-\vspace{3mm}
-\noindent \textbf{Call reflect methods with a non reflect type object:}
+\tctable
+{Description}
+{Call Java methods via {\tt Call<type>MethodA}, {\tt CallNonvirtual<type>MethodA}, and
+{\tt CallStatic<type>methodA} with {\tt NULL} as the last argument}
+{Example}
+{CallBooleanMethodA(JNIEnv*@!isNULLEnv, jobject@!isNULLO, jmethodID@isInThisClassM \&\& isJBooleanM \&\& isPrivateM \&\& !isStaticM, jvalue*@isNULLJV \&\& !isArrayPtrJV)}
 
-Passing non {\tt java.lang.reflect.Method} or {\tt java.lang.reflect.Constructor} when calling {\tt FromReflectedMethod}, and {\tt FromReflectedField}.
+\newpage
+%\vspace{3mm}
+\tc{Access fields using a {\tt NULL} field ID}
 
-\vspace{3mm}
-\noindent \textbf{Release unrelated strings:}
-
-Release a string by calling {\tt releaseCharArrayElements} which is not obtained by {\tt getCharArrayElements}.
-
-\subsection{Missing Null Check}
-
-\vspace{3mm}
-\noindent \textbf{Call methods with null arguments:}
-
-Missing null check of jvalue when calling {\tt Call<type>methodA}, {\tt CallNonvirtual<type>MethodA}, {\tt CallStatic<type>methodA}.
-
-\vspace{3mm}
-\noindent \textbf{Obtain/Set static fields with a null field ID:}
-
-Missing null check of static jfieldID when calling {\tt getStatic<type>Field}, {\tt setStatic<type>field}
-
-\vspace{3mm}
-\noindent \textbf{Obtain strings with a null destination buffer:}
-
-Missing null check of destination buffer when calling {\tt GetStringUTFRegion}, {\tt GetStringRegion} 
-
-\vspace{3mm}
-\noindent \textbf{Generate new strings with a null source buffer:}
-
-Missing null check of source string when calling {\tt NewString}
+\tctable
+{Description}
+{Get/Set Java fields with a {\tt NULL} field ID ({\tt jfieldID})}
+{Example}
+{GetStaticBooleanField(JNIEnv*@!isNULLEnv, jclass@!isNULLCL, jfieldID@isNULLF \&\& !isStaticF)}
 
 \vspace{3mm}
-\noindent \textbf{Call methods with a null method ID:}
+\tc{Get field/method IDs using a {\tt NULL} signature}
 
-Missing null check of jmethodID when calling {\tt call<type>method}, {\tt call<type>methodV}, {\tt call<type>methodA} 
-
-\vspace{3mm}
-\noindent \textbf{Define classes with a name as null value:}
-
-Missing null check of name of the class when calling {\tt DefineClass}
-
-\vspace{3mm}
-\noindent \textbf{Obtain fields and methods ID with a signature as null value:}
-
-Missing null check of field signature when calling {\tt GetFieldID}, {\tt GetStaticFieldID}, and
-missing null check of method signature when calling {\tt GetStaticMethodID}, {\tt GetMethodID}.
+\tctable
+{Description}
+{Get field/method IDs using a {\tt NULL} field signature given as the last argument for {\tt GetFieldID}, {\tt GetStaticFieldID}, {\tt GetMethodID} and {\tt GetStaticMethodID}}
+{Example}
+{GetFieldID(JNIEnv*@!isNULLEnv, jclass@!isNULLCL, char*@isFieldNameC \&\& isUTF8C \&\& !isNULLC, char*@isNULLC)} 
 
 \vspace{3mm}
-\noindent \textbf{Obtain fields with a null receiver object:}
+\tc{Get field/method IDs and classes from a {\tt NULL} object}
 
-Missing null check of jobject when calling {\tt GetObjectField}.
-
-\vspace{3mm}
-\noindent \textbf{Obtain field/method IDs and class from a null object:}
-
-Missing null check of jobject when calling {\tt FromReflectedField}, {\tt GetObjectClass}, {\tt FromReflectedMethod}
-
-
-\section{Differences between JVMs}
-\subsection{Missing Type Check}
+\tctable
+{Description}
+{Get field/method IDs and classes from a {\tt NULL} object by passing
+passing {\tt NULL} as the second argument of {\tt GetObjectClass}, for example}
+{Example}
+{GetObjectClass(JNIEnv*@!isNULLEnv, jobject@isNULLO \&\& !isDeletedO \&\& !isGlobalO \&\& !isLoaderO \&\& !isLocalO \&\& !isReflectConstructorO \&\& !isReflectFieldO \&\& !isReflectMethodO \&\& !isSubClassO)}
 
 \vspace{3mm}
-\noindent \textbf{Define classes with a non classloader object:}
+\tc{Get strings into a {\tt NULL} destination buffer}
 
-Passing non-classloader object when calling {\tt DefineClass}
-
-\vspace{3mm}
-\noindent \textbf{Obtain/update non-static fields with a static field ID:}
-
-Passing non-static field ID when calling {\tt GetStatic<type>Field},and {\tt SetStatic<type>Field}.
-
-\vspace{3mm}
-\noindent \textbf{Obtain/update static fields with a non-static field ID}
-
-Passing static field ID when calling {\tt Get<type>Field},and {\tt Set<type>Field}.
+\tctable
+{Description}
+{Store strings into a {\tt NULL} buffer by
+passing {\tt NULL} as the last argument of {\tt GetStringRegion}, for example}
+{Example}
+{GetStringRegion(JNIEnv*@!isNULLEnv, jstring@!isNULLS, jsize@isValidIndexE, jsize@isNegativeE \&\& isPositiveE \&\& isValidIndexE \&\& !isZeorE, jchar*@isNULLJC \&\& !isGetCharArrayElementsJC \&\& !isGetStringCharsJC \&\& !isGetStringCriticalJC \&\& !isThisCharArray \&\& !isUnicodeJC)}
 
 \vspace{3mm}
-\noindent \textbf{Obtain classes with a bad class descriptor}
+\tc{Get field/method IDs from a {\tt NULL} name}
 
-Passing field signature as a class name when calling {\tt FindClass}.
-
-\vspace{3mm}
-\noindent \textbf{Throw exceptions with non-throwable objects}
-
-Passing non-throwable object when calling {\tt ThrowNew}.
-
-\vspace{3mm}
-\noindent \textbf{Call a private function with a receiver object that does not consist of the private function}
-
-Call Java function with wrong type of method ID.
-e.x. Calling {\tt CallBooleanMethod} with jmethod ID of Int return type function.
+\tctable
+{Description}
+{Get field/method IDs from a {\tt NULL} name by 
+passing {\tt NULL} as the third argument of {\tt GetFieldID}, for example}
+{Example}
+{GetFieldID(JNIEnv*@!isNULLEnv, jclass@!isNULLCL, char*@isNULLC \&\& !isArrayClassSigC \&\& !isClassSigC \&\& !isEndWithBC \&\& !isEndWithCC \&\& !isEndWithDC \&\& !isEndWithFC \&\& !isEndWithIC \&\& !isEndWithJC \&\& !isEndWithLC \&\& !isEndWithSC \&\& !isEndWithVC \&\& !isEndWithZC \&\& !isFieldNameC \&\& !isFieldSigC \&\& !isGetStringUTFCharC \&\& !isInitC \&\& !isMethodNameC \&\& !isMethodSigC \&\& !isUTF8C, char*@isFieldSigC \&\& isUTF8C \&\& !isNULLC)}
 
 \vspace{3mm}
-\noindent \textbf{Create Object with array classes}
+\tc{Call methods using a {\tt NULL JNIEnv} object}
 
-Passing array class when calling {\tt NewObject}.
+\tctable
+{Description}
+{Call JNI functions using a {\tt NULL JNIEnv} object}
+{Example}
+{GetBooleanArrayElements(JNIEnv*@isNULLEnv, jbooleanArray@!isNULLJZA, jboolean*@isNULLJB)}
 
-\vspace{3mm}
-\noindent \textbf{Create Object with a non-constructor method ID}
+\newpage
+\tc{Construct a new array using a {\tt NULL} class}
 
-Passing non-constructor method ID when calling {\tt NewObject}.
-
-\vspace{3mm}
-\noindent \textbf{Obtain field IDs with not subtype of java/lang/reflect/Field object}
-
-Passing non-java.lang.reflect.field type object when calling {\tt FromReflectedField}.
-
-\vspace{3mm}
-\noindent \textbf{Call methods with a wrong type of receiver}
-
-Calling a private function with java object that does not consist of the private function through {\tt call<type>method}, {\tt call<type>methodV}, {\tt call<type>methodA}.
-
-\vspace{3mm}
-\noindent \textbf{Release unrelated array elements}
-
-Release a string by calling releaseCharArrayElements which is not obtained by getCharArrayElements.
-
-\subsection{Missing Null Check}
-\vspace{3mm}
-\noindent \textbf{Call methods with a null method ID}
-
-Passing null jmethodID when calling {\tt Call<type>Method}.
+\tctable
+{Description}
+{Construct a new array from a {\tt NULL} class by
+passing {\tt NULL} as the third argument of {\tt NewObjectArray}, for example}
+{Example}
+{NewObjectArray(JNIEnv*@!isNULLEnv, jsize@isPositiveE \&\& isZeorE, jclass@isNULLCL \&\& !isArrayCL \&\& !isContainMethod \&\& !isObjectCL \&\& !isThrowableCL, jobject@isNULLO)}
 
 \vspace{3mm}
-\noindent \textbf{Create Objects with a null method ID}
+\tc{Construct a new object using {\tt NULL} arguments}
 
-Passing null jmethodID when calling {\tt NewObject}.
-
-\vspace{3mm}
-\noindent \textbf{Obtain fields with a null receiver object}
-
-Passing null jboject when calling {\tt Get<type>Field}.
-
-\vspace{3mm}
-\noindent \textbf{Call methods with a null receiver object}
-
-Second argument of {\tt Call<type>Method} is null.
+\tctable
+{Description}
+{Construct a new object from {\tt NULL} arguments by
+passing {\tt NULL} as the fourth argument of {\tt NewObjectA}, for example}
+{Example}
+{NewObjectA(JNIEnv*@!isNULLEnv, jclass@!isArrayCL \&\& !isNULLCL, jmethodID@isInitM, jvalue*@isNULLJV \&\& !isArrayPtrJV)}
 
 \vspace{3mm}
-\noindent \textbf{Obtain field IDs with a null reflected object}
+\tc{Get Java VM interfaces from a {\tt NULL} pointer}
 
-Second argument of {\tt FromReflectedField} is null.
-
-\vspace{3mm}
-\noindent \textbf{Obtain method IDs with a null reflected object}
-
-Second argument of {\tt FromReflectedMethod} is null.
-
-\vspace{3mm}
-\noindent \textbf{Obtain field IDs with a field signature as null value}
-
-Forth argument of {\tt GetFieldID} is null.
+\tctable
+{Description}
+{Get a Java VM interface (used in the {\tt Invocation} API) from a {\tt NULL} pointer
+by passing {\tt NULL} as the second argument of {\tt GetJavaVM}, for example}
+{Example}
+{GetJavaVM(JNIEnv*@!isNULLEnv, JavaVM*@isNULLJVM)}
 
 \vspace{3mm}
-\noindent \textbf{Obtain field IDs  with a field name as null value}
+\tc{Get modules from a {\tt NULL} class}
 
-Third argument of {\tt GetFieldID} is null.
-
-\vspace{3mm}
-\noindent \textbf{Obtain method IDs with a method signature as null value}
-
-Forth argument of {\tt GetMethodID} is null.
-
-\vspace{3mm}
-\noindent \textbf{Obtain method IDs  with a method name as null value}
-
-Third argument of {\tt GetMethodID} is null.
+\tctable
+{Description}
+{Get a {\tt java.lang.Module} object from a {\tt NULL} class
+by passing {\tt NULL} as the second argument of {\tt GetModule}, for example}
+{Example}
+{GetModule(JNIEnv*@!isNULLEnv, jclass@isNULLCL \&\& !isArrayCL \&\& !isContainMethod \&\& !isObjectCL \&\& !isThrowableCL)}
 
 \vspace{3mm}
-\noindent \textbf{Release null string}
-Third argument of {\tt ReleaseStringChars} is null.
+\tc{Register a {\tt NULL} native method}
+
+\tctable
+{Description}
+{Register native methods using a {\tt NULL JNINativeMethod}
+by passing {\tt NULL} as the third argument of {\tt RegisterNatives}, for example}
+{Example}
+{RegisterNatives(JNIEnv*@!isNULLEnv, jclass@!isNULLCL, JNINativeMethod*@isNULLNMD, jint@isPositiveJI)}
 
 \vspace{3mm}
-\noindent \textbf{Obtain object from a non-existing local frame on the stack}
+\tc{Register native methods with a {\tt NULL} class}
 
-Get local reference object when there is no local frame on stack by calling {\tt PopLocalFrame}
-
-\subsection{Missing Garbage Check}
-\vspace{3mm}
-\noindent \textbf{Obtain a reference type of deleted objects}
-
-Passing deleted object as second argument of {\tt GetObjectRefType}.
-
-\vspace{3mm}
-\noindent \textbf{Store deleted objects into an array element}
-
-Passing deleted object as forth argument of {\tt SetObjectArrayElement}.
-
-
-\subsection{Missing Negative Integer Check}
+\tctable
+{Description}
+{Register native methods using a {\tt NULL} class
+by passing {\tt NULL} as the second argument of {\tt RegisterNatives}, for example}
+{Example}
+{RegisterNatives(JNIEnv*@!isNULLEnv, jclass@isNULLCL \&\& !isArrayCL \&\& !isContainMethod \&\& !isObjectCL \&\& !isThrowableCL, JNINativeMethod*@!isNULLNMD, jint@isPositiveJI)}
 
 \vspace{3mm}
-\noindent \textbf{Create negative capacity of a local reference frame}
+\tc{Store strings into a {\tt NULL} buffer}
 
-Passing negative number as second argument of {\tt EnsureLocalCapacity}.
+\tctable
+{Description}
+{Store strings into a {\tt NULL} buffer by
+passing {\tt NULL} as the last argument of {\tt GetStringUTFRegion}, for example}
+{Example}
+{GetStringUTFRegion(JNIEnv*@!isNULLEnv, jstring@!isNULLS, jsize@isValidIndexE, jsize@isValidIndexE \&\& !isNegativeE \&\& !isPositiveE \&\& !isZeorE, char*@isNULLC )}
+
+\newpage
+\tc{Unregister native methods from a {\tt NULL} class}
+
+\tctable
+{Description}
+{Unregister native methods from a {\tt NULL} class
+by passing {\tt NULL} as the second argument of {\tt UnregisterNatives}, for example}
+{Example}
+{UnregisterNatives(JNIEnv*@!isNULLEnv, jclass@isNULLCL \&\& !isArrayCL \&\& !isContainMethod \&\& !isObjectCL \&\& !isThrowableCL)}
 
 \vspace{3mm}
-\noindent \textbf{Access negative index of array elements}
+\tc{Use reflection with a {\tt NULL} field ID}
 
-Passing negative number as third argument of {\tt GetByteArrayRegion}, and {\tt SetCharArrayRegion}.
+\tctable
+{Description}
+{Convert {\tt NULL} to a {\tt java.lang.reflect.Field} object}
+{Example}
+{ToReflectedField(JNIEnv*@!isNULLEnv, jclass@!isNULLCL, jfieldID@isNULLF \&\& !isStaticF, jboolean@!isFalse \&\& !isTrue)}
 
+
+\subsection{Releasability Check}
+\tc{Release unreleasable array elements}
+
+\tctable
+{Description}
+{Release array elements not derived from {\tt Get<PrimitiveType>ArrayElements()}}
+{Example}
+{ReleaseCharArrayElements(JNIEnv*@!isNULLEnv, jcharArray@!isNULLJCA, jchar*@isGetStringCharsJC \&\& isThisCharArray \&\& isUnicodeJC \&\& !isGetCharArrayElementsJC \&\& !isGetStringCriticalJC \&\& !isNULLJC, jint@isJNI\_ABORTJI)}
+
+
+\subsection{Modifier Check}
+\tc{Use incorrect modifier flags}
+
+\tctable
+{Description}
+{Use {\tt JNI\_TRUE} when using a non-static field ID via {\tt ToReflectedField}}
+{Example}
+{ToReflectedField(JNIEnv*@!isNULLEnv, jclass@!isNULLCL, jfieldID@!isNULLF \&\& !isStaticF, jboolean@isTrue \&\& !isFalse)}
+
+
+\subsection{Size Check}
+\tc{Access out-of-bound array elements}
+
+\tctable
+{Description}
+{Access array elements with out-of-bound indices}
+{Example}
+{SetDoubleArrayRegion(JNIEnv*@!isNULLEnv, jdoubleArray@!isNULLJDA, jsize@isValidIndexE, jsize@isPositiveE \&\& isZeorE \&\& !isNegativeE \&\& !isValidIndexE, jdouble*@!isNULLJD)}
+
+\vspace{3mm}
+\tc{Use strings of incorrect lengths}
+
+\tctable
+{Description}
+{Call {\tt NewString} with {\tt NULL} as the second argument and a positive integer as the third argument}
+{Example}
+{NewString(JNIEnv*@!isNULLEnv, jchar*@isNULLJC \&\& !isGetCharArrayElementsJC \&\& !isGetStringCharsJC \&\& !isGetStringCriticalJC \&\& !isThisCharArray \&\& !isUnicodeJC, jsize@isPositiveE \&\& isValidIndexE \&\& !isNegativeE \&\& !isZeorE)}
+
+\newpage
+\subsection{Compatibility Check}
+\tc{Call unsupported JNI functions}
+
+\tctable
+{Description}
+{Call {\tt DefineClass} on Android}
+{Example}
+{DefineClass(JNIEnv*@isNULLEnv, char*@isNULLC \&\& isUTF8C, jobject@isLoaderO \&\& isNULLO, jbyte*@isBytePointerClassInfo \&\& !isNULLB, jsize@isValidIndexE)}
+
+\vspace{3mm}
+\tc{Use Java bytecode or class files}
+
+\tctable
+{Description}
+{Call Java bytecode methods on Android}
+{Example}
+{ReleaseByteArrayElements(JNIEnv*@!isNULLEnv, jbyteArray@!isNULLJBA, jbyte*@isBytePointerClassInfo \&\& isThisByteArray \&\& !isGetByteArrayElements \&\& !isNULLB, jint@isJNI\_ABORTJI)}
+
+\section{Differences of the Debug Option among JVMs}
+\subsection{Type Check}
+\tc{Define classes with ill-typed classloaders}
+
+\tctable
+{Description}
+{Pass a non-classloader object as the third argument of {\tt DefineClass}}
+{Example}
+{DefineClass(JNIEnv*@!isNULLEnv, char*@isUTF8C \&\& !isNULLC, jobject@isLocalO \&\& isSubClassO \&\& !isDeletedO \&\& !isGlobalO \&\& !isLoaderO \&\& !isNULLO \&\& !isReflectConstructorO \&\& !isReflectFieldO \&\& !isReflectMethodO, jbyte*@isBytePointerClassInfo \&\& !isNULLB, jsize@isValidIndexE)}
+
+\vspace{3mm}
+\tc{Call methods with unmatched return types}
+
+\tctable
+{Description}
+{Call Java methods returning {\tt void} via {\tt CallLongMethodV}}
+{Example}
+{CallLongMethodV(JNIEnv*@!isNULLEnv, jobject@!isNULLO, jmethodID@isInThisClassM \&\& isInitM \&\& !isInThisOrSuperClasesM \&\& !isJBooleanM \&\& !isJByteM \&\& !isJCharM \&\& !isJDoubleM \&\& !isJFloatM \&\& !isJIntM \&\& !isJLongM \&\& !isJObjectM \&\& !isJShortM \&\& !isNULLM \&\& !isPrivateM \&\& !isStaticM \&\& !isVoidM, va\_list)}
+
+\vspace{3mm}
+\tc{Create objects with array classes}
+
+\tctable
+{Description}
+{Pass an array class as the second argument of {\tt NewObject}}
+{Example}
+{NewObject(JNIEnv*@!isNULLEnv, jclass@isArrayCL \&\& isContainMethod \&\& isObjectCL \&\& !isNULLCL \&\& !isThrowableCL, jmethodID@isInitM, ...)}
+
+\vspace{3mm}
+\tc{Use reflection for fields with ill-typed objects}
+
+\tctable
+{Description}
+{Call {\tt FromReflectedField} with an
+object that is not {\tt java.lang.reflect.Method} nor {\tt java.lang.reflect.Constructor}
+as the second argument}
+{Example}
+{FromReflectedField(JNIEnv*@!isNULLEnv, jobject@isGlobalO \&\& isLoaderO \&\& isSubClassO \&\& !isDeletedO \&\& !isLocalO \&\& !isNULLO \&\& !isReflectConstructorO \&\& !isReflectFieldO \&\& !isReflectMethodO)}
+
+\newpage
+\tc{Allocate objects using array classes}
+
+\tctable
+{Description}
+{Allocate a new Java object with an array class without invoking any constructors}
+{Example}
+{AllocObject(JNIEnv*@!isNULLEnv, jclass@isArrayCL \&\& isContainMethod \&\& isObjectCL \&\& !isNULLCL \&\& !isThrowableCL)}
+
+\vspace{3mm}
+\tc{Call methods with ill-typed method IDs}
+
+\tctable
+{Description}
+{Invoke a private method with a receiver object that does not contain the specified private method}
+{Example}
+{CallLongMethodV(JNIEnv*@!isNULLEnv, jobject@!isNULLO, jmethodID@isJLongM \&\& isPrivateM \&\& !isInThisClassM \&\& !isInThisOrSuperClasesM \&\& !isInitM \&\& !isJBooleanM \&\& !isJByteM \&\& !isJCharM \&\& !isJDoubleM \&\& !isJFloatM \&\& !isJIntM \&\& !isJObjectM \&\& !isJShortM \&\& !isNULLM \&\& !isStaticM \&\& !isVoidM, va\_list)}
+
+\vspace{3mm}
+\tc{Get method IDs of non-existent methods}
+
+\tctable
+{Description}
+{Get a non-existent Java method}
+{Example}
+{GetMethodID(JNIEnv*@!isNULLEnv, jclass@isContainMethod \&\& !isNULLCL, char*@isClassSigC \&\& isEndWithCC \&\& isGetStringUTFCharC \&\& isUTF8C \&\& !isArrayClassSigC \&\& !isEndWithBC \&\& !isEndWithDC \&\& !isEndWithFC \&\& !isEndWithIC \&\& !isEndWithJC \&\& !isEndWithLC \&\& !isEndWithSC \&\& !isEndWithVC \&\& !isEndWithZC \&\& !isFieldNameC \&\& !isFieldSigC \&\& !isInitC \&\& !isMethodNameC \&\& !isMethodSigC \&\& !isNULLC, char*@isUTF8C \&\& !isArrayClassSigC \&\& !isClassSigC \&\& !isEndWithBC \&\& !isEndWithCC \&\& !isEndWithDC \&\& !isEndWithFC \&\& !isEndWithIC \&\& !isEndWithJC \&\& !isEndWithLC \&\& !isEndWithSC \&\& !isEndWithVC \&\& !isEndWithZC \&\& !isFieldNameC \&\& !isFieldSigC \&\& !isGetStringUTFCharC \&\& !isInitC \&\& !isMethodNameC \&\& !isMethodSigC \&\& !isNULLC)}
+
+\vspace{3mm}
+\tc{Use reflection for methods with ill-typed objects}
+
+\tctable
+{Description}
+{Call {\tt FromReflectedMethod}
+with an object that is not {\tt java.lang.reflect.Method} nor {\tt java.lang.reflect.Constructor}
+as the second argument}
+{Example}
+{FromReflectedMethod(JNIEnv*@!isNULLEnv, jobject@isGlobalO \&\& isLoaderO \&\& isSubClassO \&\& !isDeletedO \&\& !isLocalO \&\& !isNULLO \&\& !isReflectConstructorO \&\& !isReflectFieldO \&\& !isReflectMethodO)}
+
+\subsection{{\tt NULL} Check}
+
+\vspace{3mm}
+\tc{Call methods with {\tt NULL} arguments}
+
+\tctable
+{Description}
+{Call Java methods via {\tt Call<type>MethodA}, {\tt CallNonvirtual<type>MethodA}, and
+{\tt CallStatic<type>methodA} with {\tt NULL} as the last argument}
+{Example}
+{CallByteMethodA(JNIEnv*@!isNULLEnv, jobject@!isNULLO, jmethodID@isInThisClassM \&\& isJByteM \&\& isPrivateM \&\& !isStaticM, jvalue*@isNULLJV \&\& !isArrayPtrJV)}
+
+\newpage
+\tc{Access fields using a {\tt NULL} field ID}
+
+\tctable
+{Description}
+{Get/Set Java fields with a {\tt NULL} field ID ({\tt jfieldID})}
+{Example}
+{GetStaticByteField(JNIEnv*@!isNULLEnv, jclass@!isNULLCL, jfieldID@isNULLF \&\& !isStaticF)}
+
+\vspace{3mm}
+\tc{Get field/method IDs using a {\tt NULL} signature}
+
+\tctable
+{Description}
+{Get field/method IDs using a {\tt NULL} field signature given as the last argument for {\tt GetFieldID}, {\tt GetStaticFieldID}, {\tt GetMethodID} and {\tt GetStaticMethodID}}
+{Example}
+{GetStaticMethodID(JNIEnv*@!isNULLEnv, jclass@!isNULLCL, char*@isMethodNameC \&\& isUTF8C \&\& !isNULLC, char*@isNULLC \&\& !isArrayClassSigC \&\& !isClassSigC \&\& !isEndWithBC \&\& !isEndWithCC \&\& !isEndWithDC \&\& !isEndWithFC \&\& !isEndWithIC \&\& !isEndWithJC \&\& !isEndWithLC \&\& !isEndWithSC \&\& !isEndWithVC \&\& !isEndWithZC \&\& !isFieldNameC \&\& !isFieldSigC \&\& !isGetStringUTFCharC \&\& !isInitC \&\& !isMethodNameC \&\& !isMethodSigC \&\& !isUTF8C)}
+
+\vspace{3mm}
+\tc{Get field/method IDs and classes from a {\tt NULL} object}
+
+\tctable
+{Description}
+{Get field/method IDs and classes from a {\tt NULL} object by passing
+passing {\tt NULL} as the second argument of {\tt GetObjectClass}, for example}
+{Example}
+{GetObjectClass(JNIEnv*@!isNULLEnv, jobject@isNULLO \&\& !isDeletedO \&\& !isGlobalO \&\& !isLoaderO \&\& !isLocalO \&\& !isReflectConstructorO \&\& !isReflectFieldO \&\& !isReflectMethodO \&\& !isSubClassO)}
+
+\vspace{3mm}
+\tc{Get field/method IDs from a {\tt NULL} name}
+
+\tctable
+{Description}
+{Get field/method IDs from a {\tt NULL} name by 
+passing {\tt NULL} as the third argument of {\tt GetFieldID}, for example}
+{Example}
+{GetStaticMethodID(JNIEnv*@!isNULLEnv, jclass@!isNULLCL, char*@isNULLC \&\& !isArrayClassSigC \&\& !isClassSigC \&\& !isEndWithBC \&\& !isEndWithCC \&\& !isEndWithDC \&\& !isEndWithFC \&\& !isEndWithIC \&\& !isEndWithJC \&\& !isEndWithLC \&\& !isEndWithSC \&\& !isEndWithVC \&\& !isEndWithZC \&\& !isFieldNameC \&\& !isFieldSigC \&\& !isGetStringUTFCharC \&\& !isInitC \&\& !isMethodNameC \&\& !isMethodSigC \&\& !isUTF8C, char*@isEndWithZC \&\& isMethodSigC \&\& isUTF8C \&\& !isNULLC)}
+
+\vspace{3mm}
+\tc{Call methods using a {\tt NULL} {\tt JNIEnv} object}
+
+\tctable
+{Description}
+{Call JNI functions using a {\tt NULL JNIEnv} object}
+{Example}
+{GetVersion(JNIEnv*@isNULLEnv)}
+
+\vspace{3mm}
+\tc{Get Java VM interfaces from a {\tt NULL} pointer}
+
+\tctable
+{Description}
+{Get a Java VM interface (used in the {\tt Invocation} API) from a {\tt NULL} pointer
+by passing {\tt NULL} as the second argument of {\tt GetJavaVM}, for example}
+{Example}
+{GetJavaVM(JNIEnv*@!isNULLEnv, JavaVM*@isNULLJVM)}
+
+\newpage
+\tc{Register a {\tt NULL} native method}
+
+\tctable
+{Description}
+{Register native methods using a {\tt NULL JNINativeMethod}
+by passing {\tt NULL} as the third argument of {\tt RegisterNatives}, for example}
+{Example}
+{RegisterNatives(JNIEnv*@!isNULLEnv, jclass@!isNULLCL, JNINativeMethod*@isNULLNMD, jint@isPositiveJI)}
+
+\vspace{3mm}
+\tc{Register native methods with a {\tt NULL} class}
+
+\tctable
+{Description}
+{Register native methods using a {\tt NULL} class
+by passing {\tt NULL} as the second argument of {\tt RegisterNatives}, for example}
+{Example}
+{RegisterNatives(JNIEnv*@!isNULLEnv, jclass@isNULLCL \&\& !isArrayCL \&\& !isContainMethod \&\& !isObjectCL \&\& !isThrowableCL, JNINativeMethod*@!isNULLNMD, jint@isPositiveJI)}
+
+\vspace{3mm}
+\tc{Store strings into a {\tt NULL} buffer}
+
+\tctable
+{Description}
+{Store strings into a {\tt NULL} buffer by
+passing {\tt NULL} as the last argument of {\tt GetStringUTFRegion}, for example}
+{Example}
+{GetStringRegion(JNIEnv*@!isNULLEnv, jstring@!isNULLS, jsize@isValidIndexE, jsize@isPositiveE \&\& isValidIndexE \&\& !isNegativeE \&\& !isZeorE, jchar*@isNULLJC \&\& !isGetCharArrayElementsJC \&\& !isGetStringCharsJC \&\& !isGetStringCriticalJC \&\& !isThisCharArray \&\& !isUnicodeJC)}
+
+\vspace{3mm}
+\tc{Unregister native methods from a {\tt NULL} class}
+
+\tctable
+{Description}
+{Unregister native methods from a {\tt NULL} class
+by passing {\tt NULL} as the second argument of {\tt UnregisterNatives}, for example}
+{Example}
+{UnregisterNatives(JNIEnv*@!isNULLEnv, jclass@isNULLCL \&\& !isArrayCL \&\& !isContainMethod \&\& !isObjectCL \&\& !isThrowableCL)}
+
+\vspace{3mm}
+\tc{Call methods of a {\tt NULL} object}
+
+\tctable
+{Description}
+{Call Java methods with a {\tt NULL} receiver object}
+{Example}
+{CallByteMethodA(JNIEnv*@!isNULLEnv, jobject@isNULLO \&\& !isDeletedO \&\& !isGlobalO \&\& !isLoaderO \&\& !isLocalO \&\& !isReflectConstructorO \&\& !isReflectFieldO \&\& !isReflectMethodO \&\& !isSubClassO, jmethodID@isInThisClassM \&\& isJByteM \&\& isPrivateM \&\& !isStaticM, jvalue*@isArrayPtrJV)}
+
+\vspace{3mm}
+\tc{Release a {\tt NULL} string}
+
+\tctable
+{Description}
+{Release a {\tt NULL} string}
+{Example}
+{ReleaseStringChars(JNIEnv*@!isNULLEnv, jstring@!isNULLS, jchar*@isNULLJC \&\& !isGetCharArrayElementsJC \&\& !isGetStringCharsJC \&\& !isGetStringCriticalJC \&\& !isThisCharArray \&\& !isUnicodeJC)}
+
+\newpage
+\tc{Construct new string objects using a {\tt NULL} string}
+
+\tctable
+{Description}
+{Construct a new {\tt java.lang.String} object from {\tt NULL}}
+{Example}
+{NewString(JNIEnv*@!isNULLEnv, jchar*@isNULLJC \&\& !isGetCharArrayElementsJC \&\& !isGetStringCharsJC \&\& !isGetStringCriticalJC \&\& !isThisCharArray \&\& !isUnicodeJC, jsize@isPositiveE \&\& isValidIndexE \&\& !isNegativeE \&\& !isZeorE)}
+
+\vspace{3mm}
+\tc{Create objects with a {\tt NULL} argument}
+
+\tctable
+{Description}
+{Construct a new object from a {\tt NULL} argument}
+{Example}
+{NewObjectA(JNIEnv*@!isNULLEnv, jclass@!isArrayCL \&\& !isNULLCL, jmethodID@isInitM, jvalue*@isNULLJV \&\& !isArrayPtrJV)}
+
+\vspace{3mm}
+\tc{Define classes with a {\tt NULL} classloader}
+
+\tctable
+{Description}
+{Pass {\tt NULL} as the third argument of {\tt DefineClass}}
+{Example}
+{DefineClass(JNIEnv*@!isNULLEnv, char*@isUTF8C \&\& !isNULLC, jobject@isLoaderO \&\& isNULLO, jbyte*@isBytePointerClassInfo \&\& !isNULLB, jsize@isNegativeE \&\& isPositiveE \&\& !isValidIndexE \&\& !isZeorE)}
+
+\vspace{3mm}
+\tc{Define classes with a {\tt NULL} class name}
+
+\tctable
+{Description}
+{Pass {\tt NULL} as the second argument of {\tt DefineClass}}
+{Example}
+{DefineClass(JNIEnv*@!isNULLEnv, char*@isNULLC \&\& isUTF8C, jobject@isLoaderO \&\& !isNULLO, jbyte*@isBytePointerClassInfo \&\& !isNULLB, jsize@isNegativeE \&\& isPositiveE \&\& !isValidIndexE \&\& !isZeorE)}
+
+\vspace{3mm}
+\tc{Load classes with a {\tt NULL} name}
+
+\tctable
+{Description}
+{Pass {\tt NULL} as the second argument of {\tt FindClass}}
+{Example}
+{FindClass(JNIEnv*@!isNULLEnv, char*@isNULLC \&\& !isArrayClassSigC \&\& !isClassSigC \&\& !isEndWithBC \&\& !isEndWithCC \&\& !isEndWithDC \&\& !isEndWithFC \&\& !isEndWithIC \&\& !isEndWithJC \&\& !isEndWithLC \&\& !isEndWithSC \&\& !isEndWithVC \&\& !isEndWithZC \&\& !isFieldNameC \&\& !isFieldSigC \&\& !isGetStringUTFCharC \&\& !isInitC \&\& !isMethodNameC \&\& !isMethodSigC \&\& !isUTF8C)}
+
+\vspace{3mm}
+\tc{Get reflection objects from a {\tt NULL} field ID}
+
+\tctable
+{Description}
+{Convert {\tt NULL} to a {\tt java.lang.reflect.Field object}}
+{Example}
+{ToReflectedField(JNIEnv*@!isNULLEnv, jclass@!isNULLCL, jfieldID@isNULLF \&\& !isStaticF, jboolean@isFalse \&\& isTrue)}
+
+\newpage
+\subsection{Releasability Check}
+\tc{Release unreleasable array elements}
+
+\tctable
+{Description}
+{Release array elements not derived from {\tt Get<PrimitiveType>ArrayElements}}
+{Example}
+{ReleaseCharArrayElements(JNIEnv*@!isNULLEnv, jcharArray@!isNULLJCA, jchar*@isGetCharArrayElementsJC \&\& isUnicodeJC \&\& !isGetStringCharsJC \&\& !isGetStringCriticalJC \&\& !isNULLJC \&\& !isThisCharArray, jint@isZeroJI)}
+
+\vspace{3mm}
+\tc{Release unreleasable strings}
+
+\tctable
+{Description}
+{Release strings not derived from {\tt GetStringChars}}
+{Example}
+{ReleaseStringChars(JNIEnv*@!isNULLEnv, jstring@!isNULLS, jchar*@isUnicodeJC \&\& !isGetCharArrayElementsJC \&\& !isGetStringCharsJC \&\& !isGetStringCriticalJC \&\& !isNULLJC \&\& !isThisCharArray)}
+
+
+\subsection{Modifier Check}
+\tc{Access non-static fields with a static field ID}
+
+\tctable
+{Description}
+{Use a static field ID when accessing a non-static field}
+{Example}
+{ToReflectedField(JNIEnv*@!isNULLEnv, jclass@!isNULLCL, jfieldID@isStaticF \&\& !isNULLF, jboolean@isFalse \&\& !isTrue)}
+
+\vspace{3mm}
+\tc{Access static fields with a non-static field ID}
+
+\tctable
+{Description}
+{Use a non-static field ID when accessing a static field}
+{Example}
+{ToReflectedField(JNIEnv*@!isNULLEnv, jclass@!isNULLCL, jfieldID@!isNULLF \&\& !isStaticF, jboolean@!isFalse \&\& !isTrue)}
+
+\subsection{Size Check}
+\tc{Set capacities of local frames negative}
+
+\tctable
+{Description}
+{Pass a negative integer as the second argument of {\tt EnsureLocalCapacity}}
+{Example}
+{EnsureLocalCapacity(JNIEnv*@!isNULLEnv, jint@isNegativeJI \&\& !isJNI\_ABORTJI \&\& !isJNI\_COMMITJI \&\& !isPositiveJI \&\& !isThisArrayLenJI \&\& !isZeroJI)}
+
+\vspace{3mm}
+\tc{Copy negative indices of strings}
+
+\tctable
+{Description}
+{Pass a negative integer as the third argument of {\tt GetStringRegion}}
+{Example}
+{GetStringRegion(JNIEnv*@!isNULLEnv, jstring@!isNULLS, jsize@isNegativeE \&\& !isPositiveE \&\& !isZeorE \&\& !isValidIndexE, jsize@isPositiveE \&\& isValidIndexE, jchar*@!isNULLJC)}
+
+\vspace{3mm}
+\tc{Create local frames with negative capacities}
+
+\tctable
+{Description}
+{Pass a negative integer as the second argument of {\tt PushLocalFrame}}
+{Example}
+{PushLocalFrame(JNIEnv*@!isNULLEnv, jint@isNegativeJI \&\& !isJNI\_ABORTJI \&\& !isJNI\_COMMITJI \&\& !isPositiveJI \&\& !isThisArrayLenJI \&\& !isZeroJI)}
+
+\newpage
+\tc{Create local frames with the zero capacity}
+
+\tctable
+{Description}
+{Pass zero as the second argument of {\tt PushLocalFrame}}
+{Example}
+{PushLocalFrame(JNIEnv*@!isNULLEnv, jint@isThisArrayLenJI \&\& isZeroJI \&\& !isJNI\_ABORTJI \&\& !isJNI\_COMMITJI \&\& !isNegativeJI \&\& !isPositiveJI)}
+
+\vspace{3mm}
+\tc{Create arrays with negative sizes}
+
+\tctable
+{Description}
+{Pass a negative integer as the second argument of {\tt NewCharArray}}
+{Example}
+{NewCharArray(JNIEnv*@!isNULLEnv, jsize@isNegativeE \&\& isPositiveE \&\& isValidIndexE \&\& !isZeorE)}
+
+\vspace{3mm}
+\tc{Get elements from negative-size arrays}
+
+\tctable
+{Description}
+{Pass a negative integer as the third argument of {\tt GetObjectArrayElement}}
+{Example}
+{GetObjectArrayElement(JNIEnv*@!isNULLEnv, jobjectArray@!isNULLJOA, jsize@isNegativeE \&\& isPositiveE \&\& isValidIndexE \&\& !isZeorE)}
+
+\vspace{3mm}
+\tc{Register negative numbers of native functions}
+
+\tctable
+{Description}
+{Pass a negative integer as the fourth argument of {\tt RegisterNatives}}
+{Example}
+{RegisterNatives(JNIEnv*@!isNULLEnv, jclass@!isNULLCL, JNINativeMethod*@!isNULLNMD, jint@isNegativeJI \&\& !isJNI\_ABORTJI \&\& !isJNI\_COMMITJI \&\& !isPositiveJI \&\& !isThisArrayLenJI \&\& !isZeroJI)}
+
+\vspace{3mm}
+\tc{Register the zero number of native functions}
+
+\tctable
+{Description}
+{Pass zero as the fourth argument of {\tt RegisterNatives}}
+{Example}
+{RegisterNatives(JNIEnv*@!isNULLEnv, jclass@!isNULLCL, JNINativeMethod*@!isNULLNMD, jint@isThisArrayLenJI \&\& isZeroJI \&\& !isJNI\_ABORTJI \&\& !isJNI\_COMMITJI \&\& !isNegativeJI \&\& !isPositiveJI)}
+
+\vspace{3mm}
+\tc{Set elements to negative-size arrays}
+
+\tctable
+{Description}
+{Pass a negative integer as the third argument of {\tt SetIntArrayRegion}}
+{Example}
+{SetIntArrayRegion(JNIEnv*@!isNULLEnv, jintArray@!isNULLJIA, jsize@isNegativeE \&\& isPositiveE \&\& isZeorE \&\& !isValidIndexE, jsize@isValidIndexE, jint*@!isNULLJI)}
+
+\subsection{Liveness Check}
+\tc{Get types from deleted references}
+
+\tctable
+{Description}
+{Pass a deleted object as the second argument of {\tt GetObjectRefType}}
+{Example}
+{GetObjectRefType(JNIEnv*@!isNULLEnv, jobject@isDeletedO \&\& isGlobalO \&\& isReflectFieldO \&\& isSubClassO \&\& !isLoaderO \&\& !isLocalO \&\& !isNULLO \&\& !isReflectConstructorO \&\& !isReflectMethodO)}
+
+\newpage
+\tc{Compare objects with deleted objects}
+
+\tctable
+{Description}
+{Pass a deleted object as the third argument of {\tt IsSameObject}}
+{Example}
+{IsSameObject(JNIEnv*@!isNULLEnv, jobject@isNULLO, jobject@isDeletedO \&\& isLoaderO \&\& isLocalO \&\& isSubClassO \&\& !isGlobalO \&\& !isNULLO \&\& !isReflectConstructorO \&\& !isReflectFieldO \&\& !isReflectMethodO)}
+
+\vspace{3mm}
+\tc{Create references from deleted global reference objects}
+
+\tctable
+{Description}
+{Pass a deleted object as the second argument of {\tt NewWeakGlobalRef}}
+{Example}
+{NewWeakGlobalRef(JNIEnv*@!isNULLEnv, jobject@isDeletedO \&\& isLoaderO \&\& isLocalO \&\& isSubClassO \&\& !isGlobalO \&\& !isNULLO \&\& !isReflectConstructorO \&\& !isReflectFieldO \&\& !isReflectMethodO)}
+
+\vspace{3mm}
+\tc{Create references from deleted local reference objects}
+
+\tctable
+{Description}
+{Pass a deleted object as the second argument of {\tt NewLocalRef}}
+{Example}
+{NewLocalRef(JNIEnv*@!isNULLEnv, jobject@isDeletedO \&\& isGlobalO \&\& isReflectMethodO \&\& isSubClassO \&\& !isLoaderO \&\& !isLocalO \&\& !isNULLO \&\& !isReflectConstructorO \&\& !isReflectFieldO)}
 
 \end{document}
